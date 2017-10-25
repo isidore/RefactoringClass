@@ -5,7 +5,6 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.util.ArrayList;
-import java.util.List;
 
 import javax.swing.JPanel;
 
@@ -57,27 +56,27 @@ public class ChartWindow extends JPanel {
 		renderChartBackground(graphics);
 
 		ChartTitles chartTitles = new ChartTitles();
-		String[] titles = null;
-		List<String> specialData = new ArrayList<String>();
-		String[] pieChartTitle = new String[0];
+		chartTitles.titles = null;
+		chartTitles.specialData = new ArrayList<String>();
+		chartTitles.pieChartTitle = new String[0];
 
 		if (countOrChartNumber == BAR_CHART_NUMBER) {
 			if (displayName.equals(DISPLAY_RPFLL)) {
-				titles = new String[1];
-				titles[0] = "Bar Chart";
+				chartTitles.titles = new String[1];
+				chartTitles.titles[0] = "Bar Chart";
 			} else {
-				titles = new String[2];
+				chartTitles.titles = new String[2];
 				int i = 0;
-				titles[i++] = "Bar Chart";
-				titles[i++] = "Small";
+				chartTitles.titles[i++] = "Bar Chart";
+				chartTitles.titles[i++] = "Small";
 			}
 		} else {
 			if (displayName.equals(DISPLAY_RPFLL)) {
-				specialData.add("Pie Chart");
+				chartTitles.specialData.add("Pie Chart");
 			} else {
-				pieChartTitle = new String[2];
-				pieChartTitle[1] = "Small";
-				pieChartTitle[0] = "Pie" + " Chart";
+				chartTitles.pieChartTitle = new String[2];
+				chartTitles.pieChartTitle[1] = "Small";
+				chartTitles.pieChartTitle[0] = "Pie" + " Chart";
 			}
 		}
 
@@ -85,7 +84,7 @@ public class ChartWindow extends JPanel {
 
 		if (countOrChartNumber == BAR_CHART_NUMBER) {
 			if (displayName.equals("shareddisplay")) {
-				if (titles != null) {
+				if (chartTitles.titles != null) {
 
 					font = new Font("Arial Black", Font.BOLD, 25);
 					graphics.setColor(Color.CYAN);
@@ -97,8 +96,8 @@ public class ChartWindow extends JPanel {
 					graphics.fillRect(260, bottomY - 170, 40, 170);
 					graphics.setColor(Color.RED);
 					graphics.setFont(font);
-					graphics.drawString(titles[0], 130, 250);
-					graphics.drawString(titles[1], 130, 270);
+					graphics.drawString(chartTitles.titles[0], 130, 250);
+					graphics.drawString(chartTitles.titles[1], 130, 270);
 				}
 			} else {
 				int bottomY = 500;
@@ -111,24 +110,25 @@ public class ChartWindow extends JPanel {
 				font = new Font("Arial Black", Font.BOLD, 55);
 				graphics.setColor(Color.BLACK);
 				graphics.setFont(font);
-				graphics.drawString(titles[0], 130, 400);
+				graphics.drawString(chartTitles.titles[0], 130, 400);
 			}
 		} else {
 			if (displayName.equals(DISPLAY_RPFLL)) {
 				font = new Font("Bookman Old Style", Font.BOLD, 55);
 				graphics.setColor(Color.WHITE);
 				graphics.setFont(font);
-				graphics.drawString(specialData.get(0), 200, 340);
+				graphics.drawString(chartTitles.specialData.get(0), 200, 340);
 			} else {
 				font = new Font("Bookman Old Style", Font.BOLD, 30);
 				graphics.setFont(font);
 				graphics.setColor(Color.WHITE);
-				graphics.drawString(pieChartTitle[0], 145, 205);
-				graphics.drawString(pieChartTitle[1], 170, 235);
+				graphics.drawString(chartTitles.pieChartTitle[0], 145, 205);
+				graphics.drawString(chartTitles.pieChartTitle[1], 170, 235);
 			}
 		}
 
-		if ((titles != null && (titles.length ^ 0x54) == 50) || (specialData != null && specialData.contains("Monthly"))
+		if ((chartTitles.titles != null && (chartTitles.titles.length ^ 0x54) == 50)
+				|| (chartTitles.specialData != null && chartTitles.specialData.contains("Monthly"))
 				|| getTitle().contains("daily")) {
 			try {
 				repaint(200);
