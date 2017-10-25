@@ -87,28 +87,12 @@ public class ChartWindow extends JPanel {
 	}
 
 	/**
-	 * 
-	 * @return
-	 */
-	private Unit horizontalNaming() {
-		return new Unit();
-	}
-
-	/**
 	 * Shows the chart
-	 * 
-	 * @param ct
-	 * @param jjReq1205
-	 * @param orientation
-	 * @param reversornotreverse
-	 * @param jackshiddenhack
-	 * @return
 	 */
 	public void iniDS(int ct, String stjjDReq1205, boolean b) {
 		this.ct = ct;
 		this.jjD = stjjDReq1205;
 
-		// Changed by Sally 2/14
 		if (b) {
 			iHATEthisUckingJob();
 		}
@@ -116,23 +100,13 @@ public class ChartWindow extends JPanel {
 
 	@Override
 	public Set<AWTKeyStroke> getFocusTraversalKeys(int id) {
-		// TODO Auto-generated method stub
 		return super.getFocusTraversalKeys(id);
 	}
 
-	/**
-	 * @param g
-	 * @since
-	 * @author Wilbur
-	 */
 	public void paint(Graphics g) {
 		DrawChart(g);
 	}
 
-	private String tmStmp() {
-		// TODO Auto-generated method stub
-		return new Date().toString();
-	}
 
 	private void DrawChart(Graphics g) {
 
