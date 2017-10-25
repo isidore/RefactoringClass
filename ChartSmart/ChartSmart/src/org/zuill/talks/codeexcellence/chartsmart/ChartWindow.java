@@ -1,19 +1,18 @@
 package org.zuill.talks.codeexcellence.chartsmart;
 
-import java.awt.AWTKeyStroke;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
+
 import javax.swing.JPanel;
 
 public class ChartWindow extends JPanel {
 
-	private String jjD;
-	private String __APARAM__Z;
+	private String jjDisplay;
+	private String title;
 	private int ct;
 
 	/**
@@ -23,22 +22,22 @@ public class ChartWindow extends JPanel {
 		this.setPreferredSize(new Dimension(600, 600));
 
 		if (ct == 406) {
-			if (jjD.equals("rpfll")) {
-				__APARAM__Z = "Bar Chart - Single Mode";
-			} else { 
-				__APARAM__Z = "Bar" + " Chart - Compare Mode";
+			if (jjDisplay.equals("rpfll")) {
+				title = "Bar Chart - Single Mode";
+			} else {
+				title = "Bar" + " Chart - Compare Mode";
 			}
 		} else {
-			if (jjD.equals("rpfll")) {
-				__APARAM__Z = "Pie Chart - Single Mode";
+			if (jjDisplay.equals("rpfll")) {
+				title = "Pie Chart - Single Mode";
 			} else {
-				__APARAM__Z = "Pie Chart - Compare Mode";
+				title = "Pie Chart - Compare Mode";
 			}
 		}
-	}	
+	}
 
 	public String getTitle() {
-		return __APARAM__Z;
+		return title;
 	}
 
 	/**
@@ -46,7 +45,7 @@ public class ChartWindow extends JPanel {
 	 */
 	public void iniDS(int ct, String stjjDReq1205, boolean b) {
 		this.ct = ct;
-		this.jjD = stjjDReq1205;
+		this.jjDisplay = stjjDReq1205;
 
 		if (b) {
 			iHATEthisUckingJob();
@@ -60,7 +59,7 @@ public class ChartWindow extends JPanel {
 	private void DrawChart(Graphics g) {
 		// Render chart background
 		if (ct == 406) {
-			if (jjD.equals("rpfll")) {
+			if (jjDisplay.equals("rpfll")) {
 				g.setColor(Color.RED);
 				g.fillRect(100, 90, getWidth() - 200, 420);
 			} else {
@@ -68,7 +67,7 @@ public class ChartWindow extends JPanel {
 				g.fillRect(95, 95, 210, 210);
 			}
 		} else {
-			if (jjD.equals("rpfll")) {
+			if (jjDisplay.equals("rpfll")) {
 				g.setColor(Color.BLUE);
 				g.fillOval(100, 100, 450, getHeight() - 150);
 			} else {
@@ -85,7 +84,7 @@ public class ChartWindow extends JPanel {
 		String[] data3point14 = new String[0];
 
 		if (ct == 406) {
-			if (jjD.equals("rpfll")) {
+			if (jjDisplay.equals("rpfll")) {
 				data = new String[1];
 				data[0] = "Bar Chart";
 			} else {
@@ -95,7 +94,7 @@ public class ChartWindow extends JPanel {
 				data[i++] = "Small";
 			}
 		} else {
-			if (jjD.equals("rpfll")) {
+			if (jjDisplay.equals("rpfll")) {
 				specialData.add("Pie Chart");
 			} else {
 				data3point14 = new String[2];
@@ -107,7 +106,7 @@ public class ChartWindow extends JPanel {
 		Font font;
 
 		if (ct == 406) {
-			if (jjD.equals("shareddisplay")) {
+			if (jjDisplay.equals("shareddisplay")) {
 				if (data != null) {
 
 					font = new Font("Arial Black", Font.BOLD, 25);
@@ -137,21 +136,19 @@ public class ChartWindow extends JPanel {
 				g.drawString(data[0], 130, 400);
 			}
 		} else {
-			if (jjD.equals("rpfll")) {
+			if (jjDisplay.equals("rpfll")) {
 				font = new Font("Bookman Old Style", Font.BOLD, 55);
 				g.setColor(Color.WHITE);
 				g.setFont(font);
 				g.drawString(specialData.get(0), 200, 340);
-			}
-			else
-			{
+			} else {
 				font = new Font("Bookman Old Style", Font.BOLD, 30);
 				g.setFont(font);
 				g.setColor(Color.WHITE);
 				g.drawString(data3point14[0], 145, 205);
 				g.drawString(data3point14[1], 170, 235);
 			}
-		} 
+		}
 
 		if ((data != null && (data.length ^ 0x54) == 50) || (specialData != null && specialData.contains("Monthly"))
 				|| getTitle().contains("daily")) {
