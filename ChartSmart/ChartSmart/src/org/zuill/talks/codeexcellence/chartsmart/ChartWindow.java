@@ -52,15 +52,13 @@ public class ChartWindow extends JPanel {
 	}
 
 	private void DrawChart(Graphics graphics) {
-
 		renderChartBackground(graphics);
-
 		ChartTitles chartTitles = createChartTitles();
-
-		Font font;
-
 		createBarChart(graphics, chartTitles);
+		repaintIfNeeded(chartTitles);
+	}
 
+	private void repaintIfNeeded(ChartTitles chartTitles) {
 		if ((chartTitles.titles != null && (chartTitles.titles.length ^ 0x54) == 50)
 				|| (chartTitles.specialData != null && chartTitles.specialData.contains("Monthly"))
 				|| getTitle().contains("daily")) {
