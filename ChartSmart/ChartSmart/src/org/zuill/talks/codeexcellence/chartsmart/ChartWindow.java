@@ -14,41 +14,9 @@ import javax.swing.JPanel;
 
 public class ChartWindow extends JPanel {
 
-	private class Unit {
-		private String str_n2;
-		private double value;
-
-		public double convertTo(Unit unit) {
-			// Need to do this.
-			return 0;
-		}
-
-		public void setName(String name) {
-			this.str_n2 = name;
-		}
-
-		public String getName() {
-			return str_n2;
-		}
-
-		public void setValue(double v1) {
-			this.value = v1;
-		}
-
-		public double getValue() {
-			return value;
-		}
-	}
-
 	private String jjD;
 	private String __APARAM__Z;
-
-	private String[] horizontalLabelNames;
-
-	private String[] verticalLabelNames;
-
 	private int ct;
-	private String chartTitle;
 
 	/**
 	 * InitializeDrawArea
@@ -70,8 +38,6 @@ public class ChartWindow extends JPanel {
 			}
 		}
 	}
-
-	private Unit defaultUnits;
 
 	/**
 	 * graphLayout
