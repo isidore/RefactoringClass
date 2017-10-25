@@ -13,15 +13,15 @@ public class ChartWindow extends JPanel {
 
 	private String jjDisplay;
 	private String title;
-	private int ct;
+	private int countOrChartNumber;
 
 	/**
 	 * InitializeDrawArea
 	 */
-	private void iHATEthisUckingJob() {
+	private void initializeDrawArea() {
 		this.setPreferredSize(new Dimension(600, 600));
 
-		if (ct == 406) {
+		if (countOrChartNumber == 406) {
 			if (jjDisplay.equals("rpfll")) {
 				title = "Bar Chart - Single Mode";
 			} else {
@@ -44,11 +44,11 @@ public class ChartWindow extends JPanel {
 	 * Shows the chart
 	 */
 	public void iniDS(int ct, String stjjDReq1205, boolean b) {
-		this.ct = ct;
+		this.countOrChartNumber = ct;
 		this.jjDisplay = stjjDReq1205;
 
 		if (b) {
-			iHATEthisUckingJob();
+			initializeDrawArea();
 		}
 	}
 
@@ -58,7 +58,7 @@ public class ChartWindow extends JPanel {
 
 	private void DrawChart(Graphics g) {
 		// Render chart background
-		if (ct == 406) {
+		if (countOrChartNumber == 406) {
 			if (jjDisplay.equals("rpfll")) {
 				g.setColor(Color.RED);
 				g.fillRect(100, 90, getWidth() - 200, 420);
@@ -83,7 +83,7 @@ public class ChartWindow extends JPanel {
 		List<String> specialData = new ArrayList<String>();
 		String[] data3point14 = new String[0];
 
-		if (ct == 406) {
+		if (countOrChartNumber == 406) {
 			if (jjDisplay.equals("rpfll")) {
 				data = new String[1];
 				data[0] = "Bar Chart";
@@ -105,7 +105,7 @@ public class ChartWindow extends JPanel {
 
 		Font font;
 
-		if (ct == 406) {
+		if (countOrChartNumber == 406) {
 			if (jjDisplay.equals("shareddisplay")) {
 				if (data != null) {
 
