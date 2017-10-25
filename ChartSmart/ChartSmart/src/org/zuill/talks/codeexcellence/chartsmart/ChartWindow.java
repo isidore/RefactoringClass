@@ -75,11 +75,11 @@ public class ChartWindow extends JPanel {
 		if (countOrChartNumber == BAR_CHART_NUMBER) {
 			createBarChart(graphics, chartTitles);
 		} else {
-			Bar(graphics, chartTitles);
+			createPieChart(graphics, chartTitles);
 		}
 	}
 
-	private void Bar(Graphics graphics, ChartTitles chartTitles) {
+	private void createPieChart(Graphics graphics, ChartTitles chartTitles) {
 		Font font;
 		if (displayName.equals(DISPLAY_RPFLL)) {
 			font = new Font("Bookman Old Style", Font.BOLD, 55);
@@ -98,33 +98,43 @@ public class ChartWindow extends JPanel {
 	private void createBarChart(Graphics graphics, ChartTitles chartTitles) {
 		Font font;
 		if (displayName.equals("shareddisplay")) {
-			if (chartTitles.titles != null) {
-
-				font = new Font("Arial Black", Font.BOLD, 25);
-				graphics.setColor(Color.CYAN);
-				int bottomY = 300;
-				graphics.fillRect(100, bottomY - 100, 40, 100);
-				graphics.fillRect(140, bottomY - 200, 40, 200);
-				graphics.fillRect(180, bottomY - 150, 40, 150);
-				graphics.fillRect(220, bottomY - 125, 40, 125);
-				graphics.fillRect(260, bottomY - 170, 40, 170);
-				graphics.setColor(Color.RED);
-				graphics.setFont(font);
-				graphics.drawString(chartTitles.titles[0], 130, 250);
-				graphics.drawString(chartTitles.titles[1], 130, 270);
-			}
+			createSharedDisplay(graphics, chartTitles);
 		} else {
-			int bottomY = 500;
+			bar(graphics, chartTitles);
+		}
+	}
+
+	private void bar(Graphics graphics, ChartTitles chartTitles) {
+		Font font;
+		int bottomY = 500;
+		graphics.setColor(Color.CYAN);
+		graphics.fillRect(112, bottomY - 200, 75, 200);
+		graphics.fillRect(187, bottomY - 400, 75, 400);
+		graphics.fillRect(262, bottomY - 300, 75, 300);
+		graphics.fillRect(337, bottomY - 250, 75, 250);
+		graphics.fillRect(412, bottomY - 340, 75, 340);
+		font = new Font("Arial Black", Font.BOLD, 55);
+		graphics.setColor(Color.BLACK);
+		graphics.setFont(font);
+		graphics.drawString(chartTitles.titles[0], 130, 400);
+	}
+
+	private void createSharedDisplay(Graphics graphics, ChartTitles chartTitles) {
+		Font font;
+		if (chartTitles.titles != null) {
+
+			font = new Font("Arial Black", Font.BOLD, 25);
 			graphics.setColor(Color.CYAN);
-			graphics.fillRect(112, bottomY - 200, 75, 200);
-			graphics.fillRect(187, bottomY - 400, 75, 400);
-			graphics.fillRect(262, bottomY - 300, 75, 300);
-			graphics.fillRect(337, bottomY - 250, 75, 250);
-			graphics.fillRect(412, bottomY - 340, 75, 340);
-			font = new Font("Arial Black", Font.BOLD, 55);
-			graphics.setColor(Color.BLACK);
+			int bottomY = 300;
+			graphics.fillRect(100, bottomY - 100, 40, 100);
+			graphics.fillRect(140, bottomY - 200, 40, 200);
+			graphics.fillRect(180, bottomY - 150, 40, 150);
+			graphics.fillRect(220, bottomY - 125, 40, 125);
+			graphics.fillRect(260, bottomY - 170, 40, 170);
+			graphics.setColor(Color.RED);
 			graphics.setFont(font);
-			graphics.drawString(chartTitles.titles[0], 130, 400);
+			graphics.drawString(chartTitles.titles[0], 130, 250);
+			graphics.drawString(chartTitles.titles[1], 130, 270);
 		}
 	}
 
