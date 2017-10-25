@@ -98,13 +98,13 @@ public class ChartWindow extends JPanel {
 	private void createBarChart(Graphics graphics, ChartTitles chartTitles) {
 		Font font;
 		if (displayName.equals("shareddisplay")) {
-			createSharedDisplay(graphics, chartTitles);
+			createBarChartSharedDisplay(graphics, chartTitles);
 		} else {
-			bar(graphics, chartTitles);
+			createBarChartStandardDisplay(graphics, chartTitles);
 		}
 	}
 
-	private void bar(Graphics graphics, ChartTitles chartTitles) {
+	private void createBarChartStandardDisplay(Graphics graphics, ChartTitles chartTitles) {
 		Font font;
 		int bottomY = 500;
 		graphics.setColor(Color.CYAN);
@@ -119,7 +119,7 @@ public class ChartWindow extends JPanel {
 		graphics.drawString(chartTitles.titles[0], 130, 400);
 	}
 
-	private void createSharedDisplay(Graphics graphics, ChartTitles chartTitles) {
+	private void createBarChartSharedDisplay(Graphics graphics, ChartTitles chartTitles) {
 		Font font;
 		if (chartTitles.titles != null) {
 
