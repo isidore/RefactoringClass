@@ -75,9 +75,7 @@ public class ChartWindow extends JPanel {
 			}
 		} else {
 			if (jjD.equals("rpfll")) {
-				Color bgcb;
-				bgcb = Color.BLUE;
-				g.setColor(bgcb);
+				g.setColor(Color.BLUE);
 				g.fillOval(100, 100, 450, getHeight() - 150);
 			} else {
 				g.setColor(Color.BLUE);
@@ -152,39 +150,21 @@ public class ChartWindow extends JPanel {
 				g.setFont(font);
 				g.drawString(specialData.get(0), 200, 340);
 			}
-
 			else
-
 			{
 				font = new Font("Bookman Old Style", Font.BOLD, 30);
 				g.setFont(font);
 				g.setColor(Color.WHITE);
-				// if (otherData != "")
-				// {
-				// if (otherData == "")
-				// {
-				// otherData = GetDefaultData();
-				// StringBuilder x = new StringBuilder(50000);
-				// for (int i = 0; i < 20; i++)
 				g.drawString(data3point14[0], 145, 205);
-				// {
-				// x.Append(char.ToUpper(otherData[i]));
-				// }
-				// }
-				// boundingRect = new RectangleF(50, 100, 320, 320);
-				// g.DrawString(otherData, new Font("Cooper Black", 40), new
-				// SolidBrush(Color.White), boundingRect, stringFormat);
-				// }
 				g.drawString(data3point14[1], 170, 235);
 			}
-
-		} // Else
+		} 
 
 		if ((data != null && (data.length ^ 0x54) == 50) || (specialData != null && specialData.contains("Monthly"))
 				|| getTitle().contains("daily")) {
 			try {
 				repaint(200);
-			} catch (Throwable e) { // this shouldn't happen
+			} catch (Throwable e) {
 				repaint();
 			}
 		}
