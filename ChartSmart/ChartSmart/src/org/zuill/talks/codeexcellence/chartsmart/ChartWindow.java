@@ -66,8 +66,7 @@ public class ChartWindow extends JPanel {
 		// Render chart background
 		if (ct == 406) {
 			if (jjD.equals("rpfll")) {
-				Color bgc = Color.RED;
-				g.setColor(bgc);
+				g.setColor(Color.RED);
 				g.fillRect(100, 90, getWidth() - 200, 420);
 			} else {
 				g.setColor(Color.BLACK);
@@ -101,7 +100,6 @@ public class ChartWindow extends JPanel {
 				data[i++] = "Small";
 			}
 		} else {
-			// BUG445: Org rep team missing req chart
 			if (jjD.equals("rpfll")) {
 				specialData.add("Pie Chart");
 			} else {
