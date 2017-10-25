@@ -71,7 +71,6 @@ public class ChartWindow extends JPanel {
 	}
 
 	private void createChart(Graphics graphics, ChartTitles chartTitles) {
-		Font font;
 		if (countOrChartNumber == BAR_CHART_NUMBER) {
 			createBarChart(graphics, chartTitles);
 		} else {
@@ -96,7 +95,6 @@ public class ChartWindow extends JPanel {
 	}
 
 	private void createBarChart(Graphics graphics, ChartTitles chartTitles) {
-		Font font;
 		if (displayName.equals("shareddisplay")) {
 			createBarChartSharedDisplay(graphics, chartTitles);
 		} else {
@@ -145,15 +143,7 @@ public class ChartWindow extends JPanel {
 		chartTitles.pieChartTitle = new String[0];
 
 		if (countOrChartNumber == BAR_CHART_NUMBER) {
-			if (displayName.equals(DISPLAY_RPFLL)) {
-				chartTitles.titles = new String[1];
-				chartTitles.titles[0] = "Bar Chart";
-			} else {
-				chartTitles.titles = new String[2];
-				int i = 0;
-				chartTitles.titles[i++] = "Bar Chart";
-				chartTitles.titles[i++] = "Small";
-			}
+			createBarChartTitle(chartTitles);
 		} else {
 			if (displayName.equals(DISPLAY_RPFLL)) {
 				chartTitles.specialData.add("Pie Chart");
@@ -164,6 +154,18 @@ public class ChartWindow extends JPanel {
 			}
 		}
 		return chartTitles;
+	}
+
+	private void createBarChartTitle(ChartTitles chartTitles) {
+		if (displayName.equals(DISPLAY_RPFLL)) {
+			chartTitles.titles = new String[1];
+			chartTitles.titles[0] = "Bar Chart";
+		} else {
+			chartTitles.titles = new String[2];
+			int i = 0;
+			chartTitles.titles[i++] = "Bar Chart";
+			chartTitles.titles[i++] = "Small";
+		}
 	}
 
 	private void renderChartBackground(Graphics graphics) {
