@@ -43,11 +43,11 @@ public class ChartWindow extends JPanel {
 	/**
 	 * Shows the chart
 	 */
-	public void iniDS(int ct, String stjjDReq1205, boolean b) {
-		this.countOrChartNumber = ct;
-		this.jjDisplay = stjjDReq1205;
+	public void showChart(int countOrChartNumber, String displayName, boolean shouldInitialize) {
+		this.countOrChartNumber = countOrChartNumber;
+		this.jjDisplay = displayName;
 
-		if (b) {
+		if (shouldInitialize) {
 			initializeDrawArea();
 		}
 	}
