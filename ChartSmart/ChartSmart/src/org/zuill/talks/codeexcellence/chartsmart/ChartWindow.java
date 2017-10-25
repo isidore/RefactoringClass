@@ -73,27 +73,27 @@ public class ChartWindow extends JPanel {
 			}
 		}
 
-		String[] data = null;
+		String[] titles = null;
 		List<String> specialData = new ArrayList<String>();
-		String[] data3point14 = new String[0];
+		String[] pieChartTitle = new String[0];
 
 		if (countOrChartNumber == 406) {
 			if (jjDisplay.equals("rpfll")) {
-				data = new String[1];
-				data[0] = "Bar Chart";
+				titles = new String[1];
+				titles[0] = "Bar Chart";
 			} else {
-				data = new String[2];
+				titles = new String[2];
 				int i = 0;
-				data[i++] = "Bar Chart";
-				data[i++] = "Small";
+				titles[i++] = "Bar Chart";
+				titles[i++] = "Small";
 			}
 		} else {
 			if (jjDisplay.equals("rpfll")) {
 				specialData.add("Pie Chart");
 			} else {
-				data3point14 = new String[2];
-				data3point14[1] = "Small";
-				data3point14[0] = "Pie" + " Chart";
+				pieChartTitle = new String[2];
+				pieChartTitle[1] = "Small";
+				pieChartTitle[0] = "Pie" + " Chart";
 			}
 		}
 
@@ -101,7 +101,7 @@ public class ChartWindow extends JPanel {
 
 		if (countOrChartNumber == 406) {
 			if (jjDisplay.equals("shareddisplay")) {
-				if (data != null) {
+				if (titles != null) {
 
 					font = new Font("Arial Black", Font.BOLD, 25);
 					graphics.setColor(Color.CYAN);
@@ -113,8 +113,8 @@ public class ChartWindow extends JPanel {
 					graphics.fillRect(260, bottomY - 170, 40, 170);
 					graphics.setColor(Color.RED);
 					graphics.setFont(font);
-					graphics.drawString(data[0], 130, 250);
-					graphics.drawString(data[1], 130, 270);
+					graphics.drawString(titles[0], 130, 250);
+					graphics.drawString(titles[1], 130, 270);
 				}
 			} else {
 				int bottomY = 500;
@@ -127,7 +127,7 @@ public class ChartWindow extends JPanel {
 				font = new Font("Arial Black", Font.BOLD, 55);
 				graphics.setColor(Color.BLACK);
 				graphics.setFont(font);
-				graphics.drawString(data[0], 130, 400);
+				graphics.drawString(titles[0], 130, 400);
 			}
 		} else {
 			if (jjDisplay.equals("rpfll")) {
@@ -139,12 +139,12 @@ public class ChartWindow extends JPanel {
 				font = new Font("Bookman Old Style", Font.BOLD, 30);
 				graphics.setFont(font);
 				graphics.setColor(Color.WHITE);
-				graphics.drawString(data3point14[0], 145, 205);
-				graphics.drawString(data3point14[1], 170, 235);
+				graphics.drawString(pieChartTitle[0], 145, 205);
+				graphics.drawString(pieChartTitle[1], 170, 235);
 			}
 		}
 
-		if ((data != null && (data.length ^ 0x54) == 50) || (specialData != null && specialData.contains("Monthly"))
+		if ((titles != null && (titles.length ^ 0x54) == 50) || (specialData != null && specialData.contains("Monthly"))
 				|| getTitle().contains("daily")) {
 			try {
 				repaint(200);
