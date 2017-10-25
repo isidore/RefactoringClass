@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
-import java.util.ArrayList;
 
 import javax.swing.JPanel;
 
@@ -59,15 +58,19 @@ public class ChartWindow extends JPanel {
 	}
 
 	private void repaintIfNeeded(ChartTitles chartTitles) {
-		if ((chartTitles.titles != null && (chartTitles.titles.length ^ 0x54) == 50)
-				|| (chartTitles.specialData != null && chartTitles.specialData.contains("Monthly"))
-				|| getTitle().contains("daily")) {
+		if (isRepaintNeeded(chartTitles)) {
 			try {
 				repaint(200);
 			} catch (Throwable e) {
 				repaint();
 			}
 		}
+	}
+
+	private boolean isRepaintNeeded(ChartTitles chartTitles) {
+		return (chartTitles.titles != null && (chartTitles.titles.length ^ 0x54) == 50)
+				|| (chartTitles.specialData != null && chartTitles.specialData.contains("Monthly"))
+				|| getTitle().contains("daily");
 	}
 
 	private void createChart(Graphics graphics, ChartTitles chartTitles) {
@@ -138,22 +141,23 @@ public class ChartWindow extends JPanel {
 
 	private ChartTitles createChartTitles() {
 		ChartTitles chartTitles = new ChartTitles();
-		chartTitles.titles = null;
-		chartTitles.specialData = new ArrayList<String>();
-		chartTitles.pieChartTitle = new String[0];
 
 		if (countOrChartNumber == BAR_CHART_NUMBER) {
 			createBarChartTitle(chartTitles);
 		} else {
-			if (displayName.equals(DISPLAY_RPFLL)) {
-				chartTitles.specialData.add("Pie Chart");
-			} else {
-				chartTitles.pieChartTitle = new String[2];
-				chartTitles.pieChartTitle[1] = "Small";
-				chartTitles.pieChartTitle[0] = "Pie" + " Chart";
-			}
+			createPieChartTitle(chartTitles);
 		}
 		return chartTitles;
+	}
+
+	private void createPieChartTitle(ChartTitles chartTitles) {
+		if (displayName.equals(DISPLAY_RPFLL)) {
+			chartTitles.specialData.add("Pie Chart");
+		} else {
+			chartTitles.pieChartTitle = new String[2];
+			chartTitles.pieChartTitle[1] = "Small";
+			chartTitles.pieChartTitle[0] = "Pie" + " Chart";
+		}
 	}
 
 	private void createBarChartTitle(ChartTitles chartTitles) {
