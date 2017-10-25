@@ -54,27 +54,7 @@ public class ChartWindow extends JPanel {
 
 	private void DrawChart(Graphics graphics) {
 
-		// Render chart background
-		if (countOrChartNumber == BAR_CHART_NUMBER) {
-			if (displayName.equals(DISPLAY_RPFLL)) {
-				graphics.setColor(Color.RED);
-				graphics.fillRect(100, 90, getWidth() - 200, 420);
-			} else {
-				graphics.setColor(Color.BLACK);
-				graphics.fillRect(95, 95, 210, 210);
-			}
-		} else {
-			if (displayName.equals(DISPLAY_RPFLL)) {
-				graphics.setColor(Color.BLUE);
-				graphics.fillOval(100, 100, 450, getHeight() - 150);
-			} else {
-				graphics.setColor(Color.BLUE);
-				double isq = 405;
-				float padding = 90;
-				int sc = (int) (isq - padding * 2);
-				graphics.fillOval(100, 100, sc, sc);
-			}
-		}
+		renderChartBackground(graphics);
 
 		String[] titles = null;
 		List<String> specialData = new ArrayList<String>();
@@ -153,6 +133,29 @@ public class ChartWindow extends JPanel {
 				repaint(200);
 			} catch (Throwable e) {
 				repaint();
+			}
+		}
+	}
+
+	private void renderChartBackground(Graphics graphics) {
+		if (countOrChartNumber == BAR_CHART_NUMBER) {
+			if (displayName.equals(DISPLAY_RPFLL)) {
+				graphics.setColor(Color.RED);
+				graphics.fillRect(100, 90, getWidth() - 200, 420);
+			} else {
+				graphics.setColor(Color.BLACK);
+				graphics.fillRect(95, 95, 210, 210);
+			}
+		} else {
+			if (displayName.equals(DISPLAY_RPFLL)) {
+				graphics.setColor(Color.BLUE);
+				graphics.fillOval(100, 100, 450, getHeight() - 150);
+			} else {
+				graphics.setColor(Color.BLUE);
+				double isq = 405;
+				float padding = 90;
+				int sc = (int) (isq - padding * 2);
+				graphics.fillOval(100, 100, sc, sc);
 			}
 		}
 	}
