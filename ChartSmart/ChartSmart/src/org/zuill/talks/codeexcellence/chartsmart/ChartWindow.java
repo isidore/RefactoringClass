@@ -11,23 +11,23 @@ import javax.swing.JPanel;
 
 public class ChartWindow extends JPanel {
 
-	private static final String RPFLL = "rpfll";
-	private static final int _406 = 406;
-	private String jjDisplay;
+	private static final String DISPLAY_RPFLL = "rpfll";
+	private static final int BAR_CHART_NUMBER = 406;
+	private String displayName;
 	private String title;
 	private int countOrChartNumber;
 
 	private void initializeDrawArea() {
 		this.setPreferredSize(new Dimension(600, 600));
 
-		if (countOrChartNumber == _406) {
-			if (jjDisplay.equals(RPFLL)) {
+		if (countOrChartNumber == BAR_CHART_NUMBER) {
+			if (displayName.equals(DISPLAY_RPFLL)) {
 				title = "Bar Chart - Single Mode";
 			} else {
 				title = "Bar" + " Chart - Compare Mode";
 			}
 		} else {
-			if (jjDisplay.equals(RPFLL)) {
+			if (displayName.equals(DISPLAY_RPFLL)) {
 				title = "Pie Chart - Single Mode";
 			} else {
 				title = "Pie Chart - Compare Mode";
@@ -41,7 +41,7 @@ public class ChartWindow extends JPanel {
 
 	public void showChart(int countOrChartNumber, String displayName, boolean shouldInitialize) {
 		this.countOrChartNumber = countOrChartNumber;
-		this.jjDisplay = displayName;
+		this.displayName = displayName;
 
 		if (shouldInitialize) {
 			initializeDrawArea();
@@ -55,8 +55,8 @@ public class ChartWindow extends JPanel {
 	private void DrawChart(Graphics graphics) {
 
 		// Render chart background
-		if (countOrChartNumber == _406) {
-			if (jjDisplay.equals(RPFLL)) {
+		if (countOrChartNumber == BAR_CHART_NUMBER) {
+			if (displayName.equals(DISPLAY_RPFLL)) {
 				graphics.setColor(Color.RED);
 				graphics.fillRect(100, 90, getWidth() - 200, 420);
 			} else {
@@ -64,7 +64,7 @@ public class ChartWindow extends JPanel {
 				graphics.fillRect(95, 95, 210, 210);
 			}
 		} else {
-			if (jjDisplay.equals(RPFLL)) {
+			if (displayName.equals(DISPLAY_RPFLL)) {
 				graphics.setColor(Color.BLUE);
 				graphics.fillOval(100, 100, 450, getHeight() - 150);
 			} else {
@@ -80,8 +80,8 @@ public class ChartWindow extends JPanel {
 		List<String> specialData = new ArrayList<String>();
 		String[] pieChartTitle = new String[0];
 
-		if (countOrChartNumber == _406) {
-			if (jjDisplay.equals(RPFLL)) {
+		if (countOrChartNumber == BAR_CHART_NUMBER) {
+			if (displayName.equals(DISPLAY_RPFLL)) {
 				titles = new String[1];
 				titles[0] = "Bar Chart";
 			} else {
@@ -91,7 +91,7 @@ public class ChartWindow extends JPanel {
 				titles[i++] = "Small";
 			}
 		} else {
-			if (jjDisplay.equals(RPFLL)) {
+			if (displayName.equals(DISPLAY_RPFLL)) {
 				specialData.add("Pie Chart");
 			} else {
 				pieChartTitle = new String[2];
@@ -102,8 +102,8 @@ public class ChartWindow extends JPanel {
 
 		Font font;
 
-		if (countOrChartNumber == _406) {
-			if (jjDisplay.equals("shareddisplay")) {
+		if (countOrChartNumber == BAR_CHART_NUMBER) {
+			if (displayName.equals("shareddisplay")) {
 				if (titles != null) {
 
 					font = new Font("Arial Black", Font.BOLD, 25);
@@ -133,7 +133,7 @@ public class ChartWindow extends JPanel {
 				graphics.drawString(titles[0], 130, 400);
 			}
 		} else {
-			if (jjDisplay.equals(RPFLL)) {
+			if (displayName.equals(DISPLAY_RPFLL)) {
 				font = new Font("Bookman Old Style", Font.BOLD, 55);
 				graphics.setColor(Color.WHITE);
 				graphics.setFont(font);
