@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 
 public class ChartWindow extends JPanel {
 
+	private static final int _406 = 406;
 	private String jjDisplay;
 	private String title;
 	private int countOrChartNumber;
@@ -18,7 +19,7 @@ public class ChartWindow extends JPanel {
 	private void initializeDrawArea() {
 		this.setPreferredSize(new Dimension(600, 600));
 
-		if (countOrChartNumber == 406) {
+		if (countOrChartNumber == _406) {
 			if (jjDisplay.equals("rpfll")) {
 				title = "Bar Chart - Single Mode";
 			} else {
@@ -51,8 +52,9 @@ public class ChartWindow extends JPanel {
 	}
 
 	private void DrawChart(Graphics graphics) {
+
 		// Render chart background
-		if (countOrChartNumber == 406) {
+		if (countOrChartNumber == _406) {
 			if (jjDisplay.equals("rpfll")) {
 				graphics.setColor(Color.RED);
 				graphics.fillRect(100, 90, getWidth() - 200, 420);
@@ -77,7 +79,7 @@ public class ChartWindow extends JPanel {
 		List<String> specialData = new ArrayList<String>();
 		String[] pieChartTitle = new String[0];
 
-		if (countOrChartNumber == 406) {
+		if (countOrChartNumber == _406) {
 			if (jjDisplay.equals("rpfll")) {
 				titles = new String[1];
 				titles[0] = "Bar Chart";
@@ -99,7 +101,7 @@ public class ChartWindow extends JPanel {
 
 		Font font;
 
-		if (countOrChartNumber == 406) {
+		if (countOrChartNumber == _406) {
 			if (jjDisplay.equals("shareddisplay")) {
 				if (titles != null) {
 
