@@ -53,11 +53,6 @@ public class ChartWindow extends JPanel {
 		}
 	}
 
-	@Override
-	public Set<AWTKeyStroke> getFocusTraversalKeys(int id) {
-		return super.getFocusTraversalKeys(id);
-	}
-
 	public void paint(Graphics g) {
 		DrawChart(g);
 	}
