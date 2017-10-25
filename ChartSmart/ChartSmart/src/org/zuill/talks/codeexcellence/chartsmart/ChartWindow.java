@@ -54,7 +54,7 @@ public class ChartWindow extends JPanel {
 	private void DrawChart(Graphics graphics) {
 		renderChartBackground(graphics);
 		ChartTitles chartTitles = createChartTitles();
-		createBarChart(graphics, chartTitles);
+		createChart(graphics, chartTitles);
 		repaintIfNeeded(chartTitles);
 	}
 
@@ -70,51 +70,61 @@ public class ChartWindow extends JPanel {
 		}
 	}
 
-	private void createBarChart(Graphics graphics, ChartTitles chartTitles) {
+	private void createChart(Graphics graphics, ChartTitles chartTitles) {
 		Font font;
 		if (countOrChartNumber == BAR_CHART_NUMBER) {
-			if (displayName.equals("shareddisplay")) {
-				if (chartTitles.titles != null) {
+			createBarChart(graphics, chartTitles);
+		} else {
+			Bar(graphics, chartTitles);
+		}
+	}
 
-					font = new Font("Arial Black", Font.BOLD, 25);
-					graphics.setColor(Color.CYAN);
-					int bottomY = 300;
-					graphics.fillRect(100, bottomY - 100, 40, 100);
-					graphics.fillRect(140, bottomY - 200, 40, 200);
-					graphics.fillRect(180, bottomY - 150, 40, 150);
-					graphics.fillRect(220, bottomY - 125, 40, 125);
-					graphics.fillRect(260, bottomY - 170, 40, 170);
-					graphics.setColor(Color.RED);
-					graphics.setFont(font);
-					graphics.drawString(chartTitles.titles[0], 130, 250);
-					graphics.drawString(chartTitles.titles[1], 130, 270);
-				}
-			} else {
-				int bottomY = 500;
+	private void Bar(Graphics graphics, ChartTitles chartTitles) {
+		Font font;
+		if (displayName.equals(DISPLAY_RPFLL)) {
+			font = new Font("Bookman Old Style", Font.BOLD, 55);
+			graphics.setColor(Color.WHITE);
+			graphics.setFont(font);
+			graphics.drawString(chartTitles.specialData.get(0), 200, 340);
+		} else {
+			font = new Font("Bookman Old Style", Font.BOLD, 30);
+			graphics.setFont(font);
+			graphics.setColor(Color.WHITE);
+			graphics.drawString(chartTitles.pieChartTitle[0], 145, 205);
+			graphics.drawString(chartTitles.pieChartTitle[1], 170, 235);
+		}
+	}
+
+	private void createBarChart(Graphics graphics, ChartTitles chartTitles) {
+		Font font;
+		if (displayName.equals("shareddisplay")) {
+			if (chartTitles.titles != null) {
+
+				font = new Font("Arial Black", Font.BOLD, 25);
 				graphics.setColor(Color.CYAN);
-				graphics.fillRect(112, bottomY - 200, 75, 200);
-				graphics.fillRect(187, bottomY - 400, 75, 400);
-				graphics.fillRect(262, bottomY - 300, 75, 300);
-				graphics.fillRect(337, bottomY - 250, 75, 250);
-				graphics.fillRect(412, bottomY - 340, 75, 340);
-				font = new Font("Arial Black", Font.BOLD, 55);
-				graphics.setColor(Color.BLACK);
+				int bottomY = 300;
+				graphics.fillRect(100, bottomY - 100, 40, 100);
+				graphics.fillRect(140, bottomY - 200, 40, 200);
+				graphics.fillRect(180, bottomY - 150, 40, 150);
+				graphics.fillRect(220, bottomY - 125, 40, 125);
+				graphics.fillRect(260, bottomY - 170, 40, 170);
+				graphics.setColor(Color.RED);
 				graphics.setFont(font);
-				graphics.drawString(chartTitles.titles[0], 130, 400);
+				graphics.drawString(chartTitles.titles[0], 130, 250);
+				graphics.drawString(chartTitles.titles[1], 130, 270);
 			}
 		} else {
-			if (displayName.equals(DISPLAY_RPFLL)) {
-				font = new Font("Bookman Old Style", Font.BOLD, 55);
-				graphics.setColor(Color.WHITE);
-				graphics.setFont(font);
-				graphics.drawString(chartTitles.specialData.get(0), 200, 340);
-			} else {
-				font = new Font("Bookman Old Style", Font.BOLD, 30);
-				graphics.setFont(font);
-				graphics.setColor(Color.WHITE);
-				graphics.drawString(chartTitles.pieChartTitle[0], 145, 205);
-				graphics.drawString(chartTitles.pieChartTitle[1], 170, 235);
-			}
+			int bottomY = 500;
+			graphics.setColor(Color.CYAN);
+			graphics.fillRect(112, bottomY - 200, 75, 200);
+			graphics.fillRect(187, bottomY - 400, 75, 400);
+			graphics.fillRect(262, bottomY - 300, 75, 300);
+			graphics.fillRect(337, bottomY - 250, 75, 250);
+			graphics.fillRect(412, bottomY - 340, 75, 340);
+			font = new Font("Arial Black", Font.BOLD, 55);
+			graphics.setColor(Color.BLACK);
+			graphics.setFont(font);
+			graphics.drawString(chartTitles.titles[0], 130, 400);
 		}
 	}
 
