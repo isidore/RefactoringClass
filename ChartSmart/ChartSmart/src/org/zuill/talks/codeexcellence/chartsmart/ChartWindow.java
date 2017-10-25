@@ -134,10 +134,6 @@ public class ChartWindow extends JPanel {
 		return new Date().toString();
 	}
 
-	/**
-	 * 
-	 * @param g
-	 */
 	private void DrawChart(Graphics g) {
 
 		// Render chart background
@@ -195,13 +191,7 @@ public class ChartWindow extends JPanel {
 		if (ct == 406) {
 			if (jjD.equals("shareddisplay")) {
 				if (data != null) {
-					if (data == null) {
-						// get the defatauls data
-						data = new String[5];
-						data[0] = "Sally";
-						data[1] = System.getProperty("osname");
-						data[2] = tmStmp();
-					}
+
 					font = new Font("Arial Black", Font.BOLD, 25);
 					g.setColor(Color.CYAN);
 					int bottomY = 300;
