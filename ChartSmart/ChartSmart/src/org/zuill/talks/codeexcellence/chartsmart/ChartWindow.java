@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 
 public class ChartWindow extends JPanel {
 
+	private static final String RPFLL = "rpfll";
 	private static final int _406 = 406;
 	private String jjDisplay;
 	private String title;
@@ -20,13 +21,13 @@ public class ChartWindow extends JPanel {
 		this.setPreferredSize(new Dimension(600, 600));
 
 		if (countOrChartNumber == _406) {
-			if (jjDisplay.equals("rpfll")) {
+			if (jjDisplay.equals(RPFLL)) {
 				title = "Bar Chart - Single Mode";
 			} else {
 				title = "Bar" + " Chart - Compare Mode";
 			}
 		} else {
-			if (jjDisplay.equals("rpfll")) {
+			if (jjDisplay.equals(RPFLL)) {
 				title = "Pie Chart - Single Mode";
 			} else {
 				title = "Pie Chart - Compare Mode";
@@ -55,7 +56,7 @@ public class ChartWindow extends JPanel {
 
 		// Render chart background
 		if (countOrChartNumber == _406) {
-			if (jjDisplay.equals("rpfll")) {
+			if (jjDisplay.equals(RPFLL)) {
 				graphics.setColor(Color.RED);
 				graphics.fillRect(100, 90, getWidth() - 200, 420);
 			} else {
@@ -63,7 +64,7 @@ public class ChartWindow extends JPanel {
 				graphics.fillRect(95, 95, 210, 210);
 			}
 		} else {
-			if (jjDisplay.equals("rpfll")) {
+			if (jjDisplay.equals(RPFLL)) {
 				graphics.setColor(Color.BLUE);
 				graphics.fillOval(100, 100, 450, getHeight() - 150);
 			} else {
@@ -80,7 +81,7 @@ public class ChartWindow extends JPanel {
 		String[] pieChartTitle = new String[0];
 
 		if (countOrChartNumber == _406) {
-			if (jjDisplay.equals("rpfll")) {
+			if (jjDisplay.equals(RPFLL)) {
 				titles = new String[1];
 				titles[0] = "Bar Chart";
 			} else {
@@ -90,7 +91,7 @@ public class ChartWindow extends JPanel {
 				titles[i++] = "Small";
 			}
 		} else {
-			if (jjDisplay.equals("rpfll")) {
+			if (jjDisplay.equals(RPFLL)) {
 				specialData.add("Pie Chart");
 			} else {
 				pieChartTitle = new String[2];
@@ -132,7 +133,7 @@ public class ChartWindow extends JPanel {
 				graphics.drawString(titles[0], 130, 400);
 			}
 		} else {
-			if (jjDisplay.equals("rpfll")) {
+			if (jjDisplay.equals(RPFLL)) {
 				font = new Font("Bookman Old Style", Font.BOLD, 55);
 				graphics.setColor(Color.WHITE);
 				graphics.setFont(font);
