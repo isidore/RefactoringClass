@@ -55,33 +55,25 @@ public class ChartWindow extends JPanel {
 
 		renderChartBackground(graphics);
 
-		ChartTitles chartTitles = new ChartTitles();
-		chartTitles.titles = null;
-		chartTitles.specialData = new ArrayList<String>();
-		chartTitles.pieChartTitle = new String[0];
-
-		if (countOrChartNumber == BAR_CHART_NUMBER) {
-			if (displayName.equals(DISPLAY_RPFLL)) {
-				chartTitles.titles = new String[1];
-				chartTitles.titles[0] = "Bar Chart";
-			} else {
-				chartTitles.titles = new String[2];
-				int i = 0;
-				chartTitles.titles[i++] = "Bar Chart";
-				chartTitles.titles[i++] = "Small";
-			}
-		} else {
-			if (displayName.equals(DISPLAY_RPFLL)) {
-				chartTitles.specialData.add("Pie Chart");
-			} else {
-				chartTitles.pieChartTitle = new String[2];
-				chartTitles.pieChartTitle[1] = "Small";
-				chartTitles.pieChartTitle[0] = "Pie" + " Chart";
-			}
-		}
+		ChartTitles chartTitles = createChartTitles();
 
 		Font font;
 
+		createBarChart(graphics, chartTitles);
+
+		if ((chartTitles.titles != null && (chartTitles.titles.length ^ 0x54) == 50)
+				|| (chartTitles.specialData != null && chartTitles.specialData.contains("Monthly"))
+				|| getTitle().contains("daily")) {
+			try {
+				repaint(200);
+			} catch (Throwable e) {
+				repaint();
+			}
+		}
+	}
+
+	private void createBarChart(Graphics graphics, ChartTitles chartTitles) {
+		Font font;
 		if (countOrChartNumber == BAR_CHART_NUMBER) {
 			if (displayName.equals("shareddisplay")) {
 				if (chartTitles.titles != null) {
@@ -126,16 +118,34 @@ public class ChartWindow extends JPanel {
 				graphics.drawString(chartTitles.pieChartTitle[1], 170, 235);
 			}
 		}
+	}
 
-		if ((chartTitles.titles != null && (chartTitles.titles.length ^ 0x54) == 50)
-				|| (chartTitles.specialData != null && chartTitles.specialData.contains("Monthly"))
-				|| getTitle().contains("daily")) {
-			try {
-				repaint(200);
-			} catch (Throwable e) {
-				repaint();
+	private ChartTitles createChartTitles() {
+		ChartTitles chartTitles = new ChartTitles();
+		chartTitles.titles = null;
+		chartTitles.specialData = new ArrayList<String>();
+		chartTitles.pieChartTitle = new String[0];
+
+		if (countOrChartNumber == BAR_CHART_NUMBER) {
+			if (displayName.equals(DISPLAY_RPFLL)) {
+				chartTitles.titles = new String[1];
+				chartTitles.titles[0] = "Bar Chart";
+			} else {
+				chartTitles.titles = new String[2];
+				int i = 0;
+				chartTitles.titles[i++] = "Bar Chart";
+				chartTitles.titles[i++] = "Small";
+			}
+		} else {
+			if (displayName.equals(DISPLAY_RPFLL)) {
+				chartTitles.specialData.add("Pie Chart");
+			} else {
+				chartTitles.pieChartTitle = new String[2];
+				chartTitles.pieChartTitle[1] = "Small";
+				chartTitles.pieChartTitle[0] = "Pie" + " Chart";
 			}
 		}
+		return chartTitles;
 	}
 
 	private void renderChartBackground(Graphics graphics) {
