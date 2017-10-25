@@ -56,6 +56,7 @@ public class ChartWindow extends JPanel {
 
 		renderChartBackground(graphics);
 
+		ChartTitles chartTitles = new ChartTitles();
 		String[] titles = null;
 		List<String> specialData = new ArrayList<String>();
 		String[] pieChartTitle = new String[0];
