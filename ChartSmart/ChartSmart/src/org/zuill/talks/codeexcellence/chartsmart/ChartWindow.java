@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 
 public class ChartWindow extends JPanel {
 
-	private static final String DISPLAY_RPFLL = "rpfll";
+	private static final String SINGLE_MODE_DISPLAY = "rpfll";
 	private static final int BAR_CHART_NUMBER = 406;
 	private String displayName;
 	private String title;
@@ -19,13 +19,13 @@ public class ChartWindow extends JPanel {
 		this.setPreferredSize(new Dimension(600, 600));
 
 		if (countOrChartNumber == BAR_CHART_NUMBER) {
-			if (displayName.equals(DISPLAY_RPFLL)) {
+			if (displayName.equals(SINGLE_MODE_DISPLAY)) {
 				title = "Bar Chart - Single Mode";
 			} else {
-				title = "Bar" + " Chart - Compare Mode";
+				title = "Bar Chart - Compare Mode";
 			}
 		} else {
-			if (displayName.equals(DISPLAY_RPFLL)) {
+			if (displayName.equals(SINGLE_MODE_DISPLAY)) {
 				title = "Pie Chart - Single Mode";
 			} else {
 				title = "Pie Chart - Compare Mode";
@@ -83,7 +83,7 @@ public class ChartWindow extends JPanel {
 
 	private void createPieChart(Graphics graphics, ChartTitles chartTitles) {
 		Font font;
-		if (displayName.equals(DISPLAY_RPFLL)) {
+		if (displayName.equals(SINGLE_MODE_DISPLAY)) {
 			font = new Font("Bookman Old Style", Font.BOLD, 55);
 			graphics.setColor(Color.WHITE);
 			graphics.setFont(font);
@@ -151,7 +151,7 @@ public class ChartWindow extends JPanel {
 	}
 
 	private void createPieChartTitle(ChartTitles chartTitles) {
-		if (displayName.equals(DISPLAY_RPFLL)) {
+		if (displayName.equals(SINGLE_MODE_DISPLAY)) {
 			chartTitles.specialData.add("Pie Chart");
 		} else {
 			chartTitles.pieChartTitle = new String[2];
@@ -161,7 +161,7 @@ public class ChartWindow extends JPanel {
 	}
 
 	private void createBarChartTitle(ChartTitles chartTitles) {
-		if (displayName.equals(DISPLAY_RPFLL)) {
+		if (displayName.equals(SINGLE_MODE_DISPLAY)) {
 			chartTitles.titles = new String[1];
 			chartTitles.titles[0] = "Bar Chart";
 		} else {
@@ -174,7 +174,7 @@ public class ChartWindow extends JPanel {
 
 	private void renderChartBackground(Graphics graphics) {
 		if (countOrChartNumber == BAR_CHART_NUMBER) {
-			if (displayName.equals(DISPLAY_RPFLL)) {
+			if (displayName.equals(SINGLE_MODE_DISPLAY)) {
 				graphics.setColor(Color.RED);
 				graphics.fillRect(100, 90, getWidth() - 200, 420);
 			} else {
@@ -182,7 +182,7 @@ public class ChartWindow extends JPanel {
 				graphics.fillRect(95, 95, 210, 210);
 			}
 		} else {
-			if (displayName.equals(DISPLAY_RPFLL)) {
+			if (displayName.equals(SINGLE_MODE_DISPLAY)) {
 				graphics.setColor(Color.BLUE);
 				graphics.fillOval(100, 100, 450, getHeight() - 150);
 			} else {
