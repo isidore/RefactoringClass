@@ -19,25 +19,25 @@ public class ChartSmartTest extends TestCase
   public void testBarChart() throws Exception
   {
     IndividualDisplay cw = new IndividualDisplay();
-    cw.iniDS(406, "rpfll", true);
+    cw.showChart(406, "rpfll", true);
     Approvals.verify(cw);
   }
   public void testBarChartCompare() throws Exception
   {
     IndividualDisplay cw = new IndividualDisplay();
-    cw.iniDS(406, "shareddisplay", true);
+    cw.showChart(406, "shareddisplay", true);
     Approvals.verify(cw);
   }
   public void testPieChart() throws Exception
   {
     IndividualDisplay cw = new IndividualDisplay();
-    cw.iniDS(323, "rpfll", true);
+    cw.showChart(323, "rpfll", true);
     Approvals.verify(cw);
   }
   public void testPieChartCompare() throws Exception
   {
     IndividualDisplay cw = new IndividualDisplay();
-    cw.iniDS(323, "shareddisplay", true);
+    cw.showChart(323, "shareddisplay", true);
     Approvals.verify(cw);
   }
 }

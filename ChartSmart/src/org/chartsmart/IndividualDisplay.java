@@ -10,21 +10,22 @@ import java.util.List;
 import javax.swing.JPanel;
 
 public class IndividualDisplay extends JPanel {
+	private static final String SINGLE_MODE = "rpfll";
 	private static final int BAR_CHART = 406;
-	private String jjD;
+	private String mode;
 	private String title;
 	private int chartType;
 
 	private void initializeDrawArea() {
 		this.setPreferredSize(new Dimension(600, 600));
 		if (chartType == BAR_CHART) {
-			if (jjD.equals("rpfll")) {
+			if (mode.equals(SINGLE_MODE)) {
 				title = "Bar Chart - Single Mode";
 			} else {
 				title = "Bar" + " Chart - Compare Mode";
 			}
 		} else {
-			if (jjD.equals("rpfll")) {
+			if (mode.equals(SINGLE_MODE)) {
 				title = "Pie Chart - Single Mode";
 			} else {
 				title = "Pie Chart - Compare Mode";
@@ -36,13 +37,10 @@ public class IndividualDisplay extends JPanel {
 		return title;
 	}
 
-	/**
-	 * Shows the chart
-	 */
-	public void iniDS(int ct, String stjjDReq1205, boolean b) {
-		this.chartType = ct;
-		this.jjD = stjjDReq1205;
-		if (b) {
+	public void showChart(int chartType, String stjjDReq1205, boolean shouldInitializeDrawArea) {
+		this.chartType = chartType;
+		this.mode = stjjDReq1205;
+		if (shouldInitializeDrawArea) {
 			initializeDrawArea();
 		}
 	}
@@ -54,7 +52,7 @@ public class IndividualDisplay extends JPanel {
 	private void DrawChart(Graphics g) {
 		// Render chart background
 		if (chartType == 406) {
-			if (jjD.equals("rpfll")) {
+			if (mode.equals(SINGLE_MODE)) {
 				Color bgc = Color.RED;
 				g.setColor(bgc);
 				g.fillRect(100, 90, getWidth() - 200, 420);
@@ -63,7 +61,7 @@ public class IndividualDisplay extends JPanel {
 				g.fillRect(95, 95, 210, 210);
 			}
 		} else {
-			if (jjD.equals("rpfll")) {
+			if (mode.equals(SINGLE_MODE)) {
 				Color bgcb;
 				bgcb = Color.BLUE;
 				g.setColor(bgcb);
@@ -80,7 +78,7 @@ public class IndividualDisplay extends JPanel {
 		List<String> specialData = new ArrayList<String>();
 		String[] data3point14 = new String[0];
 		if (chartType == 406) {
-			if (jjD.equals("rpfll")) {
+			if (mode.equals(SINGLE_MODE)) {
 				data = new String[1];
 				data[0] = "Bar Chart";
 			} else {
@@ -90,7 +88,7 @@ public class IndividualDisplay extends JPanel {
 				data[i++] = "Small";
 			}
 		} else {
-			if (jjD.equals("rpfll")) {
+			if (mode.equals(SINGLE_MODE)) {
 				specialData.add("Pie Chart");
 			} else {
 				data3point14 = new String[2];
@@ -100,7 +98,7 @@ public class IndividualDisplay extends JPanel {
 		}
 		Font font;
 		if (chartType == 406) {
-			if (jjD.equals("shareddisplay")) {
+			if (mode.equals("shareddisplay")) {
 				if (data != null) {
 					font = new Font("Arial Black", Font.BOLD, 25);
 					g.setColor(Color.CYAN);
@@ -129,7 +127,7 @@ public class IndividualDisplay extends JPanel {
 				g.drawString(data[0], 130, 400);
 			}
 		} else {
-			if (jjD.equals("rpfll")) {
+			if (mode.equals(SINGLE_MODE)) {
 				font = new Font("Bookman Old Style", Font.BOLD, 55);
 				g.setColor(Color.WHITE);
 				g.setFont(font);
