@@ -6,9 +6,9 @@ import java.awt.Graphics;
 
 public class PieChart {
 
-	public void renderChart(IndividualDisplay individualDisplay, Graphics graphics, ChartData chartData) {
+	public void renderChart(Graphics graphics, ChartData chartData, String mode) {
 		Font font;
-		if (individualDisplay.mode.equals(IndividualDisplay.SINGLE_MODE)) {
+		if (mode.equals(IndividualDisplay.SINGLE_MODE)) {
 			font = new Font("Bookman Old Style", Font.BOLD, 55);
 			graphics.setColor(Color.WHITE);
 			graphics.setFont(font);

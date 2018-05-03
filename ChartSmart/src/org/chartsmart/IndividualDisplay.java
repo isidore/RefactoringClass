@@ -71,7 +71,7 @@ public class IndividualDisplay extends JPanel {
 			barChart.renderChart(graphics, chartData, mode);
 		} else {
 			PieChart pieChart = new PieChart();
-			pieChart.renderChart(this, graphics, chartData);
+			pieChart.renderChart(graphics, chartData, mode);
 		}
 	}
 
