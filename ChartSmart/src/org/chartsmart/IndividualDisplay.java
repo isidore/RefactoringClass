@@ -53,6 +53,10 @@ public class IndividualDisplay extends JPanel {
 		renderChartBackground(graphics);
 		ChartData chartData = getChartData();
 		renderChart(graphics, chartData);
+		repaintIfNecessary(chartData);
+	}
+
+	public void repaintIfNecessary(ChartData chartData) {
 		if (shouldRepaint(chartData.data, chartData.specialData)) {
 			try {
 				repaint(200);
