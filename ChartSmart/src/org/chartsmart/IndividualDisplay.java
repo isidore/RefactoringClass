@@ -71,11 +71,12 @@ public class IndividualDisplay extends JPanel {
 			BarChart barChart = new BarChart();
 			barChart.renderChart(this, graphics, chartData);
 		} else {
-			renderPieChart(graphics, chartData);
+			PieChart pieChart = new PieChart();
+			renderPieChart(pieChart, graphics, chartData);
 		}
 	}
 
-	public void renderPieChart(Graphics graphics, ChartData chartData) {
+	public void renderPieChart(PieChart pieChart, Graphics graphics, ChartData chartData) {
 		Font font;
 		if (mode.equals(SINGLE_MODE)) {
 			font = new Font("Bookman Old Style", Font.BOLD, 55);
