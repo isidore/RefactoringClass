@@ -125,28 +125,36 @@ public class IndividualDisplay extends JPanel {
 	public ChartData getChartData() {
 
 		if (chartType == BAR_CHART) {
-			ChartData chartData = new ChartData();
-			if (mode.equals(SINGLE_MODE)) {
-				chartData.data = new String[1];
-				chartData.data[0] = "Bar Chart";
-			} else {
-				chartData.data = new String[2];
-				int i = 0;
-				chartData.data[i++] = "Bar Chart";
-				chartData.data[i++] = "Small";
-			}
-			return chartData;
+			return getBarChartData();
 		} else {
-			ChartData chartData = new ChartData();
-			if (mode.equals(SINGLE_MODE)) {
-				chartData.specialData.add("Pie Chart");
-			} else {
-				chartData.data3point14 = new String[2];
-				chartData.data3point14[1] = "Small";
-				chartData.data3point14[0] = "Pie" + " Chart";
-			}
-			return chartData;
+			return getPieChartData();
 		}
+	}
+
+	public ChartData getPieChartData() {
+		ChartData chartData = new ChartData();
+		if (mode.equals(SINGLE_MODE)) {
+			chartData.specialData.add("Pie Chart");
+		} else {
+			chartData.data3point14 = new String[2];
+			chartData.data3point14[1] = "Small";
+			chartData.data3point14[0] = "Pie" + " Chart";
+		}
+		return chartData;
+	}
+
+	public ChartData getBarChartData() {
+		ChartData chartData = new ChartData();
+		if (mode.equals(SINGLE_MODE)) {
+			chartData.data = new String[1];
+			chartData.data[0] = "Bar Chart";
+		} else {
+			chartData.data = new String[2];
+			int i = 0;
+			chartData.data[i++] = "Bar Chart";
+			chartData.data[i++] = "Small";
+		}
+		return chartData;
 	}
 
 	public void renderChartBackground(Graphics graphics) {
