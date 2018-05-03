@@ -39,7 +39,7 @@ public class BarChart implements Chart {
 		}
 	}
 
-	public void renderBackground(Graphics graphics, String mode, int width) {
+	public void renderBackground(Graphics graphics, String mode, int width, int height) {
 		if (mode.equals(IndividualDisplay.SINGLE_MODE)) {
 			graphics.setColor(Color.RED);
 			graphics.fillRect(100, 90, width - 200, 420);

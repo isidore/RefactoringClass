@@ -110,10 +110,10 @@ public class IndividualDisplay extends JPanel {
 	public void renderChartBackground(Graphics graphics) {
 		if (chartType == BAR_CHART) {
 			BarChart chart = new BarChart();
-			chart.renderBackground(graphics, mode, getWidth());
+			chart.renderBackground(graphics, mode, getWidth(), getHeight());
 		} else {
 			PieChart chart = new PieChart();
-			chart.renderBackground(graphics, mode, getHeight());
+			chart.renderBackground(graphics, mode, getWidth(), getHeight());
 		}
 	}
 
