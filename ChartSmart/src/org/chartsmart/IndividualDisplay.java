@@ -48,9 +48,10 @@ public class IndividualDisplay extends JPanel {
 	}
 
 	private void drawChart(Graphics graphics) {
-		renderChartBackground(graphics);
+		Chart chart = getChart();
 		ChartData chartData = getChartData();
-		getChart().renderChart(graphics, chartData, mode);
+		chart.renderBackground(graphics, mode, getWidth(), getHeight());
+		chart.renderChart(graphics, chartData, mode);
 		repaintIfNecessary(chartData);
 	}
 
@@ -105,10 +106,6 @@ public class IndividualDisplay extends JPanel {
 			chartData.data[i++] = "Small";
 		}
 		return chartData;
-	}
-
-	public void renderChartBackground(Graphics graphics) {
-		getChart().renderBackground(graphics, mode, getWidth(), getHeight());
 	}
 
 	public boolean shouldRepaint(String[] data, List<String> specialData) {
