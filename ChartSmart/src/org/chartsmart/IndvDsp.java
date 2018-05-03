@@ -45,18 +45,10 @@ public class IndvDsp extends JPanel {
 
 	/**
 	 * Shows the chart
-	 * 
-	 * @param ct
-	 * @param jjReq1205
-	 * @param orientation
-	 * @param reversornotreverse
-	 * @param jackshiddenhack
-	 * @return
 	 */
 	public void iniDS(int ct, String stjjDReq1205, boolean b) {
 		this.ct = ct;
 		this.jjD = stjjDReq1205;
-		// Changed by Sally 2/14
 		if (b) {
 			iHATEthisUckingJob();
 		}
@@ -67,19 +59,10 @@ public class IndvDsp extends JPanel {
 		return super.getFocusTraversalKeys(id);
 	}
 
-	/**
-	 * @param g
-	 * @since
-	 * @author Wilbur
-	 */
 	public void paint(Graphics g) {
 		DrawChart(g);
 	}
 
-	/**
-	 * 
-	 * @param g
-	 */
 	private void DrawChart(Graphics g) {
 		// Render chart background
 		if (ct == 406) {
@@ -119,7 +102,6 @@ public class IndvDsp extends JPanel {
 				data[i++] = "Small";
 			}
 		} else {
-			// BUG445: Org rep team missing req chart
 			if (jjD.equals("rpfll")) {
 				specialData.add("Pie Chart");
 			} else {
