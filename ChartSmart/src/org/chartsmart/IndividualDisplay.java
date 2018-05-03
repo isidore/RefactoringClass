@@ -51,35 +51,40 @@ public class IndividualDisplay extends JPanel {
 
 	private void drawChart(Graphics graphics) {
 		renderChartBackground(graphics);
-		DataWrapper dataWrapper = new DataWrapper();
-
-		if (chartType == BAR_CHART) {
-			if (mode.equals(SINGLE_MODE)) {
-				dataWrapper.data = new String[1];
-				dataWrapper.data[0] = "Bar Chart";
-			} else {
-				dataWrapper.data = new String[2];
-				int i = 0;
-				dataWrapper.data[i++] = "Bar Chart";
-				dataWrapper.data[i++] = "Small";
-			}
-		} else {
-			if (mode.equals(SINGLE_MODE)) {
-				dataWrapper.specialData.add("Pie Chart");
-			} else {
-				dataWrapper.data3point14 = new String[2];
-				dataWrapper.data3point14[1] = "Small";
-				dataWrapper.data3point14[0] = "Pie" + " Chart";
-			}
-		}
-		drawFont(graphics, dataWrapper.data, dataWrapper.specialData, dataWrapper.data3point14);
-		if (shouldRepaint(dataWrapper.data, dataWrapper.specialData)) {
+		ChartData chartData = getChartData();
+		drawFont(graphics, chartData.data, chartData.specialData, chartData.data3point14);
+		if (shouldRepaint(chartData.data, chartData.specialData)) {
 			try {
 				repaint(200);
 			} catch (Throwable e) {
 				repaint();
 			}
 		}
+	}
+
+	public ChartData getChartData() {
+		ChartData chartData = new ChartData();
+
+		if (chartType == BAR_CHART) {
+			if (mode.equals(SINGLE_MODE)) {
+				chartData.data = new String[1];
+				chartData.data[0] = "Bar Chart";
+			} else {
+				chartData.data = new String[2];
+				int i = 0;
+				chartData.data[i++] = "Bar Chart";
+				chartData.data[i++] = "Small";
+			}
+		} else {
+			if (mode.equals(SINGLE_MODE)) {
+				chartData.specialData.add("Pie Chart");
+			} else {
+				chartData.data3point14 = new String[2];
+				chartData.data3point14[1] = "Small";
+				chartData.data3point14[0] = "Pie" + " Chart";
+			}
+		}
+		return chartData;
 	}
 
 	public void renderChartBackground(Graphics graphics) {
