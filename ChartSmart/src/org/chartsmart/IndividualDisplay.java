@@ -52,12 +52,59 @@ public class IndividualDisplay extends JPanel {
 	private void drawChart(Graphics graphics) {
 		renderChartBackground(graphics);
 		ChartData chartData = getChartData();
-		drawFont(graphics, chartData.data, chartData.specialData, chartData.data3point14);
+		renderChart(graphics, chartData);
 		if (shouldRepaint(chartData.data, chartData.specialData)) {
 			try {
 				repaint(200);
 			} catch (Throwable e) {
 				repaint();
+			}
+		}
+	}
+
+	public void renderChart(Graphics graphics, ChartData chartData) {
+		Font font;
+		if (chartType == BAR_CHART) {
+			if (mode.equals(SHARED_DISPLAY_MODE)) {
+				if (chartData.data != null) {
+					font = new Font("Arial Black", Font.BOLD, 25);
+					graphics.setColor(Color.CYAN);
+					int bottomY = 300;
+					graphics.fillRect(100, bottomY - 100, 40, 100);
+					graphics.fillRect(140, bottomY - 200, 40, 200);
+					graphics.fillRect(180, bottomY - 150, 40, 150);
+					graphics.fillRect(220, bottomY - 125, 40, 125);
+					graphics.fillRect(260, bottomY - 170, 40, 170);
+					graphics.setColor(Color.RED);
+					graphics.setFont(font);
+					graphics.drawString(chartData.data[0], 130, 250);
+					graphics.drawString(chartData.data[1], 130, 270);
+				}
+			} else {
+				int bottomY = 500;
+				graphics.setColor(Color.CYAN);
+				graphics.fillRect(112, bottomY - 200, 75, 200);
+				graphics.fillRect(187, bottomY - 400, 75, 400);
+				graphics.fillRect(262, bottomY - 300, 75, 300);
+				graphics.fillRect(337, bottomY - 250, 75, 250);
+				graphics.fillRect(412, bottomY - 340, 75, 340);
+				font = new Font("Arial Black", Font.BOLD, 55);
+				graphics.setColor(Color.BLACK);
+				graphics.setFont(font);
+				graphics.drawString(chartData.data[0], 130, 400);
+			}
+		} else {
+			if (mode.equals(SINGLE_MODE)) {
+				font = new Font("Bookman Old Style", Font.BOLD, 55);
+				graphics.setColor(Color.WHITE);
+				graphics.setFont(font);
+				graphics.drawString(chartData.specialData.get(0), 200, 340);
+			} else {
+				font = new Font("Bookman Old Style", Font.BOLD, 30);
+				graphics.setFont(font);
+				graphics.setColor(Color.WHITE);
+				graphics.drawString(chartData.data3point14[0], 145, 205);
+				graphics.drawString(chartData.data3point14[1], 170, 235);
 			}
 		}
 	}
@@ -106,53 +153,6 @@ public class IndividualDisplay extends JPanel {
 				float padding = 90;
 				int sc = (int) (isq - padding * 2);
 				graphics.fillOval(100, 100, sc, sc);
-			}
-		}
-	}
-
-	public void drawFont(Graphics graphics, String[] data, List<String> specialData, String[] data3point14) {
-		Font font;
-		if (chartType == BAR_CHART) {
-			if (mode.equals(SHARED_DISPLAY_MODE)) {
-				if (data != null) {
-					font = new Font("Arial Black", Font.BOLD, 25);
-					graphics.setColor(Color.CYAN);
-					int bottomY = 300;
-					graphics.fillRect(100, bottomY - 100, 40, 100);
-					graphics.fillRect(140, bottomY - 200, 40, 200);
-					graphics.fillRect(180, bottomY - 150, 40, 150);
-					graphics.fillRect(220, bottomY - 125, 40, 125);
-					graphics.fillRect(260, bottomY - 170, 40, 170);
-					graphics.setColor(Color.RED);
-					graphics.setFont(font);
-					graphics.drawString(data[0], 130, 250);
-					graphics.drawString(data[1], 130, 270);
-				}
-			} else {
-				int bottomY = 500;
-				graphics.setColor(Color.CYAN);
-				graphics.fillRect(112, bottomY - 200, 75, 200);
-				graphics.fillRect(187, bottomY - 400, 75, 400);
-				graphics.fillRect(262, bottomY - 300, 75, 300);
-				graphics.fillRect(337, bottomY - 250, 75, 250);
-				graphics.fillRect(412, bottomY - 340, 75, 340);
-				font = new Font("Arial Black", Font.BOLD, 55);
-				graphics.setColor(Color.BLACK);
-				graphics.setFont(font);
-				graphics.drawString(data[0], 130, 400);
-			}
-		} else {
-			if (mode.equals(SINGLE_MODE)) {
-				font = new Font("Bookman Old Style", Font.BOLD, 55);
-				graphics.setColor(Color.WHITE);
-				graphics.setFont(font);
-				graphics.drawString(specialData.get(0), 200, 340);
-			} else {
-				font = new Font("Bookman Old Style", Font.BOLD, 30);
-				graphics.setFont(font);
-				graphics.setColor(Color.WHITE);
-				graphics.drawString(data3point14[0], 145, 205);
-				graphics.drawString(data3point14[1], 170, 235);
 			}
 		}
 	}
