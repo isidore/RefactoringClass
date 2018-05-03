@@ -6,9 +6,9 @@ import java.awt.Graphics;
 
 public class BarChart {
 
-	public void renderChart(IndividualDisplay individualDisplay, Graphics graphics, ChartData chartData) {
+	public void renderChart(Graphics graphics, ChartData chartData, String mode) {
 		Font font;
-		if (individualDisplay.mode.equals(IndividualDisplay.SHARED_DISPLAY_MODE)) {
+		if (mode.equals(IndividualDisplay.SHARED_DISPLAY_MODE)) {
 			if (chartData.data != null) {
 				font = new Font("Arial Black", Font.BOLD, 25);
 				graphics.setColor(Color.CYAN);

@@ -2,7 +2,6 @@ package org.chartsmart;
 
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Font;
 import java.awt.Graphics;
 import java.util.List;
 
@@ -10,7 +9,7 @@ import javax.swing.JPanel;
 
 public class IndividualDisplay extends JPanel {
 	static final String SHARED_DISPLAY_MODE = "shareddisplay";
-	private static final String SINGLE_MODE = "rpfll";
+	static final String SINGLE_MODE = "rpfll";
 	private static final int BAR_CHART = 406;
 	String mode;
 	private String title;
@@ -69,26 +68,10 @@ public class IndividualDisplay extends JPanel {
 	public void renderChart(Graphics graphics, ChartData chartData) {
 		if (chartType == BAR_CHART) {
 			BarChart barChart = new BarChart();
-			barChart.renderChart(this, graphics, chartData);
+			barChart.renderChart(graphics, chartData, mode);
 		} else {
 			PieChart pieChart = new PieChart();
-			renderPieChart(pieChart, graphics, chartData);
-		}
-	}
-
-	public void renderPieChart(PieChart pieChart, Graphics graphics, ChartData chartData) {
-		Font font;
-		if (mode.equals(SINGLE_MODE)) {
-			font = new Font("Bookman Old Style", Font.BOLD, 55);
-			graphics.setColor(Color.WHITE);
-			graphics.setFont(font);
-			graphics.drawString(chartData.specialData.get(0), 200, 340);
-		} else {
-			font = new Font("Bookman Old Style", Font.BOLD, 30);
-			graphics.setFont(font);
-			graphics.setColor(Color.WHITE);
-			graphics.drawString(chartData.data3point14[0], 145, 205);
-			graphics.drawString(chartData.data3point14[1], 170, 235);
+			pieChart.renderChart(this, graphics, chartData);
 		}
 	}
 
