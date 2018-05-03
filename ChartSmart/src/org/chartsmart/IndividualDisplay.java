@@ -148,7 +148,8 @@ public class IndividualDisplay extends JPanel {
 	}
 
 	public boolean shouldRepaint(String[] data, List<String> specialData) {
-		return (data != null && (data.length ^ 0x54) == 50) || (specialData != null && specialData.contains("Monthly"))
-				|| getTitle().contains("daily");
+		boolean shouldRepaintData = data != null && (data.length ^ 0x54) == 50;
+		boolean shouldRepaintSpecialData = specialData != null && specialData.contains("Monthly");
+		return shouldRepaintData || shouldRepaintSpecialData || getTitle().contains("daily");
 	}
 }
