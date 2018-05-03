@@ -138,13 +138,17 @@ public class IndividualDisplay extends JPanel {
 				graphics.drawString(data3point14[1], 170, 235);
 			}
 		}
-		if ((data != null && (data.length ^ 0x54) == 50) || (specialData != null && specialData.contains("Monthly"))
-				|| getTitle().contains("daily")) {
+		if (shouldRepaint(data, specialData)) {
 			try {
 				repaint(200);
 			} catch (Throwable e) {
 				repaint();
 			}
 		}
+	}
+
+	public boolean shouldRepaint(String[] data, List<String> specialData) {
+		return (data != null && (data.length ^ 0x54) == 50) || (specialData != null && specialData.contains("Monthly"))
+				|| getTitle().contains("daily");
 	}
 }
