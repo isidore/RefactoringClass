@@ -108,13 +108,7 @@ public class IndividualDisplay extends JPanel {
 	}
 
 	public void renderChartBackground(Graphics graphics) {
-		if (chartType == BAR_CHART) {
-			BarChart chart = new BarChart();
-			chart.renderBackground(graphics, mode, getWidth(), getHeight());
-		} else {
-			PieChart chart = new PieChart();
-			chart.renderBackground(graphics, mode, getWidth(), getHeight());
-		}
+		getChart().renderBackground(graphics, mode, getWidth(), getHeight());
 	}
 
 	public boolean shouldRepaint(String[] data, List<String> specialData) {
