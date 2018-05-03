@@ -66,13 +66,18 @@ public class IndividualDisplay extends JPanel {
 	}
 
 	public void renderChart(Graphics graphics, ChartData chartData) {
+		Chart chart = getChart();
+		chart.renderChart(graphics, chartData, mode);
+	}
+
+	public Chart getChart() {
+		Chart chart;
 		if (chartType == BAR_CHART) {
-			Chart barChart = new BarChart();
-			barChart.renderChart(graphics, chartData, mode);
+			chart = new BarChart();
 		} else {
-			PieChart pieChart = new PieChart();
-			pieChart.renderChart(graphics, chartData, mode);
+			chart = new PieChart();
 		}
+		return chart;
 	}
 
 	public ChartData getChartData() {
