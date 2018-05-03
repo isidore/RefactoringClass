@@ -52,30 +52,31 @@ public class IndividualDisplay extends JPanel {
 
 	private void drawChart(Graphics graphics) {
 		renderChartBackground(graphics);
-		String[] data = null;
-		List<String> specialData = new ArrayList<String>();
-		String[] data3point14 = new String[0];
+		DataWrapper dataWrapper = new DataWrapper();
+		String[] dataWrapper_data = null;
+		List<String> dataWrapper_specialData = new ArrayList<String>();
+		String[] dataWrapper_data3point14 = new String[0];
 		if (chartType == BAR_CHART) {
 			if (mode.equals(SINGLE_MODE)) {
-				data = new String[1];
-				data[0] = "Bar Chart";
+				dataWrapper_data = new String[1];
+				dataWrapper_data[0] = "Bar Chart";
 			} else {
-				data = new String[2];
+				dataWrapper_data = new String[2];
 				int i = 0;
-				data[i++] = "Bar Chart";
-				data[i++] = "Small";
+				dataWrapper_data[i++] = "Bar Chart";
+				dataWrapper_data[i++] = "Small";
 			}
 		} else {
 			if (mode.equals(SINGLE_MODE)) {
-				specialData.add("Pie Chart");
+				dataWrapper_specialData.add("Pie Chart");
 			} else {
-				data3point14 = new String[2];
-				data3point14[1] = "Small";
-				data3point14[0] = "Pie" + " Chart";
+				dataWrapper_data3point14 = new String[2];
+				dataWrapper_data3point14[1] = "Small";
+				dataWrapper_data3point14[0] = "Pie" + " Chart";
 			}
 		}
-		drawFont(graphics, data, specialData, data3point14);
-		if (shouldRepaint(data, specialData)) {
+		drawFont(graphics, dataWrapper_data, dataWrapper_specialData, dataWrapper_data3point14);
+		if (shouldRepaint(dataWrapper_data, dataWrapper_specialData)) {
 			try {
 				repaint(200);
 			} catch (Throwable e) {
