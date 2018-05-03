@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 
-public class PieChart {
+public class PieChart implements Chart {
 
 	public void renderChart(Graphics graphics, ChartData chartData, String mode) {
 		Font font;

@@ -4,8 +4,9 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 
-public class BarChart {
+public class BarChart implements Chart {
 
+	@Override
 	public void renderChart(Graphics graphics, ChartData chartData, String mode) {
 		Font font;
 		if (mode.equals(IndividualDisplay.SHARED_DISPLAY_MODE)) {
