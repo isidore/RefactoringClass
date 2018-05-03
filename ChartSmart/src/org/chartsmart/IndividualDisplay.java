@@ -113,14 +113,15 @@ public class IndividualDisplay extends JPanel {
 			BarChart chart = new BarChart();
 			chart.renderBackground(graphics, mode, getWidth());
 		} else {
-			renderPieChartBackground(graphics);
+			PieChart chart = new PieChart();
+			renderPieChartBackground(graphics, mode, getHeight());
 		}
 	}
 
-	public void renderPieChartBackground(Graphics graphics) {
+	public void renderPieChartBackground(Graphics graphics, String mode, int height) {
 		if (mode.equals(SINGLE_MODE)) {
 			graphics.setColor(Color.BLUE);
-			graphics.fillOval(100, 100, 450, getHeight() - 150);
+			graphics.fillOval(100, 100, 450, height - 150);
 		} else {
 			graphics.setColor(Color.BLUE);
 			double isq = 405;
