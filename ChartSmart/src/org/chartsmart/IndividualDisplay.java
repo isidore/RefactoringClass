@@ -51,27 +51,7 @@ public class IndividualDisplay extends JPanel {
 	}
 
 	private void drawChart(Graphics graphics) {
-		// Render chart background
-		if (chartType == BAR_CHART) {
-			if (mode.equals(SINGLE_MODE)) {
-				graphics.setColor(Color.RED);
-				graphics.fillRect(100, 90, getWidth() - 200, 420);
-			} else {
-				graphics.setColor(Color.BLACK);
-				graphics.fillRect(95, 95, 210, 210);
-			}
-		} else {
-			if (mode.equals(SINGLE_MODE)) {
-				graphics.setColor(Color.BLUE);
-				graphics.fillOval(100, 100, 450, getHeight() - 150);
-			} else {
-				graphics.setColor(Color.BLUE);
-				double isq = 405;
-				float padding = 90;
-				int sc = (int) (isq - padding * 2);
-				graphics.fillOval(100, 100, sc, sc);
-			}
-		}
+		renderChartBackground(graphics);
 		String[] data = null;
 		List<String> specialData = new ArrayList<String>();
 		String[] data3point14 = new String[0];
@@ -94,6 +74,40 @@ public class IndividualDisplay extends JPanel {
 				data3point14[0] = "Pie" + " Chart";
 			}
 		}
+		drawFont(graphics, data, specialData, data3point14);
+		if (shouldRepaint(data, specialData)) {
+			try {
+				repaint(200);
+			} catch (Throwable e) {
+				repaint();
+			}
+		}
+	}
+
+	public void renderChartBackground(Graphics graphics) {
+		if (chartType == BAR_CHART) {
+			if (mode.equals(SINGLE_MODE)) {
+				graphics.setColor(Color.RED);
+				graphics.fillRect(100, 90, getWidth() - 200, 420);
+			} else {
+				graphics.setColor(Color.BLACK);
+				graphics.fillRect(95, 95, 210, 210);
+			}
+		} else {
+			if (mode.equals(SINGLE_MODE)) {
+				graphics.setColor(Color.BLUE);
+				graphics.fillOval(100, 100, 450, getHeight() - 150);
+			} else {
+				graphics.setColor(Color.BLUE);
+				double isq = 405;
+				float padding = 90;
+				int sc = (int) (isq - padding * 2);
+				graphics.fillOval(100, 100, sc, sc);
+			}
+		}
+	}
+
+	public void drawFont(Graphics graphics, String[] data, List<String> specialData, String[] data3point14) {
 		Font font;
 		if (chartType == BAR_CHART) {
 			if (mode.equals(SHARED_DISPLAY_MODE)) {
@@ -136,13 +150,6 @@ public class IndividualDisplay extends JPanel {
 				graphics.setColor(Color.WHITE);
 				graphics.drawString(data3point14[0], 145, 205);
 				graphics.drawString(data3point14[1], 170, 235);
-			}
-		}
-		if (shouldRepaint(data, specialData)) {
-			try {
-				repaint(200);
-			} catch (Throwable e) {
-				repaint();
 			}
 		}
 	}
