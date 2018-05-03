@@ -6,19 +6,12 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
 import javax.swing.JPanel;
 
 public class IndvDsp extends JPanel {
-	private class Unit {
-		public double convertTo(Unit unit) {
-			return 0;
-		}
-	}
-
 	private String jjD;
 	private String __APARAM__Z;
 	private int ct;
@@ -51,14 +44,6 @@ public class IndvDsp extends JPanel {
 	}
 
 	/**
-	 * 
-	 * @return
-	 */
-	private Unit horizontalNaming() {
-		return new Unit();
-	}
-
-	/**
 	 * Shows the chart
 	 * 
 	 * @param ct
@@ -79,7 +64,6 @@ public class IndvDsp extends JPanel {
 
 	@Override
 	public Set<AWTKeyStroke> getFocusTraversalKeys(int id) {
-		// TODO Auto-generated method stub
 		return super.getFocusTraversalKeys(id);
 	}
 
@@ -90,11 +74,6 @@ public class IndvDsp extends JPanel {
 	 */
 	public void paint(Graphics g) {
 		DrawChart(g);
-	}
-
-	private String tmStmp() {
-		// TODO Auto-generated method stub
-		return new Date().toString();
 	}
 
 	/**
@@ -153,13 +132,6 @@ public class IndvDsp extends JPanel {
 		if (ct == 406) {
 			if (jjD.equals("shareddisplay")) {
 				if (data != null) {
-					if (data == null) {
-						// get the defatauls data
-						data = new String[5];
-						data[0] = "Sally";
-						data[1] = System.getProperty("osname");
-						data[2] = tmStmp();
-					}
 					font = new Font("Arial Black", Font.BOLD, 25);
 					g.setColor(Color.CYAN);
 					int bottomY = 300;
