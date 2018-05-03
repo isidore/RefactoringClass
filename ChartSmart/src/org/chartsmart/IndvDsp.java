@@ -1,13 +1,11 @@
 package org.chartsmart;
 
-import java.awt.AWTKeyStroke;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 import javax.swing.JPanel;
 
@@ -36,9 +34,6 @@ public class IndvDsp extends JPanel {
 		}
 	}
 
-	public IndvDsp() {
-	}
-
 	public String getTitle() {
 		return __APARAM__Z;
 	}
@@ -52,11 +47,6 @@ public class IndvDsp extends JPanel {
 		if (b) {
 			iHATEthisUckingJob();
 		}
-	}
-
-	@Override
-	public Set<AWTKeyStroke> getFocusTraversalKeys(int id) {
-		return super.getFocusTraversalKeys(id);
 	}
 
 	public void paint(Graphics g) {
