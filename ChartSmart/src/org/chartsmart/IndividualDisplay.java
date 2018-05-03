@@ -67,22 +67,26 @@ public class IndividualDisplay extends JPanel {
 	}
 
 	public void renderChart(Graphics graphics, ChartData chartData) {
-		Font font;
 		if (chartType == BAR_CHART) {
 			renderBarChart(graphics, chartData);
 		} else {
-			if (mode.equals(SINGLE_MODE)) {
-				font = new Font("Bookman Old Style", Font.BOLD, 55);
-				graphics.setColor(Color.WHITE);
-				graphics.setFont(font);
-				graphics.drawString(chartData.specialData.get(0), 200, 340);
-			} else {
-				font = new Font("Bookman Old Style", Font.BOLD, 30);
-				graphics.setFont(font);
-				graphics.setColor(Color.WHITE);
-				graphics.drawString(chartData.data3point14[0], 145, 205);
-				graphics.drawString(chartData.data3point14[1], 170, 235);
-			}
+			renderPieChart(graphics, chartData);
+		}
+	}
+
+	public void renderPieChart(Graphics graphics, ChartData chartData) {
+		Font font;
+		if (mode.equals(SINGLE_MODE)) {
+			font = new Font("Bookman Old Style", Font.BOLD, 55);
+			graphics.setColor(Color.WHITE);
+			graphics.setFont(font);
+			graphics.drawString(chartData.specialData.get(0), 200, 340);
+		} else {
+			font = new Font("Bookman Old Style", Font.BOLD, 30);
+			graphics.setFont(font);
+			graphics.setColor(Color.WHITE);
+			graphics.drawString(chartData.data3point14[0], 145, 205);
+			graphics.drawString(chartData.data3point14[1], 170, 235);
 		}
 	}
 
@@ -145,24 +149,32 @@ public class IndividualDisplay extends JPanel {
 
 	public void renderChartBackground(Graphics graphics) {
 		if (chartType == BAR_CHART) {
-			if (mode.equals(SINGLE_MODE)) {
-				graphics.setColor(Color.RED);
-				graphics.fillRect(100, 90, getWidth() - 200, 420);
-			} else {
-				graphics.setColor(Color.BLACK);
-				graphics.fillRect(95, 95, 210, 210);
-			}
+			renderBarChartBackground(graphics);
 		} else {
-			if (mode.equals(SINGLE_MODE)) {
-				graphics.setColor(Color.BLUE);
-				graphics.fillOval(100, 100, 450, getHeight() - 150);
-			} else {
-				graphics.setColor(Color.BLUE);
-				double isq = 405;
-				float padding = 90;
-				int sc = (int) (isq - padding * 2);
-				graphics.fillOval(100, 100, sc, sc);
-			}
+			renderPieChartBackground(graphics);
+		}
+	}
+
+	public void renderPieChartBackground(Graphics graphics) {
+		if (mode.equals(SINGLE_MODE)) {
+			graphics.setColor(Color.BLUE);
+			graphics.fillOval(100, 100, 450, getHeight() - 150);
+		} else {
+			graphics.setColor(Color.BLUE);
+			double isq = 405;
+			float padding = 90;
+			int sc = (int) (isq - padding * 2);
+			graphics.fillOval(100, 100, sc, sc);
+		}
+	}
+
+	public void renderBarChartBackground(Graphics graphics) {
+		if (mode.equals(SINGLE_MODE)) {
+			graphics.setColor(Color.RED);
+			graphics.fillRect(100, 90, getWidth() - 200, 420);
+		} else {
+			graphics.setColor(Color.BLACK);
+			graphics.fillRect(95, 95, 210, 210);
 		}
 	}
 
