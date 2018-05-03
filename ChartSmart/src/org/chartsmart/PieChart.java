@@ -22,4 +22,17 @@ public class PieChart implements Chart {
 		}
 	}
 
+	public void renderBackground(Graphics graphics, String mode, int height) {
+		if (mode.equals(IndividualDisplay.SINGLE_MODE)) {
+			graphics.setColor(Color.BLUE);
+			graphics.fillOval(100, 100, 450, height - 150);
+		} else {
+			graphics.setColor(Color.BLUE);
+			double isq = 405;
+			float padding = 90;
+			int sc = (int) (isq - padding * 2);
+			graphics.fillOval(100, 100, sc, sc);
+		}
+	}
+
 }
