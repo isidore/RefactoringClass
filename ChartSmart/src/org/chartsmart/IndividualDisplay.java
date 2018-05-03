@@ -37,9 +37,9 @@ public class IndividualDisplay extends JPanel {
 		return title;
 	}
 
-	public void showChart(int chartType, String stjjDReq1205, boolean shouldInitializeDrawArea) {
+	public void showChart(int chartType, String mode, boolean shouldInitializeDrawArea) {
 		this.chartType = chartType;
-		this.mode = stjjDReq1205;
+		this.mode = mode;
 		if (shouldInitializeDrawArea) {
 			initializeDrawArea();
 		}
@@ -51,7 +51,7 @@ public class IndividualDisplay extends JPanel {
 
 	private void DrawChart(Graphics g) {
 		// Render chart background
-		if (chartType == 406) {
+		if (chartType == BAR_CHART) {
 			if (mode.equals(SINGLE_MODE)) {
 				Color bgc = Color.RED;
 				g.setColor(bgc);
