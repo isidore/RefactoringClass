@@ -35,4 +35,16 @@ public class PieChart implements Chart {
 		}
 	}
 
+	public ChartData getData(String mode) {
+		ChartData chartData = new ChartData();
+		if (mode.equals(IndividualDisplay.SINGLE_MODE)) {
+			chartData.specialData.add("Pie Chart");
+		} else {
+			chartData.data3point14 = new String[2];
+			chartData.data3point14[1] = "Small";
+			chartData.data3point14[0] = "Pie" + " Chart";
+		}
+		return chartData;
+	}
+
 }

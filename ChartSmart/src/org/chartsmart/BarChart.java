@@ -49,4 +49,18 @@ public class BarChart implements Chart {
 		}
 	}
 
+	public ChartData getData(String mode) {
+		ChartData chartData = new ChartData();
+		if (mode.equals(IndividualDisplay.SINGLE_MODE)) {
+			chartData.data = new String[1];
+			chartData.data[0] = "Bar Chart";
+		} else {
+			chartData.data = new String[2];
+			int i = 0;
+			chartData.data[i++] = "Bar Chart";
+			chartData.data[i++] = "Small";
+		}
+		return chartData;
+	}
+
 }
