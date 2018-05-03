@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JPanel;
@@ -53,30 +52,28 @@ public class IndividualDisplay extends JPanel {
 	private void drawChart(Graphics graphics) {
 		renderChartBackground(graphics);
 		DataWrapper dataWrapper = new DataWrapper();
-		String[] dataWrapper_data = null;
-		List<String> dataWrapper_specialData = new ArrayList<String>();
-		String[] dataWrapper_data3point14 = new String[0];
+
 		if (chartType == BAR_CHART) {
 			if (mode.equals(SINGLE_MODE)) {
-				dataWrapper_data = new String[1];
-				dataWrapper_data[0] = "Bar Chart";
+				dataWrapper.data = new String[1];
+				dataWrapper.data[0] = "Bar Chart";
 			} else {
-				dataWrapper_data = new String[2];
+				dataWrapper.data = new String[2];
 				int i = 0;
-				dataWrapper_data[i++] = "Bar Chart";
-				dataWrapper_data[i++] = "Small";
+				dataWrapper.data[i++] = "Bar Chart";
+				dataWrapper.data[i++] = "Small";
 			}
 		} else {
 			if (mode.equals(SINGLE_MODE)) {
-				dataWrapper_specialData.add("Pie Chart");
+				dataWrapper.specialData.add("Pie Chart");
 			} else {
-				dataWrapper_data3point14 = new String[2];
-				dataWrapper_data3point14[1] = "Small";
-				dataWrapper_data3point14[0] = "Pie" + " Chart";
+				dataWrapper.data3point14 = new String[2];
+				dataWrapper.data3point14[1] = "Small";
+				dataWrapper.data3point14[0] = "Pie" + " Chart";
 			}
 		}
-		drawFont(graphics, dataWrapper_data, dataWrapper_specialData, dataWrapper_data3point14);
-		if (shouldRepaint(dataWrapper_data, dataWrapper_specialData)) {
+		drawFont(graphics, dataWrapper.data, dataWrapper.specialData, dataWrapper.data3point14);
+		if (shouldRepaint(dataWrapper.data, dataWrapper.specialData)) {
 			try {
 				repaint(200);
 			} catch (Throwable e) {
