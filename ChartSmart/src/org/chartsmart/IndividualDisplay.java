@@ -110,7 +110,8 @@ public class IndividualDisplay extends JPanel {
 
 	public void renderChartBackground(Graphics graphics) {
 		if (chartType == BAR_CHART) {
-			renderBarChartBackground(graphics);
+			BarChart chart = new BarChart();
+			chart.renderBackground(graphics, mode, getWidth());
 		} else {
 			renderPieChartBackground(graphics);
 		}
@@ -126,16 +127,6 @@ public class IndividualDisplay extends JPanel {
 			float padding = 90;
 			int sc = (int) (isq - padding * 2);
 			graphics.fillOval(100, 100, sc, sc);
-		}
-	}
-
-	public void renderBarChartBackground(Graphics graphics) {
-		if (mode.equals(SINGLE_MODE)) {
-			graphics.setColor(Color.RED);
-			graphics.fillRect(100, 90, getWidth() - 200, 420);
-		} else {
-			graphics.setColor(Color.BLACK);
-			graphics.fillRect(95, 95, 210, 210);
 		}
 	}
 
