@@ -123,9 +123,9 @@ public class IndividualDisplay extends JPanel {
 	}
 
 	public ChartData getChartData() {
-		ChartData chartData = new ChartData();
 
 		if (chartType == BAR_CHART) {
+			ChartData chartData = new ChartData();
 			if (mode.equals(SINGLE_MODE)) {
 				chartData.data = new String[1];
 				chartData.data[0] = "Bar Chart";
@@ -135,7 +135,9 @@ public class IndividualDisplay extends JPanel {
 				chartData.data[i++] = "Bar Chart";
 				chartData.data[i++] = "Small";
 			}
+			return chartData;
 		} else {
+			ChartData chartData = new ChartData();
 			if (mode.equals(SINGLE_MODE)) {
 				chartData.specialData.add("Pie Chart");
 			} else {
@@ -143,8 +145,8 @@ public class IndividualDisplay extends JPanel {
 				chartData.data3point14[1] = "Small";
 				chartData.data3point14[0] = "Pie" + " Chart";
 			}
+			return chartData;
 		}
-		return chartData;
 	}
 
 	public void renderChartBackground(Graphics graphics) {
