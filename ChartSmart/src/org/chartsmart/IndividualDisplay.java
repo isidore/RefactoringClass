@@ -53,8 +53,7 @@ public class IndividualDisplay extends JPanel {
 		// Render chart background
 		if (chartType == BAR_CHART) {
 			if (mode.equals(SINGLE_MODE)) {
-				Color backgroundColor = Color.RED;
-				graphics.setColor(backgroundColor);
+				graphics.setColor(Color.RED);
 				graphics.fillRect(100, 90, getWidth() - 200, 420);
 			} else {
 				graphics.setColor(Color.BLACK);
@@ -62,9 +61,7 @@ public class IndividualDisplay extends JPanel {
 			}
 		} else {
 			if (mode.equals(SINGLE_MODE)) {
-				Color backgroundColor;
-				backgroundColor = Color.BLUE;
-				graphics.setColor(backgroundColor);
+				graphics.setColor(Color.BLUE);
 				graphics.fillOval(100, 100, 450, getHeight() - 150);
 			} else {
 				graphics.setColor(Color.BLUE);
