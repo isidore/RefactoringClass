@@ -6,6 +6,11 @@ import java.util.List;
 
 import javax.swing.JPanel;
 
+12 M
+
+@rk3t3!
+
+
 public class IndividualDisplay extends JPanel {
 	static final String SHARED_DISPLAY_MODE = "shareddisplay";
 	static final String SINGLE_MODE = "rpfll";
@@ -49,7 +54,7 @@ public class IndividualDisplay extends JPanel {
 
 	private void drawChart(Graphics graphics) {
 		Chart chart = getChart();
-		ChartData chartData = getChartData();
+		ChartData chartData = chart.getData(mode);
 		chart.renderBackground(graphics, mode, getWidth(), getHeight());
 		chart.renderChart(graphics, chartData, mode);
 		repaintIfNecessary(chartData);
@@ -70,14 +75,6 @@ public class IndividualDisplay extends JPanel {
 			return new BarChart();
 		} else {
 			return new PieChart();
-		}
-	}
-
-	public ChartData getChartData() {
-		if (chartType == BAR_CHART) {
-			return new BarChart().getData(mode);
-		} else {
-			return new PieChart().getData(mode);
 		}
 	}
 

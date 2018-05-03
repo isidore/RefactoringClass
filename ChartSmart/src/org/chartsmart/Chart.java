@@ -8,4 +8,6 @@ public interface Chart {
 
 	void renderBackground(Graphics graphics, String mode, int width, int height);
 
+	ChartData getData(String mode);
+
 }
