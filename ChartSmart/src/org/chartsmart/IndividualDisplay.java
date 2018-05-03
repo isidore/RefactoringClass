@@ -10,6 +10,7 @@ import java.util.List;
 import javax.swing.JPanel;
 
 public class IndividualDisplay extends JPanel {
+	private static final String SHARED_DISPLAY_MODE = "shareddisplay";
 	private static final String SINGLE_MODE = "rpfll";
 	private static final int BAR_CHART = 406;
 	private String mode;
@@ -74,7 +75,7 @@ public class IndividualDisplay extends JPanel {
 		String[] data = null;
 		List<String> specialData = new ArrayList<String>();
 		String[] data3point14 = new String[0];
-		if (chartType == 406) {
+		if (chartType == BAR_CHART) {
 			if (mode.equals(SINGLE_MODE)) {
 				data = new String[1];
 				data[0] = "Bar Chart";
@@ -94,8 +95,8 @@ public class IndividualDisplay extends JPanel {
 			}
 		}
 		Font font;
-		if (chartType == 406) {
-			if (mode.equals("shareddisplay")) {
+		if (chartType == BAR_CHART) {
+			if (mode.equals(SHARED_DISPLAY_MODE)) {
 				if (data != null) {
 					font = new Font("Arial Black", Font.BOLD, 25);
 					graphics.setColor(Color.CYAN);
