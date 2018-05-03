@@ -51,7 +51,7 @@ public class IndividualDisplay extends JPanel {
 	private void drawChart(Graphics graphics) {
 		renderChartBackground(graphics);
 		ChartData chartData = getChartData();
-		renderChart(graphics, chartData);
+		getChart().renderChart(graphics, chartData, mode);
 		repaintIfNecessary(chartData);
 	}
 
@@ -65,19 +65,12 @@ public class IndividualDisplay extends JPanel {
 		}
 	}
 
-	public void renderChart(Graphics graphics, ChartData chartData) {
-		Chart chart = getChart();
-		chart.renderChart(graphics, chartData, mode);
-	}
-
 	public Chart getChart() {
-		Chart chart;
 		if (chartType == BAR_CHART) {
-			chart = new BarChart();
+			return new BarChart();
 		} else {
-			chart = new PieChart();
+			return new PieChart();
 		}
-		return chart;
 	}
 
 	public ChartData getChartData() {
