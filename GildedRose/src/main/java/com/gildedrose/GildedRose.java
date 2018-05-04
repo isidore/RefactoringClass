@@ -12,7 +12,7 @@ class GildedRose {
 
 	public void updateQuality() {
 		for (int i = 0; i < items.length; i++) {
-			updateQualityToo(items[i]);
+			ageItem(items[i]);
 
 			decrementSellInUnlessSulfuras(items[i]);
 
@@ -44,7 +44,7 @@ class GildedRose {
 		}
 	}
 
-	public void updateQualityToo(Item item) {
+	public void ageItem(Item item) {
 		if (item.name.equals(AGED_BRIE)) {
 			incrementQualityUnlessGreaterThan50(item);
 		} else if (item.name.equals(BACKSTAGE_PASSES)) {
