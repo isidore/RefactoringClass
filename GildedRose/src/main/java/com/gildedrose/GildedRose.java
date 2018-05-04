@@ -32,52 +32,29 @@ class GildedRose {
 			return;
 		}
 		if (item.name.equals(AGED_BRIE)) {
-			ageBrie(item);
+			new Brie().expire(item);
 		} else if (item.name.equals(BACKSTAGE_PASSES)) {
-			item.quality = 0;
+			new BackstagePass().expire(item);
 		} else if (item.name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
 			// Do Nothing
 		} else {
-			ageDefault(item);
+			new DefaultAgeItem().expire(item);
 		}
 	}
 
 	public void ageItem(Item item) {
 		if (item.name.equals(AGED_BRIE)) {
-			ageBrie(item);
+			new Brie().age(item);
 		} else if (item.name.equals(BACKSTAGE_PASSES)) {
-			ageBackstagePass(item);
+			new BackstagePass().age(item);
 		} else if (item.name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
-			ageSulfuras(item);
+			new Sulfuras().age(item);
 		} else {
-			ageDefault(item);
+			new DefaultAgeItem().age(item);
 		}
 	}
 
-	private void ageSulfuras(Item item) {
-	}
-
-	public void ageBrie(Item item) {
-		incrementQualityUnlessGreaterThan50(item);
-	}
-
-	public void ageDefault(Item item) {
-		if (item.quality > 0) {
-			item.quality--;
-		}
-	}
-
-	public void ageBackstagePass(Item item) {
-		ageBrie(item);
-		if (item.sellIn < 11) {
-			ageBrie(item);
-		}
-		if (item.sellIn < 6) {
-			ageBrie(item);
-		}
-	}
-
-	public void incrementQualityUnlessGreaterThan50(Item item) {
+	public static void incrementQualityUnlessGreaterThan50(Item item) {
 		if (item.quality >= 50) {
 			return;
 		}
