@@ -19,5 +19,6 @@ Testing Functional Code:
 #Blogs
 [nobody ever gets credit for fixing problems that never happened](http://web.mit.edu/nelsonr/www/Repenning=Sterman_CMR_su01_.pdf)
 
+[Mob Progarmming RPG](https://github.com/willemlarsen/mobprogrammingrpg)
 If you are interested in having Woody or Llewellyn come in and do some long term coaching this is a video on how an average day works when we are coaching.
 [A day in the life of an agile coache](https://www.youtube.com/watch?v=7iPybzyYZbU)
