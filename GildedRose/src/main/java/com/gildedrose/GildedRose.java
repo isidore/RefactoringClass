@@ -31,18 +31,40 @@ class GildedRose {
 		if (0 <= item.sellIn) {
 			return;
 		}
-		if (item.name.equals(AGED_BRIE)) {
-			ageBrie(item);
-			return;
+		if (!handleExpiredBrie(item)) {
+			if (!handleExpiredBackstagePass(item)) {
+				if (!handleExpiredSulfuras(item)) {
+					handleExpiredDefault(item);
+				}
+			}
 		}
+	}
+
+	public void handleExpiredDefault(Item item) {
+		ageDefault(item);
+	}
+
+	public boolean handleExpiredSulfuras(Item item) {
+		if (item.name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
+			return true;
+		}
+		return false;
+	}
+
+	public boolean handleExpiredBackstagePass(Item item) {
 		if (item.name.equals(BACKSTAGE_PASSES)) {
 			item.quality = 0;
-			return;
+			return true;
 		}
-		if (item.name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
-			return;
+		return false;
+	}
+
+	public boolean handleExpiredBrie(Item item) {
+		if (item.name.equals(AGED_BRIE)) {
+			ageBrie(item);
+			return true;
 		}
-		ageDefault(item);
+		return false;
 	}
 
 	public void ageItem(Item item) {
@@ -53,7 +75,7 @@ class GildedRose {
 		} else if (item.name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
 			ageSulfuras(item);
 		} else {
-			ageDefault(item);
+			handleExpiredDefault(item);
 		}
 	}
 
