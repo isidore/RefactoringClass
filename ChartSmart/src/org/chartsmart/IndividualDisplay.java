@@ -6,11 +6,6 @@ import java.util.List;
 
 import javax.swing.JPanel;
 
-12 M
-
-@rk3t3!
-
-
 public class IndividualDisplay extends JPanel {
 	static final String SHARED_DISPLAY_MODE = "shareddisplay";
 	static final String SINGLE_MODE = "rpfll";
