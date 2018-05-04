@@ -35,15 +35,10 @@ class GildedRose {
 			incrementQualityUnlessGreaterThan50(item);
 		} else if (item.name.equals(BACKSTAGE_PASSES)) {
 			item.quality = 0;
+		} else if (item.name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
+			// Do Nothing
 		} else {
-			decrementQualityUnlessSulfuras(item);
-		}
-	}
-
-	public void decrementQualityUnlessSulfuras(Item item) {
-		if (item.quality > 0) {
-			if (item.name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
-			} else {
+			if (item.quality > 0) {
 				item.quality--;
 			}
 		}
@@ -52,28 +47,20 @@ class GildedRose {
 	public void updateQualityToo(Item item) {
 		if (item.name.equals(AGED_BRIE)) {
 			incrementQualityUnlessGreaterThan50(item);
-
 		} else if (item.name.equals(BACKSTAGE_PASSES)) {
 			incrementQualityUnlessGreaterThan50(item);
-
-			incrementQualityForBackstagePasses(item);
-
+			if (item.sellIn < 11) {
+				incrementQualityUnlessGreaterThan50(item);
+			}
+			if (item.sellIn < 6) {
+				incrementQualityUnlessGreaterThan50(item);
+			}
+		} else if (item.name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
+			// do nothing
 		} else {
-			decrementQualityUnlessSulfuras(item);
-		}
-	}
-
-	public void incrementQualityForBackstagePasses(Item item) {
-		if (!item.name.equals(BACKSTAGE_PASSES)) {
-			return;
-		}
-
-		if (item.sellIn < 11) {
-			incrementQualityUnlessGreaterThan50(item);
-		}
-
-		if (item.sellIn < 6) {
-			incrementQualityUnlessGreaterThan50(item);
+			if (item.quality > 0) {
+				item.quality--;
+			}
 		}
 	}
 
