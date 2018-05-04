@@ -16,7 +16,7 @@ class GildedRose {
 
 			decrementSellInUnlessSulfuras(items[i]);
 
-			updateQuality(items[i]);
+			handleExpired(items[i]);
 		}
 	}
 
@@ -27,54 +27,60 @@ class GildedRose {
 		item.sellIn--;
 	}
 
-	public void decrementQualityUnlessSulfuras(Item item) {
-		if (item.name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
+	public void handleExpired(Item item) {
+		if (0 <= item.sellIn) {
 			return;
 		}
-		item.quality--;
+		if (item.name.equals(AGED_BRIE)) {
+			incrementQualityUnlessGreaterThan50(item);
+		} else if (item.name.equals(BACKSTAGE_PASSES)) {
+			item.quality = 0;
+		} else {
+			decrementQualityUnlessSulfuras(item);
+		}
 	}
 
-	public void updateQuality(Item item) {
-		if (item.sellIn < 0) {
-			if (!item.name.equals(AGED_BRIE)) {
-				if (!item.name.equals(BACKSTAGE_PASSES)) {
-					if (item.quality > 0) {
-						decrementQualityUnlessSulfuras(item);
-					}
-				} else {
-					item.quality = 0;
-				}
+	public void decrementQualityUnlessSulfuras(Item item) {
+		if (item.quality > 0) {
+			if (item.name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
 			} else {
-				if (item.quality < 50) {
-					item.quality++;
-				}
+				item.quality--;
 			}
 		}
 	}
 
 	public void updateQualityToo(Item item) {
-		if (!item.name.equals(AGED_BRIE) && !item.name.equals(BACKSTAGE_PASSES)) {
-			if (item.quality > 0) {
-				decrementQualityUnlessSulfuras(item);
-			}
+		if (item.name.equals(AGED_BRIE)) {
+			incrementQualityUnlessGreaterThan50(item);
+
+		} else if (item.name.equals(BACKSTAGE_PASSES)) {
+			incrementQualityUnlessGreaterThan50(item);
+
+			incrementQualityForBackstagePasses(item);
+
 		} else {
-			if (item.quality < 50) {
-				item.quality++;
-
-				if (item.name.equals(BACKSTAGE_PASSES)) {
-					if (item.sellIn < 11) {
-						if (item.quality < 50) {
-							item.quality++;
-						}
-					}
-
-					if (item.sellIn < 6) {
-						if (item.quality < 50) {
-							item.quality++;
-						}
-					}
-				}
-			}
+			decrementQualityUnlessSulfuras(item);
 		}
+	}
+
+	public void incrementQualityForBackstagePasses(Item item) {
+		if (!item.name.equals(BACKSTAGE_PASSES)) {
+			return;
+		}
+
+		if (item.sellIn < 11) {
+			incrementQualityUnlessGreaterThan50(item);
+		}
+
+		if (item.sellIn < 6) {
+			incrementQualityUnlessGreaterThan50(item);
+		}
+	}
+
+	public void incrementQualityUnlessGreaterThan50(Item item) {
+		if (item.quality >= 50) {
+			return;
+		}
+		item.quality++;
 	}
 }
