@@ -1,1 +1,1 @@
-Item [name=foo, sellIn=-1, quality=0]
+[foo] => Item [name=foo, sellIn=-1, quality=0] 
