@@ -14,4 +14,9 @@ public class Item {
 		this.quality = quality;
 	}
 
+	@Override
+	public String toString() {
+		return "Item [name=" + name + ", sellIn=" + sellIn + ", quality=" + quality + "]";
+	}
+
 }
