@@ -10,7 +10,5 @@ public class DefaultAgeItem implements AgeItem {
 
 	public void expire(Item item) {
 		age(item);
-
 	}
-
 }
