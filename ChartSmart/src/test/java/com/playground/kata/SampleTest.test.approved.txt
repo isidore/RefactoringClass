@@ -1,5 +1,0 @@
-Numbers[0] = 4
-Numbers[1] = 5
-Numbers[2] = 6
-Numbers[3] = 7
-Numbers[4] = 8
