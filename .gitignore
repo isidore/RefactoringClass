@@ -2,15 +2,10 @@
 ## Eclipse
 #################
 *.received.*
-*.pydevproject
+.classpath
+.project
+target/
 
-bin/
-tmp/
-*.tmp
-*.bak
-*.swp
-*~.nib
-.loadpath
 
 # External tool builders
 .externalToolBuilders/
