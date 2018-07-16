@@ -5,7 +5,7 @@
 .classpath
 .project
 target/
-
+.DS_Store
 
 # External tool builders
 .externalToolBuilders/
