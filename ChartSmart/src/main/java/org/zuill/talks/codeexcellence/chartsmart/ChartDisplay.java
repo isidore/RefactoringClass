@@ -68,8 +68,8 @@ public class ChartDisplay extends JPanel {
 		// Render chart background
 		if (chart == BAR_CHART) {
 			if (dimension.equals(SINGLE_MODE_CHART)) {
-				Color bgc = Color.RED;
-				graphics.setColor(bgc);
+				Color red = Color.RED;
+				graphics.setColor(red);
 				graphics.fillRect(100, 90, getWidth() - 200, 420);
 			} else {
 				graphics.setColor(Color.BLACK);
