@@ -73,37 +73,33 @@ public class ChartDisplay extends JPanel {
 		String[] pieChartNames = new String[0];
 
 		ChartNames chartNames = new ChartNames(barChartNames, specialData, pieChartNames);
-		foo(graphics, chartNames);
-	}
-
-	public void foo(Graphics graphics, ChartNames chartNames) {
-		String[] pieChartNames = chartNames.pieChartNames;
-		String[] barChartNames = chartNames.barChartNames;
+		String[] pieChartNames1 = chartNames.pieChartNames;
+		String[] barChartNames1 = chartNames.barChartNames;
 		if (chart == BAR_CHART) {
 			if (dimension.equals(SINGLE_MODE_CHART)) {
-				barChartNames = new String[1];
-				barChartNames[0] = "Bar Chart";
+				barChartNames1 = new String[1];
+				barChartNames1[0] = "Bar Chart";
 			} else {
-				barChartNames = new String[2];
+				barChartNames1 = new String[2];
 				int i = 0;
-				barChartNames[i++] = "Bar Chart";
-				barChartNames[i++] = "Small";
+				barChartNames1[i++] = "Bar Chart";
+				barChartNames1[i++] = "Small";
 			}
 		} else {
 			if (dimension.equals(SINGLE_MODE_CHART)) {
 				chartNames.specialData.add("Pie Chart");
 			} else {
-				pieChartNames = new String[2];
-				pieChartNames[1] = "Small";
-				pieChartNames[0] = "Pie" + " Chart";
+				pieChartNames1 = new String[2];
+				pieChartNames1[1] = "Small";
+				pieChartNames1[0] = "Pie" + " Chart";
 			}
 		}
-
+		
 		Font font;
-
+		
 		if (chart == BAR_CHART) {
 			if (dimension.equals(SHARED_DISPLAY)) {
-				if (barChartNames != null) {
+				if (barChartNames1 != null) {
 					font = new Font("Arial Black", Font.BOLD, 25);
 					graphics.setColor(Color.CYAN);
 					int bottomY = 300;
@@ -112,11 +108,11 @@ public class ChartDisplay extends JPanel {
 					graphics.fillRect(180, bottomY - 150, 40, 150);
 					graphics.fillRect(220, bottomY - 125, 40, 125);
 					graphics.fillRect(260, bottomY - 170, 40, 170);
-
+		
 					graphics.setColor(Color.RED);
 					graphics.setFont(font);
-					graphics.drawString(barChartNames[0], 130, 250);
-					graphics.drawString(barChartNames[1], 130, 270);
+					graphics.drawString(barChartNames1[0], 130, 250);
+					graphics.drawString(barChartNames1[1], 130, 270);
 				}
 			} else {
 				int bottomY = 500;
@@ -129,7 +125,7 @@ public class ChartDisplay extends JPanel {
 				font = new Font("Arial Black", Font.BOLD, 55);
 				graphics.setColor(Color.BLACK);
 				graphics.setFont(font);
-				graphics.drawString(barChartNames[0], 130, 400);
+				graphics.drawString(barChartNames1[0], 130, 400);
 			}
 		} else {
 			if (dimension.equals(SINGLE_MODE_CHART)) {
@@ -141,12 +137,12 @@ public class ChartDisplay extends JPanel {
 				font = new Font("Bookman Old Style", Font.BOLD, 30);
 				graphics.setFont(font);
 				graphics.setColor(Color.WHITE);
-				graphics.drawString(pieChartNames[0], 145, 205);
-				graphics.drawString(pieChartNames[1], 170, 235);
+				graphics.drawString(pieChartNames1[0], 145, 205);
+				graphics.drawString(pieChartNames1[1], 170, 235);
 			}
 		}
-
-		if ((barChartNames != null && (barChartNames.length ^ 0x54) == 50)
+		
+		if ((barChartNames1 != null && (barChartNames1.length ^ 0x54) == 50)
 				|| (chartNames.specialData != null && chartNames.specialData.contains("Monthly")) || getTitle().contains("daily")) {
 			try {
 				repaint(200);
