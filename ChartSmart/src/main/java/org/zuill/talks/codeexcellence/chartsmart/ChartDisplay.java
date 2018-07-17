@@ -72,10 +72,12 @@ public class ChartDisplay extends JPanel {
 		List<String> specialData = new ArrayList<String>();
 		String[] pieChartNames = new String[0];
 
-		foo(graphics, barChartNames, specialData, pieChartNames);
+		foo(graphics, new ChartNames(barChartNames, specialData, pieChartNames));
 	}
 
-	public void foo(Graphics graphics, String[] barChartNames, List<String> specialData, String[] pieChartNames) {
+	public void foo(Graphics graphics, ChartNames chartNames) {
+		String[] pieChartNames = chartNames.pieChartNames;
+		String[] barChartNames = chartNames.barChartNames;
 		if (chart == BAR_CHART) {
 			if (dimension.equals(SINGLE_MODE_CHART)) {
 				barChartNames = new String[1];
@@ -88,7 +90,7 @@ public class ChartDisplay extends JPanel {
 			}
 		} else {
 			if (dimension.equals(SINGLE_MODE_CHART)) {
-				specialData.add("Pie Chart");
+				chartNames.specialData.add("Pie Chart");
 			} else {
 				pieChartNames = new String[2];
 				pieChartNames[1] = "Small";
@@ -133,7 +135,7 @@ public class ChartDisplay extends JPanel {
 				font = new Font("Bookman Old Style", Font.BOLD, 55);
 				graphics.setColor(Color.WHITE);
 				graphics.setFont(font);
-				graphics.drawString(specialData.get(0), 200, 340);
+				graphics.drawString(chartNames.specialData.get(0), 200, 340);
 			} else {
 				font = new Font("Bookman Old Style", Font.BOLD, 30);
 				graphics.setFont(font);
@@ -144,7 +146,7 @@ public class ChartDisplay extends JPanel {
 		}
 
 		if ((barChartNames != null && (barChartNames.length ^ 0x54) == 50)
-				|| (specialData != null && specialData.contains("Monthly")) || getTitle().contains("daily")) {
+				|| (chartNames.specialData != null && chartNames.specialData.contains("Monthly")) || getTitle().contains("daily")) {
 			try {
 				repaint(200);
 			} catch (Throwable e) {
