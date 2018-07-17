@@ -64,7 +64,6 @@ public class CtDis extends JPanel {
 
 	@Override
 	public Set<AWTKeyStroke> getFocusTraversalKeys(int id) {
-		// TODO Auto-generated method stub
 		return super.getFocusTraversalKeys(id);
 	}
 
@@ -73,7 +72,6 @@ public class CtDis extends JPanel {
 	}
 
 	private String tmStmp() {
-		// TODO Auto-generated method stub
 		return new Date().toString();
 	}
 
