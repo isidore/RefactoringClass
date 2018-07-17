@@ -73,7 +73,7 @@ public class ChartDisplay extends JPanel {
 		String[] pieChartNames = new String[0];
 
 		ChartNames chartNames = new ChartNames(barChartNames, specialData, pieChartNames);
-		String[] pieChartNames1 = chartNames.pieChartNames;
+		String[] chartNames___pieChartNames = chartNames.pieChartNames;
 		String[] barChartNames1 = chartNames.barChartNames;
 		if (chart == BAR_CHART) {
 			if (dimension.equals(SINGLE_MODE_CHART)) {
@@ -89,9 +89,9 @@ public class ChartDisplay extends JPanel {
 			if (dimension.equals(SINGLE_MODE_CHART)) {
 				chartNames.specialData.add("Pie Chart");
 			} else {
-				pieChartNames1 = new String[2];
-				pieChartNames1[1] = "Small";
-				pieChartNames1[0] = "Pie" + " Chart";
+				chartNames___pieChartNames = new String[2];
+				chartNames___pieChartNames[1] = "Small";
+				chartNames___pieChartNames[0] = "Pie" + " Chart";
 			}
 		}
 		
@@ -137,8 +137,8 @@ public class ChartDisplay extends JPanel {
 				font = new Font("Bookman Old Style", Font.BOLD, 30);
 				graphics.setFont(font);
 				graphics.setColor(Color.WHITE);
-				graphics.drawString(pieChartNames1[0], 145, 205);
-				graphics.drawString(pieChartNames1[1], 170, 235);
+				graphics.drawString(chartNames___pieChartNames[0], 145, 205);
+				graphics.drawString(chartNames___pieChartNames[1], 170, 235);
 			}
 		}
 		
