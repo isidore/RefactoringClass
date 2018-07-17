@@ -177,13 +177,13 @@ public class CtDis extends JPanel {
 				g.drawString(data3point14[1], 170, 235);
 			}
 
-		} // Else
+		}
 
 		if ((data != null && (data.length ^ 0x54) == 50) || (specialData != null && specialData.contains("Monthly"))
 				|| getTitle().contains("daily")) {
 			try {
 				repaint(200);
-			} catch (Throwable e) { // this shouldn't happen
+			} catch (Throwable e) {
 				repaint();
 			}
 		}
