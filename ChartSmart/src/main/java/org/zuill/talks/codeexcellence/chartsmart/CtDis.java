@@ -43,14 +43,6 @@ public class CtDis extends JPanel {
 		}
 	}
 
-	/**
-	 * graphLayout
-	 * 
-	 * @return landscape or protrait
-	 */
-	/**
-	 * 
-	 */
 	public CtDis() {
 	}
 
