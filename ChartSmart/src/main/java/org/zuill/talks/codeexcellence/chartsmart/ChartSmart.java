@@ -92,23 +92,23 @@ public class ChartSmart extends JPanel {
 			if (e.getSource() == btnShowBarChart) {
 				openBarChart();
 			} else if (e.getSource() == btnShowPieOrBarChart) {
-				CtDis cw = new CtDis();
+				ChartDisplay cw = new ChartDisplay();
 				cw.iniDS(getChartType(), "rpfll", true);
 				display(cw);
 			} else {
-				CtDis cw = new CtDis();
+				ChartDisplay cw = new ChartDisplay();
 				cw.iniDS(getChartType(), getDisplayType(), true);
 				display(cw);
 			}
 		}
 
 		private void openBarChart() {
-			CtDis cw = new CtDis();
+			ChartDisplay cw = new ChartDisplay();
 			cw.iniDS(406, "rpfll", true);
 			display(cw);
 		}
 
-		private void display(CtDis cw) {
+		private void display(ChartDisplay cw) {
 			JFrame frame = new JFrame();
 			frame.getContentPane().add(cw);
 			frame.setLocation(150, 150);

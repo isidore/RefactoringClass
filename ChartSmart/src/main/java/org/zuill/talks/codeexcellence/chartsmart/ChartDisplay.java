@@ -11,7 +11,7 @@ import java.util.Set;
 
 import javax.swing.JPanel;
 
-public class CtDis extends JPanel {
+public class ChartDisplay extends JPanel {
 
 	private String jjD;
 	private String title;
@@ -36,7 +36,7 @@ public class CtDis extends JPanel {
 		}
 	}
 
-	public CtDis() {
+	public ChartDisplay() {
 	}
 
 	public String getTitle() {
