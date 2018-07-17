@@ -59,8 +59,8 @@ public class ChartDisplay extends JPanel {
 		return super.getFocusTraversalKeys(id);
 	}
 
-	public void paint(Graphics g) {
-		rndDS(g);
+	public void paint(Graphics graphics) {
+		rndDS(graphics);
 	}
 
 	private void rndDS(Graphics g) {
