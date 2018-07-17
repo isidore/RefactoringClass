@@ -68,30 +68,7 @@ public class ChartDisplay extends JPanel {
 
 		renderChartBackground(graphics);
 
-		String[] barChartNames = null;
-		List<String> specialData = new ArrayList<String>();
-		String[] pieChartNames = new String[0];
-
-		ChartNames chartNames = new ChartNames(barChartNames, specialData, pieChartNames);
-		if (chart == BAR_CHART) {
-			if (dimension.equals(SINGLE_MODE_CHART)) {
-				chartNames.barChartNames = new String[1];
-				chartNames.barChartNames[0] = "Bar Chart";
-			} else {
-				chartNames.barChartNames = new String[2];
-				int i = 0;
-				chartNames.barChartNames[i++] = "Bar Chart";
-				chartNames.barChartNames[i++] = "Small";
-			}
-		} else {
-			if (dimension.equals(SINGLE_MODE_CHART)) {
-				chartNames.specialData.add("Pie Chart");
-			} else {
-				chartNames.pieChartNames = new String[2];
-				chartNames.pieChartNames[1] = "Small";
-				chartNames.pieChartNames[0] = "Pie" + " Chart";
-			}
-		}
+		ChartNames chartNames = getChartNames();
 
 		Font font;
 
@@ -149,6 +126,34 @@ public class ChartDisplay extends JPanel {
 				repaint();
 			}
 		}
+	}
+
+	public ChartNames getChartNames() {
+		String[] barChartNames = null;
+		List<String> specialData = new ArrayList<String>();
+		String[] pieChartNames = new String[0];
+
+		ChartNames chartNames = new ChartNames(barChartNames, specialData, pieChartNames);
+		if (chart == BAR_CHART) {
+			if (dimension.equals(SINGLE_MODE_CHART)) {
+				chartNames.barChartNames = new String[1];
+				chartNames.barChartNames[0] = "Bar Chart";
+			} else {
+				chartNames.barChartNames = new String[2];
+				int i = 0;
+				chartNames.barChartNames[i++] = "Bar Chart";
+				chartNames.barChartNames[i++] = "Small";
+			}
+		} else {
+			if (dimension.equals(SINGLE_MODE_CHART)) {
+				chartNames.specialData.add("Pie Chart");
+			} else {
+				chartNames.pieChartNames = new String[2];
+				chartNames.pieChartNames[1] = "Small";
+				chartNames.pieChartNames[0] = "Pie" + " Chart";
+			}
+		}
+		return chartNames;
 	}
 
 	public void renderChartBackground(Graphics graphics) {
