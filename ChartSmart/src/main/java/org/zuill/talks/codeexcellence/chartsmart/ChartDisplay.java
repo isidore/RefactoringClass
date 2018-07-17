@@ -70,8 +70,6 @@ public class ChartDisplay extends JPanel {
 
 		ChartNames chartNames = getChartNames();
 
-		Font font;
-
 		foo(graphics, chartNames);
 
 		if ((chartNames.barChartNames != null && (chartNames.barChartNames.length ^ 0x54) == 50)
