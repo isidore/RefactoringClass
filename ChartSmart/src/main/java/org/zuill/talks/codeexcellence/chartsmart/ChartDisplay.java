@@ -80,9 +80,9 @@ public class ChartDisplay extends JPanel {
 				graphics.fillOval(100, 100, 450, getHeight() - 150);
 			} else {
 				graphics.setColor(Color.BLUE);
-				double isq = 405;
+				double someSize = 405;
 				float padding = 90;
-				int sc = (int) (isq - padding * 2);
+				int sc = (int) (someSize - padding * 2);
 				graphics.fillOval(100, 100, sc, sc);
 			}
 		}
