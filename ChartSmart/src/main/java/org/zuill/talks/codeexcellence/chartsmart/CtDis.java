@@ -15,20 +15,15 @@ import javax.swing.JPanel;
 public class CtDis extends JPanel {
 
 	private class Unit {
-		private String str_n2;
-		private double value;
 	}
 
 	private String jjD;
 	private String __APARAM__Z;
 
-	private String[] verticalLabelNames;
-
 	/**
 	 * John says that this is better than the old way
 	 */
 	private int ct;
-	private String chartTitle;
 
 	/**
 	 * InitializeDrawArea
@@ -50,8 +45,6 @@ public class CtDis extends JPanel {
 			}
 		}
 	}
-
-	private Unit defaultUnits;
 
 	/**
 	 * graphLayout
@@ -179,7 +172,6 @@ public class CtDis extends JPanel {
 					font = new Font("Arial Black", Font.BOLD, 25);
 					g.setColor(Color.CYAN);
 					int bottomY = 300;
-					int startX = 100;
 					g.fillRect(100, bottomY - 100, 40, 100);
 					g.fillRect(140, bottomY - 200, 40, 200);
 					g.fillRect(180, bottomY - 150, 40, 150);
