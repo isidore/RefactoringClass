@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 public class CtDis extends JPanel {
 
 	private String jjD;
-	private String __APARAM__Z;
+	private String title;
 
 	private int ct;
 
@@ -23,15 +23,15 @@ public class CtDis extends JPanel {
 
 		if (ct == 406) {
 			if (jjD.equals("rpfll")) {
-				__APARAM__Z = "Bar Chart - Single Mode";
+				title = "Bar Chart - Single Mode";
 			} else {
-				__APARAM__Z = "Bar" + " Chart - Compare Mode";
+				title = "Bar" + " Chart - Compare Mode";
 			}
 		} else {
 			if (jjD.equals("rpfll")) {
-				__APARAM__Z = "Pie Chart - Single Mode";
+				title = "Pie Chart - Single Mode";
 			} else {
-				__APARAM__Z = "Pie Chart - Compare Mode";
+				title = "Pie Chart - Compare Mode";
 			}
 		}
 	}
@@ -40,7 +40,7 @@ public class CtDis extends JPanel {
 	}
 
 	public String getTitle() {
-		return __APARAM__Z;
+		return title;
 	}
 
 	/**
