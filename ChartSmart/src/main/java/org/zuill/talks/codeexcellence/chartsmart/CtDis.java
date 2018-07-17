@@ -109,7 +109,6 @@ public class CtDis extends JPanel {
 				data[i++] = "Small";
 			}
 		} else {
-			// BUG445: Org rep team missing req chart
 			if (jjD.equals("rpfll")) {
 				specialData.add("Pie Chart");
 			} else {
