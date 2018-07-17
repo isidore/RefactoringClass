@@ -65,13 +65,9 @@ public class ChartDisplay extends JPanel {
 	}
 
 	private void renderDisplay(Graphics graphics) {
-
 		renderChartBackground(graphics);
-
 		ChartNames chartNames = getChartNames();
-
 		foo(graphics, chartNames);
-
 		banana(chartNames);
 	}
 
