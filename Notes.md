@@ -11,10 +11,13 @@ Testing Functional Code:
 [Practical Refactoring](https://www.youtube.com/watch?v=aWiwDdx_rdo)  
 [Micro-refactoring - Unrolling For Loops](https://www.youtube.com/watch?v=tQjUKQxFXuE)  
 [Smaller Steps so the Whole Team Learns Better](https://www.youtube.com/watch?v=8H4vmtNItcY)  
-
+[Linda Rising: Agile Mindset](https://www.youtube.com/watch?v=SMvVJwwMn5A)
 
 ## Materials
 [Alro's Commit Notation](https://github.com/RefactoringCombos/ArlosCommitNotation)
+[Duplication Coloring](https://github.com/LearnWithLlew/DuplicationColoringBook)
+[Keyboard Refactoring - Inline](https://github.com/LearnWithLlew/KeyboardShortcutKatas.java)
+[Duplication Kata](https://github.com/LearnWithLlew/DuplicationKata.java)
 
 If you are interested in having Woody or Llewellyn come in and do some long term coaching this is a video on how an average day works when we are coaching.
 [A day in the life of an agile coache](https://www.youtube.com/watch?v=7iPybzyYZbU)
