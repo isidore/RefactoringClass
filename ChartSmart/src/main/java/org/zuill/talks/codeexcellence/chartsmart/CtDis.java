@@ -42,9 +42,6 @@ public class CtDis extends JPanel {
 	 */
 	private String[] horizontalLabelNames;
 
-	/**
-	 * It's the vertical label names
-	 */
 	private String[] verticalLabelNames;
 	
 	/**
