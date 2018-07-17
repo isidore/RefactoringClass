@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 
 public class ChartDisplay extends JPanel {
 
-	private String jjD;
+	private String dimension;
 	private String title;
 
 	private int chart;
@@ -22,13 +22,13 @@ public class ChartDisplay extends JPanel {
 		this.setPreferredSize(new Dimension(600, 600));
 
 		if (chart == 406) {
-			if (jjD.equals("rpfll")) {
+			if (dimension.equals("rpfll")) {
 				title = "Bar Chart - Single Mode";
 			} else {
 				title = "Bar" + " Chart - Compare Mode";
 			}
 		} else {
-			if (jjD.equals("rpfll")) {
+			if (dimension.equals("rpfll")) {
 				title = "Pie Chart - Single Mode";
 			} else {
 				title = "Pie Chart - Compare Mode";
@@ -48,7 +48,7 @@ public class ChartDisplay extends JPanel {
 	 */
 	public void iniDS(int ct, String stjjDReq1205, boolean b) {
 		this.chart = ct;
-		this.jjD = stjjDReq1205;
+		this.dimension = stjjDReq1205;
 
 		if (b) {
 			initializeDrawArea();
@@ -68,7 +68,7 @@ public class ChartDisplay extends JPanel {
 
 		// Render chart background
 		if (chart == 406) {
-			if (jjD.equals("rpfll")) {
+			if (dimension.equals("rpfll")) {
 				Color bgc = Color.RED;
 				g.setColor(bgc);
 				g.fillRect(100, 90, getWidth() - 200, 420);
@@ -77,7 +77,7 @@ public class ChartDisplay extends JPanel {
 				g.fillRect(95, 95, 210, 210);
 			}
 		} else {
-			if (jjD.equals("rpfll")) {
+			if (dimension.equals("rpfll")) {
 				Color bgcb;
 				bgcb = Color.BLUE;
 				g.setColor(bgcb);
@@ -96,7 +96,7 @@ public class ChartDisplay extends JPanel {
 		String[] data3point14 = new String[0];
 
 		if (chart == 406) {
-			if (jjD.equals("rpfll")) {
+			if (dimension.equals("rpfll")) {
 				data = new String[1];
 				data[0] = "Bar Chart";
 			} else {
@@ -106,7 +106,7 @@ public class ChartDisplay extends JPanel {
 				data[i++] = "Small";
 			}
 		} else {
-			if (jjD.equals("rpfll")) {
+			if (dimension.equals("rpfll")) {
 				specialData.add("Pie Chart");
 			} else {
 				data3point14 = new String[2];
@@ -118,7 +118,7 @@ public class ChartDisplay extends JPanel {
 		Font font;
 
 		if (chart == 406) {
-			if (jjD.equals("shareddisplay")) {
+			if (dimension.equals("shareddisplay")) {
 				if (data != null) {
 					font = new Font("Arial Black", Font.BOLD, 25);
 					g.setColor(Color.CYAN);
@@ -148,7 +148,7 @@ public class ChartDisplay extends JPanel {
 				g.drawString(data[0], 130, 400);
 			}
 		} else {
-			if (jjD.equals("rpfll")) {
+			if (dimension.equals("rpfll")) {
 				font = new Font("Bookman Old Style", Font.BOLD, 55);
 				g.setColor(Color.WHITE);
 				g.setFont(font);
