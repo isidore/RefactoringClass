@@ -21,7 +21,7 @@ public class CtDis extends JPanel {
 	/**
 	 * InitializeDrawArea
 	 */
-	private void iHATEthisUckingJob() {
+	private void initializeDrawArea() {
 		this.setPreferredSize(new Dimension(600, 600));
 
 		if (ct == 406) {
@@ -54,7 +54,7 @@ public class CtDis extends JPanel {
 		this.jjD = stjjDReq1205;
 
 		if (b) {
-			iHATEthisUckingJob();
+			initializeDrawArea();
 		}
 	}
 
