@@ -72,6 +72,21 @@ public class ChartDisplay extends JPanel {
 
 		Font font;
 
+		foo(graphics, chartNames);
+
+		if ((chartNames.barChartNames != null && (chartNames.barChartNames.length ^ 0x54) == 50)
+				|| (chartNames.specialData != null && chartNames.specialData.contains("Monthly"))
+				|| getTitle().contains("daily")) {
+			try {
+				repaint(200);
+			} catch (Throwable e) {
+				repaint();
+			}
+		}
+	}
+
+	public void foo(Graphics graphics, ChartNames chartNames) {
+		Font font;
 		if (chart == BAR_CHART) {
 			if (dimension.equals(SHARED_DISPLAY)) {
 				if (chartNames.barChartNames != null) {
@@ -114,16 +129,6 @@ public class ChartDisplay extends JPanel {
 				graphics.setColor(Color.WHITE);
 				graphics.drawString(chartNames.pieChartNames[0], 145, 205);
 				graphics.drawString(chartNames.pieChartNames[1], 170, 235);
-			}
-		}
-
-		if ((chartNames.barChartNames != null && (chartNames.barChartNames.length ^ 0x54) == 50)
-				|| (chartNames.specialData != null && chartNames.specialData.contains("Monthly"))
-				|| getTitle().contains("daily")) {
-			try {
-				repaint(200);
-			} catch (Throwable e) {
-				repaint();
 			}
 		}
 	}
