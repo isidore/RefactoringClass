@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 
 public class ChartDisplay extends JPanel {
 
+	private static final String SHARED_DISPLAY = "shareddisplay";
 	private static final int BAR_CHART = 406;
 	private static final String SINGLE_MODE_CHART = "rpfll";
 	private String dimension;
@@ -114,7 +115,7 @@ public class ChartDisplay extends JPanel {
 		Font font;
 
 		if (chart == BAR_CHART) {
-			if (dimension.equals("shareddisplay")) {
+			if (dimension.equals(SHARED_DISPLAY)) {
 				if (barChartNames != null) {
 					font = new Font("Arial Black", Font.BOLD, 25);
 					graphics.setColor(Color.CYAN);
