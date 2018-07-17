@@ -13,9 +13,6 @@ import javax.swing.JPanel;
 
 public class CtDis extends JPanel {
 
-	private class Unit {
-	}
-
 	private String jjD;
 	private String __APARAM__Z;
 
