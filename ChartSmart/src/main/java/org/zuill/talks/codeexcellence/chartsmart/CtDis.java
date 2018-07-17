@@ -135,7 +135,7 @@ public class CtDis extends JPanel {
 	 * @author Wilbur
 	 */
 	public void paint(Graphics g) {
-		DrawChart(g);
+		rndDS(g);
 	}
 	
 	private String tmStmp() {
@@ -147,7 +147,7 @@ public class CtDis extends JPanel {
  * 
  * @param g
  */
-        private void DrawChart(Graphics g) {
+        private void rndDS(Graphics g) {
             
             // Render chart background
             if (ct == 406) {
