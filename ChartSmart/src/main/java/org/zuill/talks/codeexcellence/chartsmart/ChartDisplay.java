@@ -77,9 +77,9 @@ public class ChartDisplay extends JPanel {
 			}
 		} else {
 			if (dimension.equals(SINGLE_MODE_CHART)) {
-				Color bgcb;
-				bgcb = Color.BLUE;
-				graphics.setColor(bgcb);
+				Color blue;
+				blue = Color.BLUE;
+				graphics.setColor(blue);
 				graphics.fillOval(100, 100, 450, getHeight() - 150);
 			} else {
 				graphics.setColor(Color.BLUE);
