@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 
 public class ChartDisplay extends JPanel {
 
+	private static final String SINGLE_MODE_CHART = "rpfll";
 	private String dimension;
 	private String title;
 
@@ -22,13 +23,13 @@ public class ChartDisplay extends JPanel {
 		this.setPreferredSize(new Dimension(600, 600));
 
 		if (chart == 406) {
-			if (dimension.equals("rpfll")) {
+			if (dimension.equals(SINGLE_MODE_CHART)) {
 				title = "Bar Chart - Single Mode";
 			} else {
 				title = "Bar" + " Chart - Compare Mode";
 			}
 		} else {
-			if (dimension.equals("rpfll")) {
+			if (dimension.equals(SINGLE_MODE_CHART)) {
 				title = "Pie Chart - Single Mode";
 			} else {
 				title = "Pie Chart - Compare Mode";
@@ -68,7 +69,7 @@ public class ChartDisplay extends JPanel {
 
 		// Render chart background
 		if (chart == 406) {
-			if (dimension.equals("rpfll")) {
+			if (dimension.equals(SINGLE_MODE_CHART)) {
 				Color bgc = Color.RED;
 				g.setColor(bgc);
 				g.fillRect(100, 90, getWidth() - 200, 420);
@@ -77,7 +78,7 @@ public class ChartDisplay extends JPanel {
 				g.fillRect(95, 95, 210, 210);
 			}
 		} else {
-			if (dimension.equals("rpfll")) {
+			if (dimension.equals(SINGLE_MODE_CHART)) {
 				Color bgcb;
 				bgcb = Color.BLUE;
 				g.setColor(bgcb);
@@ -96,7 +97,7 @@ public class ChartDisplay extends JPanel {
 		String[] data3point14 = new String[0];
 
 		if (chart == 406) {
-			if (dimension.equals("rpfll")) {
+			if (dimension.equals(SINGLE_MODE_CHART)) {
 				data = new String[1];
 				data[0] = "Bar Chart";
 			} else {
@@ -106,7 +107,7 @@ public class ChartDisplay extends JPanel {
 				data[i++] = "Small";
 			}
 		} else {
-			if (dimension.equals("rpfll")) {
+			if (dimension.equals(SINGLE_MODE_CHART)) {
 				specialData.add("Pie Chart");
 			} else {
 				data3point14 = new String[2];
@@ -148,7 +149,7 @@ public class ChartDisplay extends JPanel {
 				g.drawString(data[0], 130, 400);
 			}
 		} else {
-			if (dimension.equals("rpfll")) {
+			if (dimension.equals(SINGLE_MODE_CHART)) {
 				font = new Font("Bookman Old Style", Font.BOLD, 55);
 				g.setColor(Color.WHITE);
 				g.setFont(font);
