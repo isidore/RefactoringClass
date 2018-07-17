@@ -48,11 +48,11 @@ public class ChartDisplay extends JPanel {
 	/**
 	 * Shows the chart
 	 */
-	public void iniDS(int chart, String dimension, boolean initializeDrawAreaIfTrue) {
+	public void iniDS(int chart, String dimension, boolean shouldInitialize) {
 		this.chart = chart;
 		this.dimension = dimension;
 
-		if (initializeDrawAreaIfTrue) {
+		if (shouldInitialize) {
 			initializeDrawArea();
 		}
 	}
