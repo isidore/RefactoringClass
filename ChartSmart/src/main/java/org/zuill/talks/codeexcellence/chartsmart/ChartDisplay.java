@@ -13,8 +13,9 @@ import javax.swing.JPanel;
 
 public class ChartDisplay extends JPanel {
 
-	private static final int BAR_CHART2 = 406;
-	private static final int BAR_CHART1 = 406;
+	private static final int BAR_CHART = 406;
+	private static final int BAR_CHART2 = BAR_CHART;
+	private static final int BAR_CHART1 = BAR_CHART;
 	private static final String SINGLE_MODE_CHART = "rpfll";
 	private String dimension;
 	private String title;
@@ -95,7 +96,7 @@ public class ChartDisplay extends JPanel {
 		List<String> specialData = new ArrayList<String>();
 		String[] data3point14 = new String[0];
 
-		if (chart == 406) {
+		if (chart == BAR_CHART) {
 			if (dimension.equals(SINGLE_MODE_CHART)) {
 				data = new String[1];
 				data[0] = "Bar Chart";
@@ -117,7 +118,7 @@ public class ChartDisplay extends JPanel {
 
 		Font font;
 
-		if (chart == 406) {
+		if (chart == BAR_CHART) {
 			if (dimension.equals("shareddisplay")) {
 				if (data != null) {
 					font = new Font("Arial Black", Font.BOLD, 25);
