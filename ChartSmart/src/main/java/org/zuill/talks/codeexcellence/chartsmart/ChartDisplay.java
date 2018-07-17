@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 
 public class ChartDisplay extends JPanel {
 
+	private static final int BAR_CHART2 = 406;
 	private static final int BAR_CHART = 406;
 	private static final String SINGLE_MODE_CHART = "rpfll";
 	private String dimension;
@@ -66,7 +67,7 @@ public class ChartDisplay extends JPanel {
 	private void renderDisplay(Graphics g) {
 
 		// Render chart background
-		if (chart == 406) {
+		if (chart == BAR_CHART2) {
 			if (dimension.equals(SINGLE_MODE_CHART)) {
 				Color bgc = Color.RED;
 				g.setColor(bgc);
