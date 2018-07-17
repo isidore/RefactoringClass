@@ -87,19 +87,19 @@ public class ChartDisplay extends JPanel {
 			}
 		}
 
-		String[] data = null;
+		String[] barChartNames = null;
 		List<String> specialData = new ArrayList<String>();
 		String[] pieChartNames = new String[0];
 
 		if (chart == BAR_CHART) {
 			if (dimension.equals(SINGLE_MODE_CHART)) {
-				data = new String[1];
-				data[0] = "Bar Chart";
+				barChartNames = new String[1];
+				barChartNames[0] = "Bar Chart";
 			} else {
-				data = new String[2];
+				barChartNames = new String[2];
 				int i = 0;
-				data[i++] = "Bar Chart";
-				data[i++] = "Small";
+				barChartNames[i++] = "Bar Chart";
+				barChartNames[i++] = "Small";
 			}
 		} else {
 			if (dimension.equals(SINGLE_MODE_CHART)) {
@@ -115,7 +115,7 @@ public class ChartDisplay extends JPanel {
 
 		if (chart == BAR_CHART) {
 			if (dimension.equals("shareddisplay")) {
-				if (data != null) {
+				if (barChartNames != null) {
 					font = new Font("Arial Black", Font.BOLD, 25);
 					graphics.setColor(Color.CYAN);
 					int bottomY = 300;
@@ -127,8 +127,8 @@ public class ChartDisplay extends JPanel {
 
 					graphics.setColor(Color.RED);
 					graphics.setFont(font);
-					graphics.drawString(data[0], 130, 250);
-					graphics.drawString(data[1], 130, 270);
+					graphics.drawString(barChartNames[0], 130, 250);
+					graphics.drawString(barChartNames[1], 130, 270);
 				}
 			} else {
 				int bottomY = 500;
@@ -141,7 +141,7 @@ public class ChartDisplay extends JPanel {
 				font = new Font("Arial Black", Font.BOLD, 55);
 				graphics.setColor(Color.BLACK);
 				graphics.setFont(font);
-				graphics.drawString(data[0], 130, 400);
+				graphics.drawString(barChartNames[0], 130, 400);
 			}
 		} else {
 			if (dimension.equals(SINGLE_MODE_CHART)) {
@@ -158,7 +158,7 @@ public class ChartDisplay extends JPanel {
 			}
 		}
 
-		if ((data != null && (data.length ^ 0x54) == 50) || (specialData != null && specialData.contains("Monthly"))
+		if ((barChartNames != null && (barChartNames.length ^ 0x54) == 50) || (specialData != null && specialData.contains("Monthly"))
 				|| getTitle().contains("daily")) {
 			try {
 				repaint(200);
