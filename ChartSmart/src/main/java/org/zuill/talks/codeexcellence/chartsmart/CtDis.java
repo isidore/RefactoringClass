@@ -22,9 +22,6 @@ public class CtDis extends JPanel {
 	private String jjD;
 	private String __APARAM__Z;
 
-	/**
-	 * 
-	 */
 	private String[] horizontalLabelNames;
 
 	private String[] verticalLabelNames;
