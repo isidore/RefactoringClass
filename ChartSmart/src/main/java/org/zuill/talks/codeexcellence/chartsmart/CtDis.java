@@ -16,12 +16,12 @@ public class CtDis extends JPanel {
 	private String jjD;
 	private String title;
 
-	private int ct;
+	private int chart;
 
 	private void initializeDrawArea() {
 		this.setPreferredSize(new Dimension(600, 600));
 
-		if (ct == 406) {
+		if (chart == 406) {
 			if (jjD.equals("rpfll")) {
 				title = "Bar Chart - Single Mode";
 			} else {
@@ -47,7 +47,7 @@ public class CtDis extends JPanel {
 	 * Shows the chart
 	 */
 	public void iniDS(int ct, String stjjDReq1205, boolean b) {
-		this.ct = ct;
+		this.chart = ct;
 		this.jjD = stjjDReq1205;
 
 		if (b) {
@@ -67,7 +67,7 @@ public class CtDis extends JPanel {
 	private void rndDS(Graphics g) {
 
 		// Render chart background
-		if (ct == 406) {
+		if (chart == 406) {
 			if (jjD.equals("rpfll")) {
 				Color bgc = Color.RED;
 				g.setColor(bgc);
@@ -95,7 +95,7 @@ public class CtDis extends JPanel {
 		List<String> specialData = new ArrayList<String>();
 		String[] data3point14 = new String[0];
 
-		if (ct == 406) {
+		if (chart == 406) {
 			if (jjD.equals("rpfll")) {
 				data = new String[1];
 				data[0] = "Bar Chart";
@@ -117,7 +117,7 @@ public class CtDis extends JPanel {
 
 		Font font;
 
-		if (ct == 406) {
+		if (chart == 406) {
 			if (jjD.equals("shareddisplay")) {
 				if (data != null) {
 					font = new Font("Arial Black", Font.BOLD, 25);
