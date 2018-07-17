@@ -45,9 +45,6 @@ public class ChartDisplay extends JPanel {
 		return title;
 	}
 
-	/**
-	 * Shows the chart
-	 */
 	public void showChart(int chart, String dimension, boolean shouldInitialize) {
 		this.chart = chart;
 		this.dimension = dimension;
