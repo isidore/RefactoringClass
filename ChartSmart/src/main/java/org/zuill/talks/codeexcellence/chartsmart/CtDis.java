@@ -18,9 +18,6 @@ public class CtDis extends JPanel {
 
 	private int ct;
 
-	/**
-	 * InitializeDrawArea
-	 */
 	private void initializeDrawArea() {
 		this.setPreferredSize(new Dimension(600, 600));
 
