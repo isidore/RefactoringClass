@@ -17,22 +17,6 @@ public class CtDis extends JPanel {
 	private class Unit {
 		private String str_n2;
 		private double value;
-
-		public void setName(String name) {
-			this.str_n2 = name;
-		}
-
-		public String getName() {
-			return str_n2;
-		}
-
-		public void setValue(double v1) {
-			this.value = v1;
-		}
-
-		public double getValue() {
-			return value;
-		}
 	}
 
 	private String jjD;
@@ -87,14 +71,6 @@ public class CtDis extends JPanel {
 
 	public String getTitle() {
 		return __APARAM__Z;
-	}
-
-	/**
-	 * 
-	 * @return
-	 */
-	private Unit horizontalNaming() {
-		return new Unit();
 	}
 
 	/**
