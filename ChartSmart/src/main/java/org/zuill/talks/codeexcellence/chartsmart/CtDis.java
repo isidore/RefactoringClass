@@ -60,13 +60,6 @@ public class CtDis extends JPanel {
 
 	/**
 	 * Shows the chart
-	 * 
-	 * @param ct
-	 * @param jjReq1205
-	 * @param orientation
-	 * @param reversornotreverse
-	 * @param jackshiddenhack
-	 * @return
 	 */
 	public void iniDS(int ct, String stjjDReq1205, boolean b) {
 		this.ct = ct;
@@ -84,11 +77,6 @@ public class CtDis extends JPanel {
 		return super.getFocusTraversalKeys(id);
 	}
 
-	/**
-	 * @param g
-	 * @since
-	 * @author Wilbur
-	 */
 	public void paint(Graphics g) {
 		rndDS(g);
 	}
@@ -98,10 +86,6 @@ public class CtDis extends JPanel {
 		return new Date().toString();
 	}
 
-	/**
-	 * 
-	 * @param g
-	 */
 	private void rndDS(Graphics g) {
 
 		// Render chart background
@@ -207,22 +191,7 @@ public class CtDis extends JPanel {
 				font = new Font("Bookman Old Style", Font.BOLD, 30);
 				g.setFont(font);
 				g.setColor(Color.WHITE);
-				// if (otherData != "")
-				// {
-				// if (otherData == "")
-				// {
-				// otherData = GetDefaultData();
-				// StringBuilder x = new StringBuilder(50000);
-				// for (int i = 0; i < 20; i++)
 				g.drawString(data3point14[0], 145, 205);
-				// {
-				// x.Append(char.ToUpper(otherData[i]));
-				// }
-				// }
-				// boundingRect = new RectangleF(50, 100, 320, 320);
-				// g.DrawString(otherData, new Font("Cooper Black", 40), new
-				// SolidBrush(Color.White), boundingRect, stringFormat);
-				// }
 				g.drawString(data3point14[1], 170, 235);
 			}
 
