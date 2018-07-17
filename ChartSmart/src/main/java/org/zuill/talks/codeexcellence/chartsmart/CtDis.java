@@ -20,9 +20,6 @@ public class CtDis extends JPanel {
 	private String jjD;
 	private String __APARAM__Z;
 
-	/**
-	 * John says that this is better than the old way
-	 */
 	private int ct;
 
 	/**
