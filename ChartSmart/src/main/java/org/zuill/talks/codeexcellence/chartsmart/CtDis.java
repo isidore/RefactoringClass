@@ -6,7 +6,6 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
@@ -69,10 +68,6 @@ public class CtDis extends JPanel {
 
 	public void paint(Graphics g) {
 		rndDS(g);
-	}
-
-	private String tmStmp() {
-		return new Date().toString();
 	}
 
 	private void rndDS(Graphics g) {
