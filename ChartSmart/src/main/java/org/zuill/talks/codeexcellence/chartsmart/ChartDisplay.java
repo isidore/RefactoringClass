@@ -60,10 +60,10 @@ public class ChartDisplay extends JPanel {
 	}
 
 	public void paint(Graphics graphics) {
-		rndDS(graphics);
+		renderDisplay(graphics);
 	}
 
-	private void rndDS(Graphics g) {
+	private void renderDisplay(Graphics g) {
 
 		// Render chart background
 		if (chart == 406) {
