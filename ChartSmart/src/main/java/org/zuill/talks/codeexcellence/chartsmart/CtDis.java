@@ -22,7 +22,6 @@ public class CtDis extends JPanel {
         public double convertTo(
         		Unit unit)
     {
-        		// Need to do this.
         return 0;
     }
 		public void setName(String name) {
@@ -128,6 +127,8 @@ public class CtDis extends JPanel {
 		// TODO Auto-generated method stub
 		return super.getFocusTraversalKeys(id);
 	}
+	
+	
 
 	/**
 	 * @param g
