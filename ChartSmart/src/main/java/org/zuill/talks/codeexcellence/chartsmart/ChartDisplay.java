@@ -48,9 +48,9 @@ public class ChartDisplay extends JPanel {
 	/**
 	 * Shows the chart
 	 */
-	public void iniDS(int chart, String stjjDReq1205, boolean b) {
+	public void iniDS(int chart, String dimension, boolean b) {
 		this.chart = chart;
-		this.dimension = stjjDReq1205;
+		this.dimension = dimension;
 
 		if (b) {
 			initializeDrawArea();
