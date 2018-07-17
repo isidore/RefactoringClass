@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 
 public class ChartDisplay extends JPanel {
 
+	private static final int BAR_CHART = 406;
 	private static final String SINGLE_MODE_CHART = "rpfll";
 	private String dimension;
 	private String title;
@@ -22,7 +23,7 @@ public class ChartDisplay extends JPanel {
 	private void initializeDrawArea() {
 		this.setPreferredSize(new Dimension(600, 600));
 
-		if (chart == 406) {
+		if (chart == BAR_CHART) {
 			if (dimension.equals(SINGLE_MODE_CHART)) {
 				title = "Bar Chart - Single Mode";
 			} else {
