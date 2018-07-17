@@ -72,7 +72,8 @@ public class ChartDisplay extends JPanel {
 		List<String> specialData = new ArrayList<String>();
 		String[] pieChartNames = new String[0];
 
-		foo(graphics, new ChartNames(barChartNames, specialData, pieChartNames));
+		ChartNames chartNames = new ChartNames(barChartNames, specialData, pieChartNames);
+		foo(graphics, chartNames);
 	}
 
 	public void foo(Graphics graphics, ChartNames chartNames) {
