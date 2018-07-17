@@ -67,26 +67,7 @@ public class ChartDisplay extends JPanel {
 	private void renderDisplay(Graphics graphics) {
 
 		// Render chart background
-		if (chart == BAR_CHART) {
-			if (dimension.equals(SINGLE_MODE_CHART)) {
-				graphics.setColor(Color.RED);
-				graphics.fillRect(100, 90, getWidth() - 200, 420);
-			} else {
-				graphics.setColor(Color.BLACK);
-				graphics.fillRect(95, 95, 210, 210);
-			}
-		} else {
-			if (dimension.equals(SINGLE_MODE_CHART)) {
-				graphics.setColor(Color.BLUE);
-				graphics.fillOval(100, 100, 450, getHeight() - 150);
-			} else {
-				graphics.setColor(Color.BLUE);
-				double someSize = 405;
-				float padding = 90;
-				int scale = (int) (someSize - padding * 2);
-				graphics.fillOval(100, 100, scale, scale);
-			}
-		}
+		renderChartBackground(graphics);
 
 		String[] barChartNames = null;
 		List<String> specialData = new ArrayList<String>();
@@ -165,6 +146,29 @@ public class ChartDisplay extends JPanel {
 				repaint(200);
 			} catch (Throwable e) {
 				repaint();
+			}
+		}
+	}
+
+	public void renderChartBackground(Graphics graphics) {
+		if (chart == BAR_CHART) {
+			if (dimension.equals(SINGLE_MODE_CHART)) {
+				graphics.setColor(Color.RED);
+				graphics.fillRect(100, 90, getWidth() - 200, 420);
+			} else {
+				graphics.setColor(Color.BLACK);
+				graphics.fillRect(95, 95, 210, 210);
+			}
+		} else {
+			if (dimension.equals(SINGLE_MODE_CHART)) {
+				graphics.setColor(Color.BLUE);
+				graphics.fillOval(100, 100, 450, getHeight() - 150);
+			} else {
+				graphics.setColor(Color.BLUE);
+				double someSize = 405;
+				float padding = 90;
+				int scale = (int) (someSize - padding * 2);
+				graphics.fillOval(100, 100, scale, scale);
 			}
 		}
 	}
