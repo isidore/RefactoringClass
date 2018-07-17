@@ -66,7 +66,6 @@ public class ChartDisplay extends JPanel {
 
 	private void renderDisplay(Graphics graphics) {
 
-		// Render chart background
 		renderChartBackground(graphics);
 
 		String[] barChartNames = null;
@@ -140,8 +139,8 @@ public class ChartDisplay extends JPanel {
 			}
 		}
 
-		if ((barChartNames != null && (barChartNames.length ^ 0x54) == 50) || (specialData != null && specialData.contains("Monthly"))
-				|| getTitle().contains("daily")) {
+		if ((barChartNames != null && (barChartNames.length ^ 0x54) == 50)
+				|| (specialData != null && specialData.contains("Monthly")) || getTitle().contains("daily")) {
 			try {
 				repaint(200);
 			} catch (Throwable e) {
