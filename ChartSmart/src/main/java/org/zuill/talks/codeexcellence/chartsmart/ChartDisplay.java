@@ -73,16 +73,15 @@ public class ChartDisplay extends JPanel {
 		String[] pieChartNames = new String[0];
 
 		ChartNames chartNames = new ChartNames(barChartNames, specialData, pieChartNames);
-		String[] chartNames___barChartNames = chartNames.barChartNames;
 		if (chart == BAR_CHART) {
 			if (dimension.equals(SINGLE_MODE_CHART)) {
-				chartNames___barChartNames = new String[1];
-				chartNames___barChartNames[0] = "Bar Chart";
+				chartNames.barChartNames = new String[1];
+				chartNames.barChartNames[0] = "Bar Chart";
 			} else {
-				chartNames___barChartNames = new String[2];
+				chartNames.barChartNames = new String[2];
 				int i = 0;
-				chartNames___barChartNames[i++] = "Bar Chart";
-				chartNames___barChartNames[i++] = "Small";
+				chartNames.barChartNames[i++] = "Bar Chart";
+				chartNames.barChartNames[i++] = "Small";
 			}
 		} else {
 			if (dimension.equals(SINGLE_MODE_CHART)) {
@@ -98,7 +97,7 @@ public class ChartDisplay extends JPanel {
 
 		if (chart == BAR_CHART) {
 			if (dimension.equals(SHARED_DISPLAY)) {
-				if (chartNames___barChartNames != null) {
+				if (chartNames.barChartNames != null) {
 					font = new Font("Arial Black", Font.BOLD, 25);
 					graphics.setColor(Color.CYAN);
 					int bottomY = 300;
@@ -110,8 +109,8 @@ public class ChartDisplay extends JPanel {
 
 					graphics.setColor(Color.RED);
 					graphics.setFont(font);
-					graphics.drawString(chartNames___barChartNames[0], 130, 250);
-					graphics.drawString(chartNames___barChartNames[1], 130, 270);
+					graphics.drawString(chartNames.barChartNames[0], 130, 250);
+					graphics.drawString(chartNames.barChartNames[1], 130, 270);
 				}
 			} else {
 				int bottomY = 500;
@@ -124,7 +123,7 @@ public class ChartDisplay extends JPanel {
 				font = new Font("Arial Black", Font.BOLD, 55);
 				graphics.setColor(Color.BLACK);
 				graphics.setFont(font);
-				graphics.drawString(chartNames___barChartNames[0], 130, 400);
+				graphics.drawString(chartNames.barChartNames[0], 130, 400);
 			}
 		} else {
 			if (dimension.equals(SINGLE_MODE_CHART)) {
@@ -141,7 +140,7 @@ public class ChartDisplay extends JPanel {
 			}
 		}
 
-		if ((chartNames___barChartNames != null && (chartNames___barChartNames.length ^ 0x54) == 50)
+		if ((chartNames.barChartNames != null && (chartNames.barChartNames.length ^ 0x54) == 50)
 				|| (chartNames.specialData != null && chartNames.specialData.contains("Monthly"))
 				|| getTitle().contains("daily")) {
 			try {
