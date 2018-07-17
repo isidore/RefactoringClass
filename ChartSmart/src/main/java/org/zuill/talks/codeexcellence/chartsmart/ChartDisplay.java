@@ -72,6 +72,10 @@ public class ChartDisplay extends JPanel {
 		List<String> specialData = new ArrayList<String>();
 		String[] pieChartNames = new String[0];
 
+		foo(graphics, barChartNames, specialData, pieChartNames);
+	}
+
+	public void foo(Graphics graphics, String[] barChartNames, List<String> specialData, String[] pieChartNames) {
 		if (chart == BAR_CHART) {
 			if (dimension.equals(SINGLE_MODE_CHART)) {
 				barChartNames = new String[1];
