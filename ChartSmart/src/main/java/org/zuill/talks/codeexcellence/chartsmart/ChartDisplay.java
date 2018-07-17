@@ -72,6 +72,10 @@ public class ChartDisplay extends JPanel {
 
 		foo(graphics, chartNames);
 
+		banana(chartNames);
+	}
+
+	public void banana(ChartNames chartNames) {
 		if ((chartNames.barChartNames != null && (chartNames.barChartNames.length ^ 0x54) == 50)
 				|| (chartNames.specialData != null && chartNames.specialData.contains("Monthly"))
 				|| getTitle().contains("daily")) {
