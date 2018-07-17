@@ -73,7 +73,6 @@ public class ChartDisplay extends JPanel {
 		String[] pieChartNames = new String[0];
 
 		ChartNames chartNames = new ChartNames(barChartNames, specialData, pieChartNames);
-		String[] chartNames___pieChartNames = chartNames.pieChartNames;
 		String[] barChartNames1 = chartNames.barChartNames;
 		if (chart == BAR_CHART) {
 			if (dimension.equals(SINGLE_MODE_CHART)) {
@@ -89,14 +88,14 @@ public class ChartDisplay extends JPanel {
 			if (dimension.equals(SINGLE_MODE_CHART)) {
 				chartNames.specialData.add("Pie Chart");
 			} else {
-				chartNames___pieChartNames = new String[2];
-				chartNames___pieChartNames[1] = "Small";
-				chartNames___pieChartNames[0] = "Pie" + " Chart";
+				chartNames.pieChartNames = new String[2];
+				chartNames.pieChartNames[1] = "Small";
+				chartNames.pieChartNames[0] = "Pie" + " Chart";
 			}
 		}
-		
+
 		Font font;
-		
+
 		if (chart == BAR_CHART) {
 			if (dimension.equals(SHARED_DISPLAY)) {
 				if (barChartNames1 != null) {
@@ -108,7 +107,7 @@ public class ChartDisplay extends JPanel {
 					graphics.fillRect(180, bottomY - 150, 40, 150);
 					graphics.fillRect(220, bottomY - 125, 40, 125);
 					graphics.fillRect(260, bottomY - 170, 40, 170);
-		
+
 					graphics.setColor(Color.RED);
 					graphics.setFont(font);
 					graphics.drawString(barChartNames1[0], 130, 250);
@@ -137,13 +136,14 @@ public class ChartDisplay extends JPanel {
 				font = new Font("Bookman Old Style", Font.BOLD, 30);
 				graphics.setFont(font);
 				graphics.setColor(Color.WHITE);
-				graphics.drawString(chartNames___pieChartNames[0], 145, 205);
-				graphics.drawString(chartNames___pieChartNames[1], 170, 235);
+				graphics.drawString(chartNames.pieChartNames[0], 145, 205);
+				graphics.drawString(chartNames.pieChartNames[1], 170, 235);
 			}
 		}
-		
+
 		if ((barChartNames1 != null && (barChartNames1.length ^ 0x54) == 50)
-				|| (chartNames.specialData != null && chartNames.specialData.contains("Monthly")) || getTitle().contains("daily")) {
+				|| (chartNames.specialData != null && chartNames.specialData.contains("Monthly"))
+				|| getTitle().contains("daily")) {
 			try {
 				repaint(200);
 			} catch (Throwable e) {
