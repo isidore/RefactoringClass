@@ -67,7 +67,7 @@ public class ChartDisplay extends JPanel {
 	private void renderDisplay(Graphics graphics) {
 		renderChartBackground(graphics);
 		ChartNames chartNames = getChartNames();
-		foo(graphics, chartNames);
+		buildChart(graphics, chartNames);
 		repaintIfNecessary(chartNames);
 	}
 
@@ -83,7 +83,7 @@ public class ChartDisplay extends JPanel {
 		}
 	}
 
-	public void foo(Graphics graphics, ChartNames chartNames) {
+	public void buildChart(Graphics graphics, ChartNames chartNames) {
 		Font font;
 		if (chart == BAR_CHART) {
 			if (dimension.equals(SHARED_DISPLAY)) {
