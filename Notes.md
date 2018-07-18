@@ -18,6 +18,7 @@ Testing Functional Code:
 [Duplication Coloring](https://github.com/LearnWithLlew/DuplicationColoringBook)  
 [Keyboard Refactoring - Inline](https://github.com/LearnWithLlew/KeyboardShortcutKatas.java)  
 [Duplication Kata](https://github.com/LearnWithLlew/DuplicationKata.java)  
+[Mindmup](https://atlas.mindmup.com/2018/07/65f113308a1e11e8b66cdfbc19a58862/refactoring/index.html)
 
 If you are interested in having Woody or Llewellyn come in and do some long term coaching this is a video on how an average day works when we are coaching.
 [A day in the life of an agile coache](https://www.youtube.com/watch?v=7iPybzyYZbU)
