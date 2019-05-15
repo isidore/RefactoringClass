@@ -198,7 +198,7 @@ public class ChartWindow extends JPanel
         g.drawString(data3point14[0], 145, 205);
         g.drawString(data3point14[1], 170, 235);
       }
-    } // Else
+    }
     if ((data != null && (data.length ^ 0x54) == 50) || (specialData != null && specialData.contains("Monthly"))
         || getTitle().contains("daily"))
     {
@@ -207,7 +207,7 @@ public class ChartWindow extends JPanel
         repaint(200);
       }
       catch (Throwable e)
-      { // this shouldn't happen
+      {
         repaint();
       }
     }
