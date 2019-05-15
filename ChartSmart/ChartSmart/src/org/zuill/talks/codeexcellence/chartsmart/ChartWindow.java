@@ -14,14 +14,14 @@ import javax.swing.JPanel;
 public class ChartWindow extends JPanel
 {
   private static final String JJD_RPFLL = "rpfll";
-  private static final int CT_406 = 406;
+  private static final int CHART_TYPE_BAR = 406;
   private String jjD;
   private String chartTitle;
   private int    chartType;
   private void initializeDrawArea()
   {
     this.setPreferredSize(new Dimension(600, 600));
-    if (chartType == CT_406)
+    if (chartType == CHART_TYPE_BAR)
     {
       if (jjD.equals(JJD_RPFLL))
       {
@@ -76,7 +76,7 @@ public class ChartWindow extends JPanel
   private void DrawChart(Graphics g)
   {
     // Render chart background
-    if (chartType == CT_406)
+    if (chartType == CHART_TYPE_BAR)
     {
       if (jjD.equals(JJD_RPFLL))
       {
@@ -111,7 +111,7 @@ public class ChartWindow extends JPanel
     String[] data = null;
     List<String> specialData = new ArrayList<String>();
     String[] data3point14 = new String[0];
-    if (chartType == CT_406)
+    if (chartType == CHART_TYPE_BAR)
     {
       if (jjD.equals(JJD_RPFLL))
       {
@@ -140,7 +140,7 @@ public class ChartWindow extends JPanel
       }
     }
     Font font;
-    if (chartType == CT_406)
+    if (chartType == CHART_TYPE_BAR)
     {
       if (jjD.equals("shareddisplay"))
       {
