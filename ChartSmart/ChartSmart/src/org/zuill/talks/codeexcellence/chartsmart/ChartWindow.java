@@ -77,7 +77,6 @@ public class ChartWindow extends JPanel
   }
   private String tmStmp()
   {
-    // TODO Auto-generated method stub
     return new Date().toString();
   }
   /**
