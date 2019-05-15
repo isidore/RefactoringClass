@@ -74,7 +74,7 @@ public class ChartWindow extends JPanel
   {
     renderBackground(g);
     ChartData chartData = getChartData();
-    foo(g, chartData);
+    drawChartData(g, chartData);
     repaintIfNecessary(chartData);
   }
   private void repaintIfNecessary(ChartData chartData)
@@ -91,7 +91,7 @@ public class ChartWindow extends JPanel
       }
     }
   }
-  private void foo(Graphics g, ChartData chartData)
+  private void drawChartData(Graphics g, ChartData chartData)
   {
     Font font;
     if (chartType == CHART_TYPE_BAR)
