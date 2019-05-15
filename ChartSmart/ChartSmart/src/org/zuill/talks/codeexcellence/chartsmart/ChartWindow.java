@@ -74,7 +74,6 @@ public class ChartWindow extends JPanel
   {
     renderBackground(g);
     ChartData chartData = getChartData();
-    Font font;
     foo(g, chartData);
     if (shouldRepaint(chartData.data, chartData.specialData))
     {
