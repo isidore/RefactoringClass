@@ -13,11 +13,11 @@ import javax.swing.JPanel;
 
 public class ChartWindow extends JPanel
 {
-  private static final String JJD_RPFLL = "rpfll";
-  private static final int CHART_TYPE_BAR = 406;
-  private String chartMode;
-  private String chartTitle;
-  private int    chartType;
+  private static final String JJD_RPFLL      = "rpfll";
+  private static final int    CHART_TYPE_BAR = 406;
+  private String              chartMode;
+  private String              chartTitle;
+  private int                 chartType;
   private void initializeDrawArea()
   {
     this.setPreferredSize(new Dimension(600, 600));
@@ -29,7 +29,7 @@ public class ChartWindow extends JPanel
       }
       else
       {
-        chartTitle = "Bar" + " Chart - Compare Mode";
+        chartTitle = "Bar Chart - Compare Mode";
       }
     }
     else
