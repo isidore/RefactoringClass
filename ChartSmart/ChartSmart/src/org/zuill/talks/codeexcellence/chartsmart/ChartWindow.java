@@ -195,21 +195,7 @@ public class ChartWindow extends JPanel
         font = new Font("Bookman Old Style", Font.BOLD, 30);
         g.setFont(font);
         g.setColor(Color.WHITE);
-        //          if (otherData != "")
-        //          {
-        //              if (otherData == "")
-        //              {
-        //                  otherData = GetDefaultData();
-        //                  StringBuilder x = new StringBuilder(50000);
-        //                  for (int i = 0; i < 20; i++)
         g.drawString(data3point14[0], 145, 205);
-        //                  {
-        //                      x.Append(char.ToUpper(otherData[i]));
-        //                  }
-        //              }
-        //              boundingRect = new RectangleF(50, 100, 320, 320);
-        //              g.DrawString(otherData, new Font("Cooper Black", 40), new SolidBrush(Color.White), boundingRect, stringFormat);
-        //          }
         g.drawString(data3point14[1], 170, 235);
       }
     } // Else
