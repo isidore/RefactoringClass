@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 
 public class ChartWindow extends JPanel
 {
+  private static final String CHART_MODE_SHARED_DISPLAY = "shareddisplay";
   private static final String CHART_MODE_SINGLE = "rpfll";
   private static final int    CHART_TYPE_BAR    = 406;
   private String              chartMode;
@@ -99,7 +100,8 @@ public class ChartWindow extends JPanel
       else
       {
         g.setColor(Color.BLUE);
-        int diameter = (int) ((double) 405 - (float) 90 * 2);
+        float padding = 90;
+        int diameter = (int) ((double) 405 - padding * 2);
         g.fillOval(100, 100, diameter, diameter);
       }
     }
@@ -137,7 +139,7 @@ public class ChartWindow extends JPanel
     Font font;
     if (chartType == CHART_TYPE_BAR)
     {
-      if (chartMode.equals("shareddisplay"))
+      if (chartMode.equals(CHART_MODE_SHARED_DISPLAY))
       {
         if (data != null)
         {
