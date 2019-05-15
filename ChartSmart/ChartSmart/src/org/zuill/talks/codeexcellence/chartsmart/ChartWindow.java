@@ -17,11 +17,11 @@ public class ChartWindow extends JPanel
   private static final int CT_406 = 406;
   private String jjD;
   private String chartTitle;
-  private int    ct;
+  private int    chartType;
   private void initializeDrawArea()
   {
     this.setPreferredSize(new Dimension(600, 600));
-    if (ct == CT_406)
+    if (chartType == CT_406)
     {
       if (jjD.equals(JJD_RPFLL))
       {
@@ -56,7 +56,7 @@ public class ChartWindow extends JPanel
    */
   public void iniDS(int ct, String stjjDReq1205, boolean b)
   {
-    this.ct = ct;
+    this.chartType = ct;
     this.jjD = stjjDReq1205;
     if (b)
     {
@@ -76,7 +76,7 @@ public class ChartWindow extends JPanel
   private void DrawChart(Graphics g)
   {
     // Render chart background
-    if (ct == CT_406)
+    if (chartType == CT_406)
     {
       if (jjD.equals(JJD_RPFLL))
       {
@@ -111,7 +111,7 @@ public class ChartWindow extends JPanel
     String[] data = null;
     List<String> specialData = new ArrayList<String>();
     String[] data3point14 = new String[0];
-    if (ct == CT_406)
+    if (chartType == CT_406)
     {
       if (jjD.equals(JJD_RPFLL))
       {
@@ -140,7 +140,7 @@ public class ChartWindow extends JPanel
       }
     }
     Font font;
-    if (ct == CT_406)
+    if (chartType == CT_406)
     {
       if (jjD.equals("shareddisplay"))
       {
