@@ -75,6 +75,22 @@ public class ChartWindow extends JPanel
     renderBackground(g);
     ChartData chartData = getChartData();
     Font font;
+    foo(g, chartData);
+    if (shouldRepaint(chartData.data, chartData.specialData))
+    {
+      try
+      {
+        repaint(200);
+      }
+      catch (Throwable e)
+      {
+        repaint();
+      }
+    }
+  }
+  private void foo(Graphics g, ChartData chartData)
+  {
+    Font font;
     if (chartType == CHART_TYPE_BAR)
     {
       if (chartMode.equals(CHART_MODE_SHARED_DISPLAY))
@@ -126,17 +142,6 @@ public class ChartWindow extends JPanel
         g.setColor(Color.WHITE);
         g.drawString(chartData.pieData[0], 145, 205);
         g.drawString(chartData.pieData[1], 170, 235);
-      }
-    }
-    if (shouldRepaint(chartData.data, chartData.specialData))
-    {
-      try
-      {
-        repaint(200);
-      }
-      catch (Throwable e)
-      {
-        repaint();
       }
     }
   }
