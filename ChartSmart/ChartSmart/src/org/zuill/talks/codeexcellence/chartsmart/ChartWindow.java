@@ -74,6 +74,7 @@ public class ChartWindow extends JPanel
   private void DrawChart(Graphics g)
   {
     renderBackground(g);
+    ChartData chartData = new ChartData();
     String[] data = null;
     List<String> specialData = new ArrayList<String>();
     String[] pieData = new String[0];
