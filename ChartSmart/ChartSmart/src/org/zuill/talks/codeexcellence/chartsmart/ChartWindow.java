@@ -51,9 +51,9 @@ public class ChartWindow extends JPanel
   {
     return chartTitle;
   }
-  public void showChart(int ct, String stjjDReq1205, boolean b)
+  public void showChart(int chartType, String stjjDReq1205, boolean b)
   {
-    this.chartType = ct;
+    this.chartType = chartType;
     this.chartMode = stjjDReq1205;
     if (b)
     {
