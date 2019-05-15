@@ -73,11 +73,6 @@ public class ChartWindow extends JPanel
   {
     return super.getFocusTraversalKeys(id);
   }
-  /**
-   * @param g
-   * @since 
-   * @author Wilbur
-   */
   public void paint(Graphics g)
   {
     DrawChart(g);
