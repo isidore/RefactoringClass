@@ -189,20 +189,24 @@ public class ChartWindow extends JPanel
     }
     else
     {
-      if (chartMode.equals(CHART_MODE_SINGLE))
-      {
-        Color backgroundColor;
-        backgroundColor = Color.BLUE;
-        g.setColor(backgroundColor);
-        g.fillOval(100, 100, 450, getHeight() - 150);
-      }
-      else
-      {
-        g.setColor(Color.BLUE);
-        float padding = 90;
-        int diameter = (int) ((double) 405 - padding * 2);
-        g.fillOval(100, 100, diameter, diameter);
-      }
+      renderPieChartBackground(g);
+    }
+  }
+  private void renderPieChartBackground(Graphics g)
+  {
+    if (chartMode.equals(CHART_MODE_SINGLE))
+    {
+      Color backgroundColor;
+      backgroundColor = Color.BLUE;
+      g.setColor(backgroundColor);
+      g.fillOval(100, 100, 450, getHeight() - 150);
+    }
+    else
+    {
+      g.setColor(Color.BLUE);
+      float padding = 90;
+      int diameter = (int) ((double) 405 - padding * 2);
+      g.fillOval(100, 100, diameter, diameter);
     }
   }
   private void renderBarChartBackground(Graphics g)
