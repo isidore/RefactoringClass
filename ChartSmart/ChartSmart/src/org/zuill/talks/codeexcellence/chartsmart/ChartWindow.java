@@ -17,10 +17,6 @@ public class ChartWindow extends JPanel
   private class Unit
   {
     private double value;
-    public void setValue(double v1)
-    {
-      this.value = v1;
-    }
     public double getValue()
     {
       return value;
