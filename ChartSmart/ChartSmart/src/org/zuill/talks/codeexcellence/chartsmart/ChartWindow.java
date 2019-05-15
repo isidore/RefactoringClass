@@ -190,8 +190,7 @@ public class ChartWindow extends JPanel
         g.drawString(pieData[1], 170, 235);
       }
     }
-    if ((data != null && (data.length ^ 0x54) == 50) || (specialData != null && specialData.contains("Monthly"))
-        || getTitle().contains("daily"))
+    if (shouldRepaint(data, specialData))
     {
       try
       {
@@ -202,5 +201,10 @@ public class ChartWindow extends JPanel
         repaint();
       }
     }
+  }
+  private boolean shouldRepaint(String[] data, List<String> specialData)
+  {
+    return (data != null && (data.length ^ 0x54) == 50) || (specialData != null && specialData.contains("Monthly"))
+        || getTitle().contains("daily");
   }
 }
