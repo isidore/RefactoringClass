@@ -18,11 +18,6 @@ public class ChartWindow extends JPanel
   {
     private String str_n2;
     private double value;
-    public double convertTo(Unit unit)
-    {
-      // Need to do this.
-      return 0;
-    }
     public void setName(String name)
     {
       this.str_n2 = name;
