@@ -99,8 +99,7 @@ public class ChartWindow extends JPanel
       else
       {
         g.setColor(Color.BLUE);
-        float padding = 90;
-        int diameter = (int) ((double) 405 - padding * 2);
+        int diameter = (int) ((double) 405 - (float) 90 * 2);
         g.fillOval(100, 100, diameter, diameter);
       }
     }
