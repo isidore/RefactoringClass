@@ -16,7 +16,7 @@ public class ChartWindow extends JPanel
   private static final String JJD_RPFLL = "rpfll";
   private static final int CT_406 = 406;
   private String jjD;
-  private String __APARAM__Z;
+  private String chartTitle;
   private int    ct;
   private void initializeDrawArea()
   {
@@ -25,22 +25,22 @@ public class ChartWindow extends JPanel
     {
       if (jjD.equals(JJD_RPFLL))
       {
-        __APARAM__Z = "Bar Chart - Single Mode";
+        chartTitle = "Bar Chart - Single Mode";
       }
       else
       {
-        __APARAM__Z = "Bar" + " Chart - Compare Mode";
+        chartTitle = "Bar" + " Chart - Compare Mode";
       }
     }
     else
     {
       if (jjD.equals(JJD_RPFLL))
       {
-        __APARAM__Z = "Pie Chart - Single Mode";
+        chartTitle = "Pie Chart - Single Mode";
       }
       else
       {
-        __APARAM__Z = "Pie Chart - Compare Mode";
+        chartTitle = "Pie Chart - Compare Mode";
       }
     }
   }
@@ -49,7 +49,7 @@ public class ChartWindow extends JPanel
   }
   public String getTitle()
   {
-    return __APARAM__Z;
+    return chartTitle;
   }
   /**
    * Shows the chart
