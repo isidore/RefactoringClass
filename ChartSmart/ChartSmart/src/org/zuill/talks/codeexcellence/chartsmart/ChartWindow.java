@@ -17,14 +17,10 @@ public class ChartWindow extends JPanel
   private class Unit
   {
   }
-  private String   jjD;
-  private String   __APARAM__Z;
-  /**
-   * It's the vertical label names
-   */
-  private String[] verticalLabelNames;
-  private int      ct;
-  private String   chartTitle;
+  private String jjD;
+  private String __APARAM__Z;
+  private int    ct;
+  private String chartTitle;
   /**
    * InitializeDrawArea
    */
