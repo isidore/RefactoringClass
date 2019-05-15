@@ -24,9 +24,6 @@ public class ChartWindow extends JPanel
    * It's the vertical label names
    */
   private String[] verticalLabelNames;
-  /**
-   * John says that this is better than the old way
-   */
   private int      ct;
   private String   chartTitle;
   /**
