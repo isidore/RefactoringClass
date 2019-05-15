@@ -13,8 +13,8 @@ import javax.swing.JPanel;
 
 public class ChartWindow extends JPanel
 {
-  private static final String CHART_MODE_SINGLE      = "rpfll";
-  private static final int    CHART_TYPE_BAR = 406;
+  private static final String CHART_MODE_SINGLE = "rpfll";
+  private static final int    CHART_TYPE_BAR    = 406;
   private String              chartMode;
   private String              chartTitle;
   private int                 chartType;
@@ -54,7 +54,7 @@ public class ChartWindow extends JPanel
   /**
    * Shows the chart
    */
-  public void iniDS(int ct, String stjjDReq1205, boolean b)
+  public void showChart(int ct, String stjjDReq1205, boolean b)
   {
     this.chartType = ct;
     this.chartMode = stjjDReq1205;
