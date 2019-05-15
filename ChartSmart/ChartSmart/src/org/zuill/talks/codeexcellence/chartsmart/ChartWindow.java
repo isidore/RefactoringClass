@@ -75,6 +75,10 @@ public class ChartWindow extends JPanel
     renderBackground(g);
     ChartData chartData = getChartData();
     foo(g, chartData);
+    repaintIfNecessary(chartData);
+  }
+  private void repaintIfNecessary(ChartData chartData)
+  {
     if (shouldRepaint(chartData.data, chartData.specialData))
     {
       try
