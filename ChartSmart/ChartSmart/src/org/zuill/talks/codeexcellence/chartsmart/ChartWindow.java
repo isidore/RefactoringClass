@@ -68,6 +68,7 @@ public class ChartWindow extends JPanel
       iHATEthisUckingJob();
     }
   }
+  //Dead code please remove
   @Override
   public Set<AWTKeyStroke> getFocusTraversalKeys(int id)
   {
