@@ -3,6 +3,7 @@
 #################
 *.received.*
 *.pydevproject
+target/
 
 bin/
 tmp/
