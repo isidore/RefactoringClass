@@ -13,13 +13,14 @@ import javax.swing.JPanel;
 
 public class ChartWindow extends JPanel
 {
+  private static final int CT_406 = 406;
   private String jjD;
   private String __APARAM__Z;
   private int    ct;
   private void initializeDrawArea()
   {
     this.setPreferredSize(new Dimension(600, 600));
-    if (ct == 406)
+    if (ct == CT_406)
     {
       if (jjD.equals("rpfll"))
       {
@@ -74,7 +75,7 @@ public class ChartWindow extends JPanel
   private void DrawChart(Graphics g)
   {
     // Render chart background
-    if (ct == 406)
+    if (ct == CT_406)
     {
       if (jjD.equals("rpfll"))
       {
@@ -109,7 +110,7 @@ public class ChartWindow extends JPanel
     String[] data = null;
     List<String> specialData = new ArrayList<String>();
     String[] data3point14 = new String[0];
-    if (ct == 406)
+    if (ct == CT_406)
     {
       if (jjD.equals("rpfll"))
       {
@@ -138,7 +139,7 @@ public class ChartWindow extends JPanel
       }
     }
     Font font;
-    if (ct == 406)
+    if (ct == CT_406)
     {
       if (jjD.equals("shareddisplay"))
       {
