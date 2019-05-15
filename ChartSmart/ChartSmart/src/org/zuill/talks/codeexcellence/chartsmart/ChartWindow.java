@@ -5,7 +5,6 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -75,35 +74,32 @@ public class ChartWindow extends JPanel
   {
     renderBackground(g);
     ChartData chartData = new ChartData();
-    String[] chartData_data = null;
-    List<String> chartData_specialData = new ArrayList<String>();
-    String[] chartData_pieData = new String[0];
     if (chartType == CHART_TYPE_BAR)
     {
       if (chartMode.equals(CHART_MODE_SINGLE))
       {
-        chartData_data = new String[1];
-        chartData_data[0] = "Bar Chart";
+        chartData.data = new String[1];
+        chartData.data[0] = "Bar Chart";
       }
       else
       {
-        chartData_data = new String[2];
+        chartData.data = new String[2];
         int i = 0;
-        chartData_data[i++] = "Bar Chart";
-        chartData_data[i++] = "Small";
+        chartData.data[i++] = "Bar Chart";
+        chartData.data[i++] = "Small";
       }
     }
     else
     {
       if (chartMode.equals(CHART_MODE_SINGLE))
       {
-        chartData_specialData.add("Pie Chart");
+        chartData.specialData.add("Pie Chart");
       }
       else
       {
-        chartData_pieData = new String[2];
-        chartData_pieData[1] = "Small";
-        chartData_pieData[0] = "Pie Chart";
+        chartData.pieData = new String[2];
+        chartData.pieData[1] = "Small";
+        chartData.pieData[0] = "Pie Chart";
       }
     }
     Font font;
@@ -111,7 +107,7 @@ public class ChartWindow extends JPanel
     {
       if (chartMode.equals(CHART_MODE_SHARED_DISPLAY))
       {
-        if (chartData_data != null)
+        if (chartData.data != null)
         {
           font = new Font("Arial Black", Font.BOLD, 25);
           g.setColor(Color.CYAN);
@@ -123,8 +119,8 @@ public class ChartWindow extends JPanel
           g.fillRect(260, bottomY - 170, 40, 170);
           g.setColor(Color.RED);
           g.setFont(font);
-          g.drawString(chartData_data[0], 130, 250);
-          g.drawString(chartData_data[1], 130, 270);
+          g.drawString(chartData.data[0], 130, 250);
+          g.drawString(chartData.data[1], 130, 270);
         }
       }
       else
@@ -139,7 +135,7 @@ public class ChartWindow extends JPanel
         font = new Font("Arial Black", Font.BOLD, 55);
         g.setColor(Color.BLACK);
         g.setFont(font);
-        g.drawString(chartData_data[0], 130, 400);
+        g.drawString(chartData.data[0], 130, 400);
       }
     }
     else
@@ -149,18 +145,18 @@ public class ChartWindow extends JPanel
         font = new Font("Bookman Old Style", Font.BOLD, 55);
         g.setColor(Color.WHITE);
         g.setFont(font);
-        g.drawString(chartData_specialData.get(0), 200, 340);
+        g.drawString(chartData.specialData.get(0), 200, 340);
       }
       else
       {
         font = new Font("Bookman Old Style", Font.BOLD, 30);
         g.setFont(font);
         g.setColor(Color.WHITE);
-        g.drawString(chartData_pieData[0], 145, 205);
-        g.drawString(chartData_pieData[1], 170, 235);
+        g.drawString(chartData.pieData[0], 145, 205);
+        g.drawString(chartData.pieData[1], 170, 235);
       }
     }
-    if (shouldRepaint(chartData_data, chartData_specialData))
+    if (shouldRepaint(chartData.data, chartData.specialData))
     {
       try
       {
