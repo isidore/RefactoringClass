@@ -152,36 +152,44 @@ public class ChartWindow extends JPanel
   {
     if (chartType == CHART_TYPE_BAR)
     {
-      ChartData chartData = new ChartData();
-      if (chartMode.equals(CHART_MODE_SINGLE))
-      {
-        chartData.data = new String[1];
-        chartData.data[0] = "Bar Chart";
-      }
-      else
-      {
-        chartData.data = new String[2];
-        int i = 0;
-        chartData.data[i++] = "Bar Chart";
-        chartData.data[i++] = "Small";
-      }
-      return chartData;
+      return getBarChartData();
     }
     else
     {
-      ChartData chartData = new ChartData();
-      if (chartMode.equals(CHART_MODE_SINGLE))
-      {
-        chartData.specialData.add("Pie Chart");
-      }
-      else
-      {
-        chartData.pieData = new String[2];
-        chartData.pieData[1] = "Small";
-        chartData.pieData[0] = "Pie Chart";
-      }
-      return chartData;
+      return getPieChartData();
     }
+  }
+  private ChartData getPieChartData()
+  {
+    ChartData chartData = new ChartData();
+    if (chartMode.equals(CHART_MODE_SINGLE))
+    {
+      chartData.specialData.add("Pie Chart");
+    }
+    else
+    {
+      chartData.pieData = new String[2];
+      chartData.pieData[1] = "Small";
+      chartData.pieData[0] = "Pie Chart";
+    }
+    return chartData;
+  }
+  private ChartData getBarChartData()
+  {
+    ChartData chartData = new ChartData();
+    if (chartMode.equals(CHART_MODE_SINGLE))
+    {
+      chartData.data = new String[1];
+      chartData.data[0] = "Bar Chart";
+    }
+    else
+    {
+      chartData.data = new String[2];
+      int i = 0;
+      chartData.data[i++] = "Bar Chart";
+      chartData.data[i++] = "Small";
+    }
+    return chartData;
   }
   private void renderBackground(Graphics g)
   {
