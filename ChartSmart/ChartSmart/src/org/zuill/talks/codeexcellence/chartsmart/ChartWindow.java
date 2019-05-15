@@ -165,6 +165,7 @@ public class ChartWindow extends JPanel
         chartData.data[i++] = "Bar Chart";
         chartData.data[i++] = "Small";
       }
+      return chartData;
     }
     else
     {
@@ -178,8 +179,8 @@ public class ChartWindow extends JPanel
         chartData.pieData[1] = "Small";
         chartData.pieData[0] = "Pie Chart";
       }
+      return chartData;
     }
-    return chartData;
   }
   private void renderBackground(Graphics g)
   {
