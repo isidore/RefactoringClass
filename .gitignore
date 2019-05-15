@@ -2,6 +2,7 @@
 ## Eclipse
 #################
 *.received.*
+target/
 *.pydevproject
 
 bin/
