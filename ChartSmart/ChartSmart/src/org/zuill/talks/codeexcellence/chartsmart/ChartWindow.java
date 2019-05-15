@@ -14,8 +14,8 @@ import javax.swing.JPanel;
 public class ChartWindow extends JPanel
 {
   private static final String CHART_MODE_SHARED_DISPLAY = "shareddisplay";
-  private static final String CHART_MODE_SINGLE = "rpfll";
-  private static final int    CHART_TYPE_BAR    = 406;
+  private static final String CHART_MODE_SINGLE         = "rpfll";
+  private static final int    CHART_TYPE_BAR            = 406;
   private String              chartMode;
   private String              chartTitle;
   private int                 chartType;
@@ -133,7 +133,7 @@ public class ChartWindow extends JPanel
       {
         data3point14 = new String[2];
         data3point14[1] = "Small";
-        data3point14[0] = "Pie" + " Chart";
+        data3point14[0] = "Pie Chart";
       }
     }
     Font font;
