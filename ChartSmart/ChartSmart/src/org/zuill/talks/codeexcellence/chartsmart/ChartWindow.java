@@ -183,7 +183,6 @@ public class ChartWindow extends JPanel
   }
   private void renderBackground(Graphics g)
   {
-    // Render chart background
     if (chartType == CHART_TYPE_BAR)
     {
       if (chartMode.equals(CHART_MODE_SINGLE))
