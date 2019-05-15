@@ -73,38 +73,7 @@ public class ChartWindow extends JPanel
   }
   private void DrawChart(Graphics g)
   {
-    // Render chart background
-    if (chartType == CHART_TYPE_BAR)
-    {
-      if (chartMode.equals(CHART_MODE_SINGLE))
-      {
-        Color bgc = Color.RED;
-        g.setColor(bgc);
-        g.fillRect(100, 90, getWidth() - 200, 420);
-      }
-      else
-      {
-        g.setColor(Color.BLACK);
-        g.fillRect(95, 95, 210, 210);
-      }
-    }
-    else
-    {
-      if (chartMode.equals(CHART_MODE_SINGLE))
-      {
-        Color backgroundColor;
-        backgroundColor = Color.BLUE;
-        g.setColor(backgroundColor);
-        g.fillOval(100, 100, 450, getHeight() - 150);
-      }
-      else
-      {
-        g.setColor(Color.BLUE);
-        float padding = 90;
-        int diameter = (int) ((double) 405 - padding * 2);
-        g.fillOval(100, 100, diameter, diameter);
-      }
-    }
+    renderBackground(g);
     String[] data = null;
     List<String> specialData = new ArrayList<String>();
     String[] pieData = new String[0];
@@ -199,6 +168,41 @@ public class ChartWindow extends JPanel
       catch (Throwable e)
       {
         repaint();
+      }
+    }
+  }
+  private void renderBackground(Graphics g)
+  {
+    // Render chart background
+    if (chartType == CHART_TYPE_BAR)
+    {
+      if (chartMode.equals(CHART_MODE_SINGLE))
+      {
+        Color bgc = Color.RED;
+        g.setColor(bgc);
+        g.fillRect(100, 90, getWidth() - 200, 420);
+      }
+      else
+      {
+        g.setColor(Color.BLACK);
+        g.fillRect(95, 95, 210, 210);
+      }
+    }
+    else
+    {
+      if (chartMode.equals(CHART_MODE_SINGLE))
+      {
+        Color backgroundColor;
+        backgroundColor = Color.BLUE;
+        g.setColor(backgroundColor);
+        g.fillOval(100, 100, 450, getHeight() - 150);
+      }
+      else
+      {
+        g.setColor(Color.BLUE);
+        float padding = 90;
+        int diameter = (int) ((double) 405 - padding * 2);
+        g.fillOval(100, 100, diameter, diameter);
       }
     }
   }
