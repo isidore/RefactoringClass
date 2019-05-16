@@ -13,7 +13,14 @@ Testing Functional Code:
 [Smaller Steps so the Whole Team Learns Better](https://www.youtube.com/watch?v=8H4vmtNItcY)  
 
 
-
+## Bash
+``` Bash
+ function start {\nclear;\ndate;\ncheck;\n}
+ function check { ls -l ChartWindow*.class}
+ function commit { git commit -a -m 'r rename'}
+ function foo { echo "$@" }                
+ function proven { git commit -a -m "r $@"}
+```
 
 If you are interested in having Woody or Llewellyn come in and do some long term coaching this is a video on how an average day works when we are coaching.
 [A day in the life of an agile coache](https://www.youtube.com/watch?v=7iPybzyYZbU)
