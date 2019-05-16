@@ -31,6 +31,22 @@ Guilded Rose:
 [MindMup ](https://app.mindmup.com/map/new)
 
 
+## Bash
+Class Files
+``` Bash
+  cd /Users/llewellyn/Github/RefactoringClass/ChartSmart/ChartSmart.Java/target/classes/org/zuill/talks/codeexcellence/
+```
+
+chartsmart
+``` Bash
+ function start {\nclear;\ndate;\ncheck;\n}
+ function check { ls -l ChartWindow*.class}
+ function commit { git commit -a -m 'r rename'}
+ function foo { echo "$@" }                
+ function proven { git commit -a -m "r $@"}
+```
+
+
 
 
 If you are interested in having Woody or Llewellyn come in and do some long term coaching this is a video on how an average day works when we are coaching.
