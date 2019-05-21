@@ -7,7 +7,7 @@ https://github.com/LearnWithLlew/DuplicationKata.Net
 https://github.com/LearnWithLlew/TestingFunctionalCodeKata.Java
 
 
-##  Day 1 
+##  Day 1
 
 ## Introductions [ 1 hour]
 * Lines (Rate yourself
@@ -15,7 +15,7 @@ https://github.com/LearnWithLlew/TestingFunctionalCodeKata.Java
   * Name
   * Distance
   * Programmer
-  * Unit testing 
+  * Unit testing
   * Refactoring
   * What’s code like at work
   * Iphone - Android
@@ -25,7 +25,7 @@ https://github.com/LearnWithLlew/TestingFunctionalCodeKata.Java
 
 ## ChartSmart (Mob)
 
-We are going to use TestCommitRevert (TCR) + Arlo's commit notation. 
+We are going to use TestCommitRevert (TCR) + Arlo's commit notation.
 
 ## Clutter [ 2 hours]
   * Sparrow Decks Intro -> Sparrows
@@ -55,9 +55,9 @@ We are going to use TestCommitRevert (TCR) + Arlo's commit notation.
 
 ## Duplication  [2 hours]
 
-Notes: 
+Notes:
   Print out & Use Kata Cups.   
-  Do Coloring indivually but programming Paired. 
+  Do Coloring indivually but programming Paired.
   Have Pairs check each others coloring.
 * Duplication Deck
 * Coloring Exercises
@@ -74,7 +74,7 @@ Notes:
 
 ChartSmart (Mob)
 Duplication
-Individual Exercises Duplication 
+Individual Exercises Duplication
 Testing Functional Code Kata [If code is functional it is very easy to test]
 Code coverage
 Emily Bache Gilded Rose
@@ -90,11 +90,13 @@ The Russian Connection
 Peel and Slice
 
 
-Notes: 
+Notes:
 Working in “our” manner allows us to work without understanding the code.
 
 Llewellyn mentioned this about a sessions at AONW
 “I hate that, but I want to do it so I can hate it with data”
+
+Show the [Refactoring Image](https://twitter.com/LlewellynFalco/status/633363986273189888)
 
 Also:
 Read By Refactoring
