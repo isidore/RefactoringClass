@@ -11,24 +11,24 @@ Duplication Coloring book:
   [.Net](https://github.com/LearnWithLlew/DuplicationKata.Net)
   [Python](https://github.com/LearnWithLlew/DuplicationKata.Python)
   [C++](https://github.com/LearnWithLlew/DuplicationKata.cpp.vs2017)
-  [Javascript](https://github.com/LearnWithLlew/DuplicationKata.js)
+  [Javascript](https://github.com/LearnWithLlew/DuplicationKata.js)  
 Guilded Rose:
-[Guilded Rose](https://github.com/emilybache/GildedRose-Refactoring-Kata)
+[Guilded Rose](https://github.com/emilybache/GildedRose-Refactoring-Kata)  
 
 
 
 ## Videos:
-[Practical Refactoring](https://www.youtube.com/watch?v=aWiwDdx_rdo)
-[Micro-refactoring - Unrolling For Loops](https://www.youtube.com/watch?v=tQjUKQxFXuE)
-[Smaller Steps so the Whole Team Learns Better](https://www.youtube.com/watch?v=8H4vmtNItcY)
-[Duplication Exercise #2 Variables](https://www.youtube.com/watch?v=Fw-knDwOZTU)
+[Practical Refactoring](https://www.youtube.com/watch?v=aWiwDdx_rdo)  
+[Micro-refactoring - Unrolling For Loops](https://www.youtube.com/watch?v=tQjUKQxFXuE)  
+[Smaller Steps so the Whole Team Learns Better](https://www.youtube.com/watch?v=8H4vmtNItcY)  
+[Duplication Exercise #2 Variables](https://www.youtube.com/watch?v=Fw-knDwOZTU  )
 
 #Retrospectives
-[Faa Baa; The McGurk Effect](https://youtu.be/G-lN8vWm3m0 )
-[The Monkey Business Illusion](https://youtu.be/IGQmdoK_ZfY)
-[Assumptions](https://youtu.be/zNbF006Y5x4)
-[Sticky Notes](https://www.slideshare.net/llewellynfalco/sticky-notes-36467650)
-[MindMup ](https://app.mindmup.com/map/new)
+[The Monkey Business Illusion](https://youtu.be/IGQmdoK_ZfY)  
+[Faa Baa; The McGurk Effect](https://youtu.be/G-lN8vWm3m0 )  
+[Assumptions](https://youtu.be/zNbF006Y5x4)  
+[Sticky Notes](https://www.slideshare.net/llewellynfalco/sticky-notes-36467650)  
+[MindMup ](https://app.mindmup.com/map/new)  
 
 
 ## Bash
