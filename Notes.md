@@ -37,6 +37,7 @@ Class Files
   cd /Users/llewellyn/Github/RefactoringClass/ChartSmart/ChartSmart.Java/target/classes/org/zuill/talks/codeexcellence/
 ```
 
+
 chartsmart
 ``` Bash
  function start {\nclear;\ndate;\ncheck;\n}
