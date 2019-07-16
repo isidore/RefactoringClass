@@ -84,7 +84,6 @@ public class ChartWindow extends JPanel
   {
     renderChartBackground(graphics);
     ChartData chartData = initializeChartData();
-    Font font;
     createGraphics(graphics, chartData);
     if ((chartData.data != null && (chartData.data.length ^ 0x54) == 50)
         || (chartData.specialData != null && chartData.specialData.contains("Monthly"))
