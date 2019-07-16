@@ -94,7 +94,7 @@ public class ChartWindow extends JPanel
     }
     String[] data = null;
     List<String> specialData = new ArrayList<String>();
-    String[] data3point14 = new String[0];
+    String[] chartProperties = new String[0];
     if (chartType == BAR_CHART)
     {
       if (chartMode.equals(SINGLE_MODE_CHART))
@@ -118,9 +118,9 @@ public class ChartWindow extends JPanel
       }
       else
       {
-        data3point14 = new String[2];
-        data3point14[1] = "Small";
-        data3point14[0] = "Pie" + " Chart";
+        chartProperties = new String[2];
+        chartProperties[1] = "Small";
+        chartProperties[0] = "Pie" + " Chart";
       }
     }
     Font font;
@@ -173,8 +173,8 @@ public class ChartWindow extends JPanel
         font = new Font("Bookman Old Style", Font.BOLD, 30);
         graphics.setFont(font);
         graphics.setColor(Color.WHITE);
-        graphics.drawString(data3point14[0], 145, 205);
-        graphics.drawString(data3point14[1], 170, 235);
+        graphics.drawString(chartProperties[0], 145, 205);
+        graphics.drawString(chartProperties[1], 170, 235);
       }
     }
     if ((data != null && (data.length ^ 0x54) == 50) || (specialData != null && specialData.contains("Monthly"))
