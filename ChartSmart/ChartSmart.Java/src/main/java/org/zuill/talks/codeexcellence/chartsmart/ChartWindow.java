@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 
 public class ChartWindow extends JPanel
 {
-  private static class ChartMode
+  public static class ChartMode
   {
   }
   private static final String CHART_MODE_SHARED_DISPLAY = "shareddisplay";
