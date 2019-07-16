@@ -83,35 +83,7 @@ public class ChartWindow extends JPanel
   private void drawChart(Graphics graphics)
   {
     renderChartBackground(graphics);
-    Container container = new Container();
-    if (chartType == CHART_TYPE_BAR)
-    {
-      if (chartMode.equals(ChartMode.SINGLE_DISPLAY))
-      {
-        container.data = new String[1];
-        container.data[0] = "Bar Chart";
-      }
-      else
-      {
-        container.data = new String[2];
-        int i = 0;
-        container.data[i++] = "Bar Chart";
-        container.data[i++] = "Small";
-      }
-    }
-    else
-    {
-      if (chartMode.equals(ChartMode.SINGLE_DISPLAY))
-      {
-        container.specialData.add("Pie Chart");
-      }
-      else
-      {
-        container.chartProperties = new String[2];
-        container.chartProperties[1] = "Small";
-        container.chartProperties[0] = "Pie" + " Chart";
-      }
-    }
+    Container container = initializeChartData();
     Font font;
     if (chartType == CHART_TYPE_BAR)
     {
@@ -179,6 +151,39 @@ public class ChartWindow extends JPanel
         repaint();
       }
     }
+  }
+  private Container initializeChartData()
+  {
+    Container container = new Container();
+    if (chartType == CHART_TYPE_BAR)
+    {
+      if (chartMode.equals(ChartMode.SINGLE_DISPLAY))
+      {
+        container.data = new String[1];
+        container.data[0] = "Bar Chart";
+      }
+      else
+      {
+        container.data = new String[2];
+        int i = 0;
+        container.data[i++] = "Bar Chart";
+        container.data[i++] = "Small";
+      }
+    }
+    else
+    {
+      if (chartMode.equals(ChartMode.SINGLE_DISPLAY))
+      {
+        container.specialData.add("Pie Chart");
+      }
+      else
+      {
+        container.chartProperties = new String[2];
+        container.chartProperties[1] = "Small";
+        container.chartProperties[0] = "Pie" + " Chart";
+      }
+    }
+    return container;
   }
   private void renderChartBackground(Graphics graphics)
   {
