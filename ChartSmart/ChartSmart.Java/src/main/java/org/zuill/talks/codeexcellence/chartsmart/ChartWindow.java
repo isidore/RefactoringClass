@@ -83,7 +83,7 @@ public class ChartWindow extends JPanel
   private void drawChart(Graphics graphics)
   {
     renderChartBackground(graphics);
-    ChartData chartData = initializeChartData();
+    ChartData chartData = getChartData();
     createGraphics(graphics, chartData);
     repaint(chartData);
   }
@@ -173,7 +173,7 @@ public class ChartWindow extends JPanel
       graphics.drawString(chartData.data[0], 130, 400);
     }
   }
-  private ChartData initializeChartData()
+  private ChartData getChartData()
   {
     if (chartType == CHART_TYPE_BAR)
     {
