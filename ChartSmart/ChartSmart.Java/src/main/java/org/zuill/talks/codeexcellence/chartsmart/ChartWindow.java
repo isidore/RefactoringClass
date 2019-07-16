@@ -85,6 +85,10 @@ public class ChartWindow extends JPanel
     renderChartBackground(graphics);
     ChartData chartData = initializeChartData();
     createGraphics(graphics, chartData);
+    extracted(chartData);
+  }
+  private void extracted(ChartData chartData)
+  {
     if ((chartData.data != null && (chartData.data.length ^ 0x54) == 50)
         || (chartData.specialData != null && chartData.specialData.contains("Monthly"))
         || getTitle().contains("daily"))
