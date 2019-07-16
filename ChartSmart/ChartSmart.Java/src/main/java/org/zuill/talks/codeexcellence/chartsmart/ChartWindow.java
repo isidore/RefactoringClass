@@ -77,7 +77,7 @@ public class ChartWindow extends JPanel
   private void drawChart(Graphics graphics)
   {
     // Render chart background
-    extract(graphics);
+    renderChartBackground(graphics);
     String[] data = null;
     List<String> specialData = new ArrayList<String>();
     String[] chartProperties = new String[0];
@@ -176,7 +176,7 @@ public class ChartWindow extends JPanel
       }
     }
   }
-  private void extract(Graphics graphics)
+  private void renderChartBackground(Graphics graphics)
   {
     if (chartType == CHART_TYPE_BAR)
     {
