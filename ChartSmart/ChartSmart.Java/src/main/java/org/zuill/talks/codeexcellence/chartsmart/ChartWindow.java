@@ -11,9 +11,12 @@ import javax.swing.JPanel;
 
 public class ChartWindow extends JPanel
 {
+  private static class ChartMode
+  {
+  }
   private static final String CHART_MODE_SHARED_DISPLAY = "shareddisplay";
-  private static final int    CHART_TYPE_BAR         = 406;
-  private static final String CHART_MODE_SINGLE = "rpfll";
+  private static final int    CHART_TYPE_BAR            = 406;
+  private static final String CHART_MODE_SINGLE         = "rpfll";
   private String              chartMode;
   private String              title;
   private int                 chartType;
