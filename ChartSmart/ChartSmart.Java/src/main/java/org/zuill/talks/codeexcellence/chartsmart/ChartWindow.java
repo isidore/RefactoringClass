@@ -88,7 +88,7 @@ public class ChartWindow extends JPanel
       else
       {
         graphics.setColor(Color.BLUE);
-        int sc = 405 - 90 * 2;
+        int sc = 225;
         graphics.fillOval(100, 100, sc, sc);
       }
     }
