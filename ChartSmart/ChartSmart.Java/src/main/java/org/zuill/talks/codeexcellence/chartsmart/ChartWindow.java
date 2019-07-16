@@ -77,33 +77,7 @@ public class ChartWindow extends JPanel
   private void drawChart(Graphics graphics)
   {
     // Render chart background
-    if (chartType == CHART_TYPE_BAR)
-    {
-      if (chartMode.equals(ChartMode.SINGLE_DISPLAY))
-      {
-        graphics.setColor(Color.RED);
-        graphics.fillRect(100, 90, getWidth() - 200, 420);
-      }
-      else
-      {
-        graphics.setColor(Color.BLACK);
-        graphics.fillRect(95, 95, 210, 210);
-      }
-    }
-    else
-    {
-      if (chartMode.equals(ChartMode.SINGLE_DISPLAY))
-      {
-        graphics.setColor(Color.BLUE);
-        graphics.fillOval(100, 100, 450, getHeight() - 150);
-      }
-      else
-      {
-        graphics.setColor(Color.BLUE);
-        int diameter = 225;
-        graphics.fillOval(100, 100, diameter, diameter);
-      }
-    }
+    extract(graphics);
     String[] data = null;
     List<String> specialData = new ArrayList<String>();
     String[] chartProperties = new String[0];
@@ -199,6 +173,36 @@ public class ChartWindow extends JPanel
       catch (Throwable e)
       {
         repaint();
+      }
+    }
+  }
+  private void extract(Graphics graphics)
+  {
+    if (chartType == CHART_TYPE_BAR)
+    {
+      if (chartMode.equals(ChartMode.SINGLE_DISPLAY))
+      {
+        graphics.setColor(Color.RED);
+        graphics.fillRect(100, 90, getWidth() - 200, 420);
+      }
+      else
+      {
+        graphics.setColor(Color.BLACK);
+        graphics.fillRect(95, 95, 210, 210);
+      }
+    }
+    else
+    {
+      if (chartMode.equals(ChartMode.SINGLE_DISPLAY))
+      {
+        graphics.setColor(Color.BLUE);
+        graphics.fillOval(100, 100, 450, getHeight() - 150);
+      }
+      else
+      {
+        graphics.setColor(Color.BLUE);
+        int diameter = 225;
+        graphics.fillOval(100, 100, diameter, diameter);
       }
     }
   }
