@@ -83,6 +83,7 @@ public class ChartWindow extends JPanel
   private void drawChart(Graphics graphics)
   {
     renderChartBackground(graphics);
+    Container container = new Container();
     String[] data = null;
     List<String> specialData = new ArrayList<String>();
     String[] chartProperties = new String[0];
