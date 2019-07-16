@@ -177,20 +177,7 @@ public class ChartWindow extends JPanel
   {
     if (chartType == CHART_TYPE_BAR)
     {
-      ChartData container = new ChartData();
-      if (chartMode.equals(ChartMode.SINGLE_DISPLAY))
-      {
-        container.data = new String[1];
-        container.data[0] = "Bar Chart";
-      }
-      else
-      {
-        container.data = new String[2];
-        int i = 0;
-        container.data[i++] = "Bar Chart";
-        container.data[i++] = "Small";
-      }
-      return container;
+      return initializeBarChartData();
     }
     else
     {
@@ -207,6 +194,23 @@ public class ChartWindow extends JPanel
       }
       return container;
     }
+  }
+  private ChartData initializeBarChartData()
+  {
+    ChartData container = new ChartData();
+    if (chartMode.equals(ChartMode.SINGLE_DISPLAY))
+    {
+      container.data = new String[1];
+      container.data[0] = "Bar Chart";
+    }
+    else
+    {
+      container.data = new String[2];
+      int i = 0;
+      container.data[i++] = "Bar Chart";
+      container.data[i++] = "Small";
+    }
+    return container;
   }
   private void renderChartBackground(Graphics graphics)
   {
