@@ -101,7 +101,6 @@ public class ChartWindow extends JPanel
   @Override
   public Set<AWTKeyStroke> getFocusTraversalKeys(int id)
   {
-    // TODO Auto-generated method stub
     return super.getFocusTraversalKeys(id);
   }
   /**
