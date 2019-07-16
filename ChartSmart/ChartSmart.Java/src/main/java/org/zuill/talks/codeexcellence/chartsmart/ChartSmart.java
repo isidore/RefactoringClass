@@ -86,20 +86,20 @@ public class ChartSmart extends JPanel
       else if (e.getSource() == btnShowPieOrBarChart)
       {
         ChartWindow cw = new ChartWindow();
-        cw.iniDS(getChartType(), "rpfll", true);
+        cw.showChart(getChartType(), "rpfll", true);
         display(cw);
       }
       else
       {
         ChartWindow cw = new ChartWindow();
-        cw.iniDS(getChartType(), getDisplayType(), true);
+        cw.showChart(getChartType(), getDisplayType(), true);
         display(cw);
       }
     }
     private void openBarChart()
     {
       ChartWindow cw = new ChartWindow();
-      cw.iniDS(406, "rpfll", true);
+      cw.showChart(406, "rpfll", true);
       display(cw);
     }
     private void display(ChartWindow cw)

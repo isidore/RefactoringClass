@@ -21,7 +21,7 @@ public class ChartSmartTest extends TestCommitRevertTest
   public void testBarChartWindow() throws Exception
   {
     ChartWindow chartSmart = new ChartWindow();
-    chartSmart.iniDS(406, "rpfll", true);
+    chartSmart.showChart(406, "rpfll", true);
     Approvals.verify(chartSmart);
     assertEquals("Bar Chart - Single Mode", chartSmart.getTitle());
   }
@@ -29,7 +29,7 @@ public class ChartSmartTest extends TestCommitRevertTest
   public void testPieChartWindow() throws Exception
   {
     ChartWindow chartSmart = new ChartWindow();
-    chartSmart.iniDS(323, "rpfll", true);
+    chartSmart.showChart(323, "rpfll", true);
     Approvals.verify(chartSmart);
     assertEquals("Pie Chart - Single Mode", chartSmart.getTitle());
   }
@@ -37,7 +37,7 @@ public class ChartSmartTest extends TestCommitRevertTest
   public void testBarChartSmallWindow() throws Exception
   {
     ChartWindow chartSmart = new ChartWindow();
-    chartSmart.iniDS(406, "shareddisplay", true);
+    chartSmart.showChart(406, "shareddisplay", true);
     Approvals.verify(chartSmart);
     assertEquals("Bar Chart - Compare Mode", chartSmart.getTitle());
   }
@@ -45,7 +45,7 @@ public class ChartSmartTest extends TestCommitRevertTest
   public void testPieChartSmallWindow() throws Exception
   {
     ChartWindow chartSmart = new ChartWindow();
-    chartSmart.iniDS(323, "shareddisplay", true);
+    chartSmart.showChart(323, "shareddisplay", true);
     Approvals.verify(chartSmart);
     assertEquals("Pie Chart - Compare Mode", chartSmart.getTitle());
   }
