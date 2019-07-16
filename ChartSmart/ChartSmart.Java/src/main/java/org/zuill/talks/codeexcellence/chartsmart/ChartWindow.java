@@ -116,21 +116,26 @@ public class ChartWindow extends JPanel
     }
     else
     {
-      if (chartMode.equals(ChartMode.SINGLE_DISPLAY))
-      {
-        font = new Font("Bookman Old Style", Font.BOLD, 55);
-        graphics.setColor(Color.WHITE);
-        graphics.setFont(font);
-        graphics.drawString(chartData.specialData.get(0), 200, 340);
-      }
-      else
-      {
-        font = new Font("Bookman Old Style", Font.BOLD, 30);
-        graphics.setFont(font);
-        graphics.setColor(Color.WHITE);
-        graphics.drawString(chartData.chartProperties[0], 145, 205);
-        graphics.drawString(chartData.chartProperties[1], 170, 235);
-      }
+      crap(graphics, chartData);
+    }
+  }
+  private void crap(Graphics graphics, ChartData chartData)
+  {
+    Font font;
+    if (chartMode.equals(ChartMode.SINGLE_DISPLAY))
+    {
+      font = new Font("Bookman Old Style", Font.BOLD, 55);
+      graphics.setColor(Color.WHITE);
+      graphics.setFont(font);
+      graphics.drawString(chartData.specialData.get(0), 200, 340);
+    }
+    else
+    {
+      font = new Font("Bookman Old Style", Font.BOLD, 30);
+      graphics.setFont(font);
+      graphics.setColor(Color.WHITE);
+      graphics.drawString(chartData.chartProperties[0], 145, 205);
+      graphics.drawString(chartData.chartProperties[1], 170, 235);
     }
   }
   private void createBarChart(Graphics graphics, ChartData chartData)
