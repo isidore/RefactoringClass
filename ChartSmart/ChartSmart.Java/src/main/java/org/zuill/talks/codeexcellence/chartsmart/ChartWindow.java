@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 
 public class ChartWindow extends JPanel
 {
+  private static final int    BAR_CHART_2       = 406;
   private static final String SINGLE_MODE_CHART = "rpfll";
   private static final int    BAR_CHART         = 406;
   private String              chartMode;
@@ -65,7 +66,7 @@ public class ChartWindow extends JPanel
   private void DrawChart(Graphics g)
   {
     // Render chart background
-    if (chartType == 406)
+    if (chartType == BAR_CHART_2)
     {
       if (chartMode.equals(SINGLE_MODE_CHART))
       {
