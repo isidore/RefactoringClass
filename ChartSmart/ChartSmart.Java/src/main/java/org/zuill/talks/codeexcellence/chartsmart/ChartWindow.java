@@ -15,14 +15,14 @@ public class ChartWindow extends JPanel
 {
   private String jjD;
   private String __APARAM__Z;
-  private int    ct;
+  private int    count;
   /**
    * InitializeDrawArea
    */
   private void iHATEthisUckingJob()
   {
     this.setPreferredSize(new Dimension(600, 600));
-    if (ct == 406)
+    if (count == 406)
     {
       if (jjD.equals("rpfll"))
       {
@@ -57,7 +57,7 @@ public class ChartWindow extends JPanel
    */
   public void iniDS(int ct, String stjjDReq1205, boolean b)
   {
-    this.ct = ct;
+    this.count = ct;
     this.jjD = stjjDReq1205;
     if (b)
     {
@@ -76,7 +76,7 @@ public class ChartWindow extends JPanel
   private void DrawChart(Graphics g)
   {
     // Render chart background
-    if (ct == 406)
+    if (count == 406)
     {
       if (jjD.equals("rpfll"))
       {
@@ -111,7 +111,7 @@ public class ChartWindow extends JPanel
     String[] data = null;
     List<String> specialData = new ArrayList<String>();
     String[] data3point14 = new String[0];
-    if (ct == 406)
+    if (count == 406)
     {
       if (jjD.equals("rpfll"))
       {
@@ -140,7 +140,7 @@ public class ChartWindow extends JPanel
       }
     }
     Font font;
-    if (ct == 406)
+    if (count == 406)
     {
       if (jjD.equals("shareddisplay"))
       {
