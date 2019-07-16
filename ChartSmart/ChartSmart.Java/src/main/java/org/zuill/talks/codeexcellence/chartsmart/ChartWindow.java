@@ -13,14 +13,14 @@ import javax.swing.JPanel;
 
 public class ChartWindow extends JPanel
 {
-  private static final int _406 = 406;
+  private static final int COUNT_406 = 406;
   private String           jjD;
   private String           __APARAM__Z;
   private int              count;
   private void initializeDrawArea()
   {
     this.setPreferredSize(new Dimension(600, 600));
-    if (count == _406)
+    if (count == COUNT_406)
     {
       if (jjD.equals("rpfll"))
       {
