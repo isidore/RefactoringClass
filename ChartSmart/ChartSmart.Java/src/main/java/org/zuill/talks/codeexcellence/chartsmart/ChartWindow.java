@@ -43,9 +43,6 @@ public class ChartWindow extends JPanel
   private String   __APARAM__Z;
   private String[] horizontalLabelNames;
   private String[] verticalLabelNames;
-  /**
-   * John says that this is better than the old way
-   */
   private int      ct;
   private String   chartTitle;
   /**
