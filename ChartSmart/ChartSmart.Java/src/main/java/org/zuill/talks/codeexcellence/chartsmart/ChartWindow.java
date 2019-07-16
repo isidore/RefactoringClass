@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 public class ChartWindow extends JPanel
 {
   private static final String CHART_MODE_SHARED_DISPLAY = "shareddisplay";
-  private static final int    BAR_CHART         = 406;
+  private static final int    CHART_TYPE_BAR         = 406;
   private static final String SINGLE_MODE_CHART = "rpfll";
   private String              chartMode;
   private String              title;
@@ -20,7 +20,7 @@ public class ChartWindow extends JPanel
   private void initializeDrawArea()
   {
     this.setPreferredSize(new Dimension(600, 600));
-    if (chartType == BAR_CHART)
+    if (chartType == CHART_TYPE_BAR)
     {
       if (chartMode.equals(SINGLE_MODE_CHART))
       {
@@ -66,7 +66,7 @@ public class ChartWindow extends JPanel
   private void drawChart(Graphics graphics)
   {
     // Render chart background
-    if (chartType == BAR_CHART)
+    if (chartType == CHART_TYPE_BAR)
     {
       if (chartMode.equals(SINGLE_MODE_CHART))
       {
@@ -96,7 +96,7 @@ public class ChartWindow extends JPanel
     String[] data = null;
     List<String> specialData = new ArrayList<String>();
     String[] chartProperties = new String[0];
-    if (chartType == BAR_CHART)
+    if (chartType == CHART_TYPE_BAR)
     {
       if (chartMode.equals(SINGLE_MODE_CHART))
       {
@@ -125,7 +125,7 @@ public class ChartWindow extends JPanel
       }
     }
     Font font;
-    if (chartType == BAR_CHART)
+    if (chartType == CHART_TYPE_BAR)
     {
       if (chartMode.equals(CHART_MODE_SHARED_DISPLAY))
       {
