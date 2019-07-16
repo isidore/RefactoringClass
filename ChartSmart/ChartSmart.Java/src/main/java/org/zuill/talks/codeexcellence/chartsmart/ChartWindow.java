@@ -18,6 +18,9 @@ public class ChartWindow extends JPanel
   }
   private static class Container
   {
+    String[]     data            = null;
+    List<String> specialData     = new ArrayList<String>();
+    String[]     chartProperties = new String[0];
   }
   private static final int CHART_TYPE_BAR = 406;
   private String           chartMode;
