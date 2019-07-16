@@ -51,11 +51,11 @@ public class ChartWindow extends JPanel
   {
     return title;
   }
-  public void showChart(int chartType, String chartMode, boolean b)
+  public void showChart(int chartType, String chartMode, boolean shouldInitialize)
   {
     this.chartType = chartType;
     this.chartMode = chartMode;
-    if (b)
+    if (shouldInitialize)
     {
       initializeDrawArea();
     }
