@@ -29,14 +29,18 @@ public class ChartWindow extends JPanel
     }
     else
     {
-      if (chartMode.equals(ChartMode.SINGLE_DISPLAY))
-      {
-        title = "Pie Chart - Single Mode";
-      }
-      else
-      {
-        title = "Pie Chart - Compare Mode";
-      }
+      initializePieChart();
+    }
+  }
+  private void initializePieChart()
+  {
+    if (chartMode.equals(ChartMode.SINGLE_DISPLAY))
+    {
+      title = "Pie Chart - Single Mode";
+    }
+    else
+    {
+      title = "Pie Chart - Compare Mode";
     }
   }
   private void initializeBarChart()
