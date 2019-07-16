@@ -177,7 +177,7 @@ public class ChartWindow extends JPanel
   {
     if (chartType == CHART_TYPE_BAR)
     {
-      return initializeBarChartData();
+      return getBarChartData();
     }
     else
     {
@@ -195,7 +195,7 @@ public class ChartWindow extends JPanel
       return container;
     }
   }
-  private ChartData initializeBarChartData()
+  private ChartData getBarChartData()
   {
     ChartData container = new ChartData();
     if (chartMode.equals(ChartMode.SINGLE_DISPLAY))
