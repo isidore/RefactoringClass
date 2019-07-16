@@ -88,8 +88,8 @@ public class ChartWindow extends JPanel
       else
       {
         graphics.setColor(Color.BLUE);
-        int sc = 225;
-        graphics.fillOval(100, 100, sc, sc);
+        int diameter = 225;
+        graphics.fillOval(100, 100, diameter, diameter);
       }
     }
     String[] data = null;
