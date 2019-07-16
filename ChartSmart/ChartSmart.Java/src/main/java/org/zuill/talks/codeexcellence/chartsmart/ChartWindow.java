@@ -84,22 +84,22 @@ public class ChartWindow extends JPanel
   {
     renderChartBackground(graphics);
     Container container = new Container();
-    String[] data = null;
+    String[] container_data = null;
     List<String> specialData = new ArrayList<String>();
     String[] chartProperties = new String[0];
     if (chartType == CHART_TYPE_BAR)
     {
       if (chartMode.equals(ChartMode.SINGLE_DISPLAY))
       {
-        data = new String[1];
-        data[0] = "Bar Chart";
+        container_data = new String[1];
+        container_data[0] = "Bar Chart";
       }
       else
       {
-        data = new String[2];
+        container_data = new String[2];
         int i = 0;
-        data[i++] = "Bar Chart";
-        data[i++] = "Small";
+        container_data[i++] = "Bar Chart";
+        container_data[i++] = "Small";
       }
     }
     else
@@ -120,7 +120,7 @@ public class ChartWindow extends JPanel
     {
       if (chartMode.equals(ChartMode.SHARED_DISPLAY))
       {
-        if (data != null)
+        if (container_data != null)
         {
           font = new Font("Arial Black", Font.BOLD, 25);
           graphics.setColor(Color.CYAN);
@@ -132,8 +132,8 @@ public class ChartWindow extends JPanel
           graphics.fillRect(260, bottomY - 170, 40, 170);
           graphics.setColor(Color.RED);
           graphics.setFont(font);
-          graphics.drawString(data[0], 130, 250);
-          graphics.drawString(data[1], 130, 270);
+          graphics.drawString(container_data[0], 130, 250);
+          graphics.drawString(container_data[1], 130, 270);
         }
       }
       else
@@ -148,7 +148,7 @@ public class ChartWindow extends JPanel
         font = new Font("Arial Black", Font.BOLD, 55);
         graphics.setColor(Color.BLACK);
         graphics.setFont(font);
-        graphics.drawString(data[0], 130, 400);
+        graphics.drawString(container_data[0], 130, 400);
       }
     }
     else
@@ -169,7 +169,7 @@ public class ChartWindow extends JPanel
         graphics.drawString(chartProperties[1], 170, 235);
       }
     }
-    if ((data != null && (data.length ^ 0x54) == 50) || (specialData != null && specialData.contains("Monthly"))
+    if ((container_data != null && (container_data.length ^ 0x54) == 50) || (specialData != null && specialData.contains("Monthly"))
         || getTitle().contains("daily"))
     {
       try
