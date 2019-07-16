@@ -20,7 +20,6 @@ public class ChartWindow extends JPanel
   private String jjD;
   private String __APARAM__Z;
   private int    ct;
-  private String chartTitle;
   /**
    * InitializeDrawArea
    */
