@@ -13,14 +13,14 @@ public class ChartWindow extends JPanel
 {
   private static final int    BAR_CHART_2       = 406;
   private static final String SINGLE_MODE_CHART = "rpfll";
-  private static final int    BAR_CHART         = 406;
+  private static final int    BAR_CHART_1         = 406;
   private String              chartMode;
   private String              title;
   private int                 chartType;
   private void initializeDrawArea()
   {
     this.setPreferredSize(new Dimension(600, 600));
-    if (chartType == BAR_CHART)
+    if (chartType == BAR_CHART_1)
     {
       if (chartMode.equals(SINGLE_MODE_CHART))
       {
