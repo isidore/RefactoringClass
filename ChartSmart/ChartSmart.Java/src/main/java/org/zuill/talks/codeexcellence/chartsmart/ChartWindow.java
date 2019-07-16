@@ -112,7 +112,7 @@ public class ChartWindow extends JPanel
     Font font;
     if (chartType == CHART_TYPE_BAR)
     {
-      crap(graphics, chartData);
+      createBarChart(graphics, chartData);
     }
     else
     {
@@ -133,7 +133,7 @@ public class ChartWindow extends JPanel
       }
     }
   }
-  private void crap(Graphics graphics, ChartData chartData)
+  private void createBarChart(Graphics graphics, ChartData chartData)
   {
     Font font;
     if (chartMode.equals(ChartMode.SHARED_DISPLAY))
