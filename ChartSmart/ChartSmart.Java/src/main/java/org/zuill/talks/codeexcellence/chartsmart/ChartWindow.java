@@ -82,8 +82,7 @@ public class ChartWindow extends JPanel
     {
       if (chartMode.equals(SINGLE_MODE_CHART))
       {
-        Color bgcb = Color.BLUE;
-        graphics.setColor(bgcb);
+        graphics.setColor(Color.BLUE);
         graphics.fillOval(100, 100, 450, getHeight() - 150);
       }
       else
