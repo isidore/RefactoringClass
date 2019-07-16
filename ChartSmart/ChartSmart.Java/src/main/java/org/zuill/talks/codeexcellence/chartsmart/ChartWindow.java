@@ -16,6 +16,9 @@ public class ChartWindow extends JPanel
     private static final String SHARED_DISPLAY = "shareddisplay";
     private static final String SINGLE_DISPLAY = "rpfll";
   }
+  private static class Container
+  {
+  }
   private static final int CHART_TYPE_BAR = 406;
   private String           chartMode;
   private String           title;
