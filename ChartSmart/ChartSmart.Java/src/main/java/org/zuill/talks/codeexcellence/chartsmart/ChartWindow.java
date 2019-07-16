@@ -15,7 +15,7 @@ public class ChartWindow extends JPanel
 {
   private static final String JJD_RPFLL = "rpfll";
   private static final int    BAR_CHART = 406;
-  private String              jjD;
+  private String              chartMode;
   private String              title;
   private int                 chartType;
   private void initializeDrawArea()
@@ -23,7 +23,7 @@ public class ChartWindow extends JPanel
     this.setPreferredSize(new Dimension(600, 600));
     if (chartType == BAR_CHART)
     {
-      if (jjD.equals(JJD_RPFLL))
+      if (chartMode.equals(JJD_RPFLL))
       {
         title = "Bar Chart - Single Mode";
       }
@@ -34,7 +34,7 @@ public class ChartWindow extends JPanel
     }
     else
     {
-      if (jjD.equals(JJD_RPFLL))
+      if (chartMode.equals(JJD_RPFLL))
       {
         title = "Pie Chart - Single Mode";
       }
@@ -57,7 +57,7 @@ public class ChartWindow extends JPanel
   public void iniDS(int ct, String stjjDReq1205, boolean b)
   {
     this.chartType = ct;
-    this.jjD = stjjDReq1205;
+    this.chartMode = stjjDReq1205;
     if (b)
     {
       initializeDrawArea();
@@ -77,7 +77,7 @@ public class ChartWindow extends JPanel
     // Render chart background
     if (chartType == 406)
     {
-      if (jjD.equals(JJD_RPFLL))
+      if (chartMode.equals(JJD_RPFLL))
       {
         Color bgc = Color.RED;
         g.setColor(bgc);
@@ -91,7 +91,7 @@ public class ChartWindow extends JPanel
     }
     else
     {
-      if (jjD.equals(JJD_RPFLL))
+      if (chartMode.equals(JJD_RPFLL))
       {
         Color bgcb;
         bgcb = Color.BLUE;
@@ -112,7 +112,7 @@ public class ChartWindow extends JPanel
     String[] data3point14 = new String[0];
     if (chartType == 406)
     {
-      if (jjD.equals(JJD_RPFLL))
+      if (chartMode.equals(JJD_RPFLL))
       {
         data = new String[1];
         data[0] = "Bar Chart";
@@ -127,7 +127,7 @@ public class ChartWindow extends JPanel
     }
     else
     {
-      if (jjD.equals(JJD_RPFLL))
+      if (chartMode.equals(JJD_RPFLL))
       {
         specialData.add("Pie Chart");
       }
@@ -141,7 +141,7 @@ public class ChartWindow extends JPanel
     Font font;
     if (chartType == 406)
     {
-      if (jjD.equals("shareddisplay"))
+      if (chartMode.equals("shareddisplay"))
       {
         if (data != null)
         {
@@ -176,7 +176,7 @@ public class ChartWindow extends JPanel
     }
     else
     {
-      if (jjD.equals(JJD_RPFLL))
+      if (chartMode.equals(JJD_RPFLL))
       {
         font = new Font("Bookman Old Style", Font.BOLD, 55);
         g.setColor(Color.WHITE);
