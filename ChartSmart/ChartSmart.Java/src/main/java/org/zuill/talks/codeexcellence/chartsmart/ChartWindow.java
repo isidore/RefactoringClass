@@ -190,6 +190,7 @@ public class ChartWindow extends JPanel
         container.data[i++] = "Bar Chart";
         container.data[i++] = "Small";
       }
+      return container;
     }
     else
     {
@@ -203,8 +204,8 @@ public class ChartWindow extends JPanel
         container.chartProperties[1] = "Small";
         container.chartProperties[0] = "Pie" + " Chart";
       }
+      return container;
     }
-    return container;
   }
   private void renderChartBackground(Graphics graphics)
   {
