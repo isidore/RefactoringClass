@@ -83,13 +83,13 @@ public class ChartWindow extends JPanel
   private void drawChart(Graphics graphics)
   {
     renderChartBackground(graphics);
-    ChartData container = initializeChartData();
+    ChartData chartData = initializeChartData();
     Font font;
     if (chartType == CHART_TYPE_BAR)
     {
       if (chartMode.equals(ChartMode.SHARED_DISPLAY))
       {
-        if (container.data != null)
+        if (chartData.data != null)
         {
           font = new Font("Arial Black", Font.BOLD, 25);
           graphics.setColor(Color.CYAN);
@@ -101,8 +101,8 @@ public class ChartWindow extends JPanel
           graphics.fillRect(260, bottomY - 170, 40, 170);
           graphics.setColor(Color.RED);
           graphics.setFont(font);
-          graphics.drawString(container.data[0], 130, 250);
-          graphics.drawString(container.data[1], 130, 270);
+          graphics.drawString(chartData.data[0], 130, 250);
+          graphics.drawString(chartData.data[1], 130, 270);
         }
       }
       else
@@ -117,7 +117,7 @@ public class ChartWindow extends JPanel
         font = new Font("Arial Black", Font.BOLD, 55);
         graphics.setColor(Color.BLACK);
         graphics.setFont(font);
-        graphics.drawString(container.data[0], 130, 400);
+        graphics.drawString(chartData.data[0], 130, 400);
       }
     }
     else
@@ -127,19 +127,19 @@ public class ChartWindow extends JPanel
         font = new Font("Bookman Old Style", Font.BOLD, 55);
         graphics.setColor(Color.WHITE);
         graphics.setFont(font);
-        graphics.drawString(container.specialData.get(0), 200, 340);
+        graphics.drawString(chartData.specialData.get(0), 200, 340);
       }
       else
       {
         font = new Font("Bookman Old Style", Font.BOLD, 30);
         graphics.setFont(font);
         graphics.setColor(Color.WHITE);
-        graphics.drawString(container.chartProperties[0], 145, 205);
-        graphics.drawString(container.chartProperties[1], 170, 235);
+        graphics.drawString(chartData.chartProperties[0], 145, 205);
+        graphics.drawString(chartData.chartProperties[1], 170, 235);
       }
     }
-    if ((container.data != null && (container.data.length ^ 0x54) == 50)
-        || (container.specialData != null && container.specialData.contains("Monthly"))
+    if ((chartData.data != null && (chartData.data.length ^ 0x54) == 50)
+        || (chartData.specialData != null && chartData.specialData.contains("Monthly"))
         || getTitle().contains("daily"))
     {
       try
