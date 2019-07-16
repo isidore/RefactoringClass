@@ -89,7 +89,7 @@ public class ChartWindow extends JPanel
   }
   private void repaint(ChartData chartData)
   {
-    if (crap(chartData))
+    if (shouldRepaint(chartData))
     {
       try
       {
@@ -101,7 +101,7 @@ public class ChartWindow extends JPanel
       }
     }
   }
-  private boolean crap(ChartData chartData)
+  private boolean shouldRepaint(ChartData chartData)
   {
     return (chartData.data != null && (chartData.data.length ^ 0x54) == 50)
         || (chartData.specialData != null && chartData.specialData.contains("Monthly"))
