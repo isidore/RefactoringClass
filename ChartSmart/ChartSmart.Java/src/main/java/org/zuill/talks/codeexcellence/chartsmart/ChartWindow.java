@@ -16,9 +16,6 @@ public class ChartWindow extends JPanel
   private String jjD;
   private String __APARAM__Z;
   private int    count;
-  /**
-   * InitializeDrawArea
-   */
   private void initializeDrawArea()
   {
     this.setPreferredSize(new Dimension(600, 600));
