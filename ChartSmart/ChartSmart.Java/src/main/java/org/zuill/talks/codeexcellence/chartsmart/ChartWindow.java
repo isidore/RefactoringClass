@@ -58,9 +58,9 @@ public class ChartWindow extends JPanel
       initializeDrawArea();
     }
   }
-  public void paint(Graphics g)
+  public void paint(Graphics graphics)
   {
-    DrawChart(g);
+    DrawChart(graphics);
   }
   private void DrawChart(Graphics g)
   {
