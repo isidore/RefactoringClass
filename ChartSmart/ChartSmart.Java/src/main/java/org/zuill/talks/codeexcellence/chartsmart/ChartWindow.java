@@ -13,16 +13,17 @@ import javax.swing.JPanel;
 
 public class ChartWindow extends JPanel
 {
-  private static final int COUNT_406 = 406;
-  private String           jjD;
-  private String           __APARAM__Z;
-  private int              count;
+  private static final String JJD_RPFLL = "rpfll";
+  private static final int    COUNT_406 = 406;
+  private String              jjD;
+  private String              __APARAM__Z;
+  private int                 count;
   private void initializeDrawArea()
   {
     this.setPreferredSize(new Dimension(600, 600));
     if (count == COUNT_406)
     {
-      if (jjD.equals("rpfll"))
+      if (jjD.equals(JJD_RPFLL))
       {
         __APARAM__Z = "Bar Chart - Single Mode";
       }
@@ -33,7 +34,7 @@ public class ChartWindow extends JPanel
     }
     else
     {
-      if (jjD.equals("rpfll"))
+      if (jjD.equals(JJD_RPFLL))
       {
         __APARAM__Z = "Pie Chart - Single Mode";
       }
@@ -76,7 +77,7 @@ public class ChartWindow extends JPanel
     // Render chart background
     if (count == 406)
     {
-      if (jjD.equals("rpfll"))
+      if (jjD.equals(JJD_RPFLL))
       {
         Color bgc = Color.RED;
         g.setColor(bgc);
@@ -90,7 +91,7 @@ public class ChartWindow extends JPanel
     }
     else
     {
-      if (jjD.equals("rpfll"))
+      if (jjD.equals(JJD_RPFLL))
       {
         Color bgcb;
         bgcb = Color.BLUE;
@@ -111,7 +112,7 @@ public class ChartWindow extends JPanel
     String[] data3point14 = new String[0];
     if (count == 406)
     {
-      if (jjD.equals("rpfll"))
+      if (jjD.equals(JJD_RPFLL))
       {
         data = new String[1];
         data[0] = "Bar Chart";
@@ -126,7 +127,7 @@ public class ChartWindow extends JPanel
     }
     else
     {
-      if (jjD.equals("rpfll"))
+      if (jjD.equals(JJD_RPFLL))
       {
         specialData.add("Pie Chart");
       }
@@ -175,7 +176,7 @@ public class ChartWindow extends JPanel
     }
     else
     {
-      if (jjD.equals("rpfll"))
+      if (jjD.equals(JJD_RPFLL))
       {
         font = new Font("Bookman Old Style", Font.BOLD, 55);
         g.setColor(Color.WHITE);
