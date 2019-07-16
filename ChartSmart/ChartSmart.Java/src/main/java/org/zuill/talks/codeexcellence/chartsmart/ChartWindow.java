@@ -25,14 +25,7 @@ public class ChartWindow extends JPanel
     this.setPreferredSize(new Dimension(600, 600));
     if (chartType == CHART_TYPE_BAR)
     {
-      if (chartMode.equals(ChartMode.SINGLE_DISPLAY))
-      {
-        title = "Bar Chart - Single Mode";
-      }
-      else
-      {
-        title = "Bar" + " Chart - Compare Mode";
-      }
+      initializeBarChart();
     }
     else
     {
@@ -44,6 +37,17 @@ public class ChartWindow extends JPanel
       {
         title = "Pie Chart - Compare Mode";
       }
+    }
+  }
+  private void initializeBarChart()
+  {
+    if (chartMode.equals(ChartMode.SINGLE_DISPLAY))
+    {
+      title = "Bar Chart - Single Mode";
+    }
+    else
+    {
+      title = "Bar" + " Chart - Compare Mode";
     }
   }
   public ChartWindow()
