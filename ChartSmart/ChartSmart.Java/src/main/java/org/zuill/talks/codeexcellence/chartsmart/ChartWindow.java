@@ -84,35 +84,32 @@ public class ChartWindow extends JPanel
   {
     renderChartBackground(graphics);
     Container container = new Container();
-    String[] container_data = null;
-    List<String> container_specialData = new ArrayList<String>();
-    String[] container_chartProperties = new String[0];
     if (chartType == CHART_TYPE_BAR)
     {
       if (chartMode.equals(ChartMode.SINGLE_DISPLAY))
       {
-        container_data = new String[1];
-        container_data[0] = "Bar Chart";
+        container.data = new String[1];
+        container.data[0] = "Bar Chart";
       }
       else
       {
-        container_data = new String[2];
+        container.data = new String[2];
         int i = 0;
-        container_data[i++] = "Bar Chart";
-        container_data[i++] = "Small";
+        container.data[i++] = "Bar Chart";
+        container.data[i++] = "Small";
       }
     }
     else
     {
       if (chartMode.equals(ChartMode.SINGLE_DISPLAY))
       {
-        container_specialData.add("Pie Chart");
+        container.specialData.add("Pie Chart");
       }
       else
       {
-        container_chartProperties = new String[2];
-        container_chartProperties[1] = "Small";
-        container_chartProperties[0] = "Pie" + " Chart";
+        container.chartProperties = new String[2];
+        container.chartProperties[1] = "Small";
+        container.chartProperties[0] = "Pie" + " Chart";
       }
     }
     Font font;
@@ -120,7 +117,7 @@ public class ChartWindow extends JPanel
     {
       if (chartMode.equals(ChartMode.SHARED_DISPLAY))
       {
-        if (container_data != null)
+        if (container.data != null)
         {
           font = new Font("Arial Black", Font.BOLD, 25);
           graphics.setColor(Color.CYAN);
@@ -132,8 +129,8 @@ public class ChartWindow extends JPanel
           graphics.fillRect(260, bottomY - 170, 40, 170);
           graphics.setColor(Color.RED);
           graphics.setFont(font);
-          graphics.drawString(container_data[0], 130, 250);
-          graphics.drawString(container_data[1], 130, 270);
+          graphics.drawString(container.data[0], 130, 250);
+          graphics.drawString(container.data[1], 130, 270);
         }
       }
       else
@@ -148,7 +145,7 @@ public class ChartWindow extends JPanel
         font = new Font("Arial Black", Font.BOLD, 55);
         graphics.setColor(Color.BLACK);
         graphics.setFont(font);
-        graphics.drawString(container_data[0], 130, 400);
+        graphics.drawString(container.data[0], 130, 400);
       }
     }
     else
@@ -158,18 +155,19 @@ public class ChartWindow extends JPanel
         font = new Font("Bookman Old Style", Font.BOLD, 55);
         graphics.setColor(Color.WHITE);
         graphics.setFont(font);
-        graphics.drawString(container_specialData.get(0), 200, 340);
+        graphics.drawString(container.specialData.get(0), 200, 340);
       }
       else
       {
         font = new Font("Bookman Old Style", Font.BOLD, 30);
         graphics.setFont(font);
         graphics.setColor(Color.WHITE);
-        graphics.drawString(container_chartProperties[0], 145, 205);
-        graphics.drawString(container_chartProperties[1], 170, 235);
+        graphics.drawString(container.chartProperties[0], 145, 205);
+        graphics.drawString(container.chartProperties[1], 170, 235);
       }
     }
-    if ((container_data != null && (container_data.length ^ 0x54) == 50) || (container_specialData != null && container_specialData.contains("Monthly"))
+    if ((container.data != null && (container.data.length ^ 0x54) == 50)
+        || (container.specialData != null && container.specialData.contains("Monthly"))
         || getTitle().contains("daily"))
     {
       try
