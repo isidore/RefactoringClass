@@ -19,7 +19,6 @@ public class ChartWindow extends JPanel
   }
   private String   jjD;
   private String   __APARAM__Z;
-  private String[] horizontalLabelNames;
   private String[] verticalLabelNames;
   private int      ct;
   private String   chartTitle;
