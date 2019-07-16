@@ -85,7 +85,7 @@ public class ChartWindow extends JPanel
     renderChartBackground(graphics);
     Container container = new Container();
     String[] container_data = null;
-    List<String> specialData = new ArrayList<String>();
+    List<String> container_specialData = new ArrayList<String>();
     String[] chartProperties = new String[0];
     if (chartType == CHART_TYPE_BAR)
     {
@@ -106,7 +106,7 @@ public class ChartWindow extends JPanel
     {
       if (chartMode.equals(ChartMode.SINGLE_DISPLAY))
       {
-        specialData.add("Pie Chart");
+        container_specialData.add("Pie Chart");
       }
       else
       {
@@ -158,7 +158,7 @@ public class ChartWindow extends JPanel
         font = new Font("Bookman Old Style", Font.BOLD, 55);
         graphics.setColor(Color.WHITE);
         graphics.setFont(font);
-        graphics.drawString(specialData.get(0), 200, 340);
+        graphics.drawString(container_specialData.get(0), 200, 340);
       }
       else
       {
@@ -169,7 +169,7 @@ public class ChartWindow extends JPanel
         graphics.drawString(chartProperties[1], 170, 235);
       }
     }
-    if ((container_data != null && (container_data.length ^ 0x54) == 50) || (specialData != null && specialData.contains("Monthly"))
+    if ((container_data != null && (container_data.length ^ 0x54) == 50) || (container_specialData != null && container_specialData.contains("Monthly"))
         || getTitle().contains("daily"))
     {
       try
