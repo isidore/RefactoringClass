@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 
 public class ChartWindow extends JPanel
 {
-  private static final int BAR_CHART = 406;
+  private static final int    BAR_CHART         = 406;
   private static final String SINGLE_MODE_CHART = "rpfll";
   private String              chartMode;
   private String              title;
@@ -82,8 +82,7 @@ public class ChartWindow extends JPanel
     {
       if (chartMode.equals(SINGLE_MODE_CHART))
       {
-        Color bgcb;
-        bgcb = Color.BLUE;
+        Color bgcb = Color.BLUE;
         graphics.setColor(bgcb);
         graphics.fillOval(100, 100, 450, getHeight() - 150);
       }
