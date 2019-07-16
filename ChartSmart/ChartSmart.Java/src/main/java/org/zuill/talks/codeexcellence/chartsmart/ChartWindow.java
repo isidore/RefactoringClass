@@ -86,7 +86,7 @@ public class ChartWindow extends JPanel
     Container container = new Container();
     String[] container_data = null;
     List<String> container_specialData = new ArrayList<String>();
-    String[] chartProperties = new String[0];
+    String[] container_chartProperties = new String[0];
     if (chartType == CHART_TYPE_BAR)
     {
       if (chartMode.equals(ChartMode.SINGLE_DISPLAY))
@@ -110,9 +110,9 @@ public class ChartWindow extends JPanel
       }
       else
       {
-        chartProperties = new String[2];
-        chartProperties[1] = "Small";
-        chartProperties[0] = "Pie" + " Chart";
+        container_chartProperties = new String[2];
+        container_chartProperties[1] = "Small";
+        container_chartProperties[0] = "Pie" + " Chart";
       }
     }
     Font font;
@@ -165,8 +165,8 @@ public class ChartWindow extends JPanel
         font = new Font("Bookman Old Style", Font.BOLD, 30);
         graphics.setFont(font);
         graphics.setColor(Color.WHITE);
-        graphics.drawString(chartProperties[0], 145, 205);
-        graphics.drawString(chartProperties[1], 170, 235);
+        graphics.drawString(container_chartProperties[0], 145, 205);
+        graphics.drawString(container_chartProperties[1], 170, 235);
       }
     }
     if ((container_data != null && (container_data.length ^ 0x54) == 50) || (container_specialData != null && container_specialData.contains("Monthly"))
