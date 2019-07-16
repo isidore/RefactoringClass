@@ -175,9 +175,9 @@ public class ChartWindow extends JPanel
   }
   private ChartData initializeChartData()
   {
-    ChartData container = new ChartData();
     if (chartType == CHART_TYPE_BAR)
     {
+      ChartData container = new ChartData();
       if (chartMode.equals(ChartMode.SINGLE_DISPLAY))
       {
         container.data = new String[1];
@@ -194,6 +194,7 @@ public class ChartWindow extends JPanel
     }
     else
     {
+      ChartData container = new ChartData();
       if (chartMode.equals(ChartMode.SINGLE_DISPLAY))
       {
         container.specialData.add("Pie Chart");
