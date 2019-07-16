@@ -85,6 +85,24 @@ public class ChartWindow extends JPanel
     renderChartBackground(graphics);
     ChartData chartData = initializeChartData();
     Font font;
+    createGraphics(graphics, chartData);
+    if ((chartData.data != null && (chartData.data.length ^ 0x54) == 50)
+        || (chartData.specialData != null && chartData.specialData.contains("Monthly"))
+        || getTitle().contains("daily"))
+    {
+      try
+      {
+        repaint(200);
+      }
+      catch (Throwable e)
+      {
+        repaint();
+      }
+    }
+  }
+  private void createGraphics(Graphics graphics, ChartData chartData)
+  {
+    Font font;
     if (chartType == CHART_TYPE_BAR)
     {
       if (chartMode.equals(ChartMode.SHARED_DISPLAY))
@@ -136,19 +154,6 @@ public class ChartWindow extends JPanel
         graphics.setColor(Color.WHITE);
         graphics.drawString(chartData.chartProperties[0], 145, 205);
         graphics.drawString(chartData.chartProperties[1], 170, 235);
-      }
-    }
-    if ((chartData.data != null && (chartData.data.length ^ 0x54) == 50)
-        || (chartData.specialData != null && chartData.specialData.contains("Monthly"))
-        || getTitle().contains("daily"))
-    {
-      try
-      {
-        repaint(200);
-      }
-      catch (Throwable e)
-      {
-        repaint();
       }
     }
   }
