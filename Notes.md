@@ -40,7 +40,7 @@ Class Files
 
 chartsmart
 ``` Bash
- function start {\nclear;\ndate;\ncheck;\n}
+ function start { clear;date;check; }
  function check { ls -l ChartWindow*.class}
  function commit { git commit -a -m 'r rename'}
  function foo { echo "$@" }                
