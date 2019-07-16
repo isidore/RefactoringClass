@@ -181,19 +181,23 @@ public class ChartWindow extends JPanel
     }
     else
     {
-      ChartData container = new ChartData();
-      if (chartMode.equals(ChartMode.SINGLE_DISPLAY))
-      {
-        container.specialData.add("Pie Chart");
-      }
-      else
-      {
-        container.chartProperties = new String[2];
-        container.chartProperties[1] = "Small";
-        container.chartProperties[0] = "Pie" + " Chart";
-      }
-      return container;
+      return getPieChartData();
     }
+  }
+  private ChartData getPieChartData()
+  {
+    ChartData container = new ChartData();
+    if (chartMode.equals(ChartMode.SINGLE_DISPLAY))
+    {
+      container.specialData.add("Pie Chart");
+    }
+    else
+    {
+      container.chartProperties = new String[2];
+      container.chartProperties[1] = "Small";
+      container.chartProperties[0] = "Pie" + " Chart";
+    }
+    return container;
   }
   private ChartData getBarChartData()
   {
