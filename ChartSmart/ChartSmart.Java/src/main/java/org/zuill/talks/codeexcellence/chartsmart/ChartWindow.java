@@ -116,10 +116,10 @@ public class ChartWindow extends JPanel
     }
     else
     {
-      crap(graphics, chartData);
+      createPieChart(graphics, chartData);
     }
   }
-  private void crap(Graphics graphics, ChartData chartData)
+  private void createPieChart(Graphics graphics, ChartData chartData)
   {
     Font font;
     if (chartMode.equals(ChartMode.SINGLE_DISPLAY))
