@@ -16,7 +16,7 @@ public class ChartWindow extends JPanel
     private static final String SHARED_DISPLAY = "shareddisplay";
     private static final String SINGLE_DISPLAY = "rpfll";
   }
-  private static class Container
+  private static class ChartData
   {
     String[]     data            = null;
     List<String> specialData     = new ArrayList<String>();
@@ -83,7 +83,7 @@ public class ChartWindow extends JPanel
   private void drawChart(Graphics graphics)
   {
     renderChartBackground(graphics);
-    Container container = initializeChartData();
+    ChartData container = initializeChartData();
     Font font;
     if (chartType == CHART_TYPE_BAR)
     {
@@ -152,9 +152,9 @@ public class ChartWindow extends JPanel
       }
     }
   }
-  private Container initializeChartData()
+  private ChartData initializeChartData()
   {
-    Container container = new Container();
+    ChartData container = new ChartData();
     if (chartType == CHART_TYPE_BAR)
     {
       if (chartMode.equals(ChartMode.SINGLE_DISPLAY))
