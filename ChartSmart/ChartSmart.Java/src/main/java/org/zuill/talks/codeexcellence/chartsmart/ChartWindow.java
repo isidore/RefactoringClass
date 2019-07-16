@@ -13,7 +13,7 @@ public class ChartWindow extends JPanel
 {
   public static class ChartMode
   {
-    private static final String CHART_MODE_SHARED_DISPLAY = "shareddisplay";
+    private static final String SHARED_DISPLAY = "shareddisplay";
     private static final String CHART_MODE_SINGLE         = "rpfll";
   }
   private static final int CHART_TYPE_BAR = 406;
@@ -130,7 +130,7 @@ public class ChartWindow extends JPanel
     Font font;
     if (chartType == CHART_TYPE_BAR)
     {
-      if (chartMode.equals(ChartMode.CHART_MODE_SHARED_DISPLAY))
+      if (chartMode.equals(ChartMode.SHARED_DISPLAY))
       {
         if (data != null)
         {
