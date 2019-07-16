@@ -109,7 +109,6 @@ public class ChartWindow extends JPanel
   }
   private void createGraphics(Graphics graphics, ChartData chartData)
   {
-    Font font;
     if (chartType == CHART_TYPE_BAR)
     {
       createBarChart(graphics, chartData);
