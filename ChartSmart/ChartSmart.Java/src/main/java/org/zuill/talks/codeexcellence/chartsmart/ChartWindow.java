@@ -16,7 +16,6 @@ public class ChartWindow extends JPanel
 {
   private class Unit
   {
-    private double value;
   }
   private String   jjD;
   private String   __APARAM__Z;
