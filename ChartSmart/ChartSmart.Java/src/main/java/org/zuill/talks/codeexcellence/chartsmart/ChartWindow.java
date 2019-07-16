@@ -111,10 +111,6 @@ public class ChartWindow extends JPanel
   {
     return new Date().toString();
   }
-  /**
-  * 
-  * @param g
-  */
   private void DrawChart(Graphics g)
   {
     // Render chart background
