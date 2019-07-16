@@ -60,9 +60,9 @@ public class ChartWindow extends JPanel
   }
   public void paint(Graphics graphics)
   {
-    DrawChart(graphics);
+    drawChart(graphics);
   }
-  private void DrawChart(Graphics graphics)
+  private void drawChart(Graphics graphics)
   {
     // Render chart background
     if (chartType == BAR_CHART)
