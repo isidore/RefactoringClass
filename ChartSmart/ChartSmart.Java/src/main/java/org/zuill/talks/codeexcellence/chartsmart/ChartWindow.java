@@ -11,9 +11,10 @@ import javax.swing.JPanel;
 
 public class ChartWindow extends JPanel
 {
-  private static final int    BAR_CHART_2       = 406;
+  private static final int BAR_CHART = 406;
+  private static final int    BAR_CHART_2       = BAR_CHART;
   private static final String SINGLE_MODE_CHART = "rpfll";
-  private static final int    BAR_CHART_1         = 406;
+  private static final int    BAR_CHART_1         = BAR_CHART;
   private String              chartMode;
   private String              title;
   private int                 chartType;
@@ -101,7 +102,7 @@ public class ChartWindow extends JPanel
     String[] data = null;
     List<String> specialData = new ArrayList<String>();
     String[] data3point14 = new String[0];
-    if (chartType == 406)
+    if (chartType == BAR_CHART)
     {
       if (chartMode.equals(SINGLE_MODE_CHART))
       {
@@ -130,7 +131,7 @@ public class ChartWindow extends JPanel
       }
     }
     Font font;
-    if (chartType == 406)
+    if (chartType == BAR_CHART)
     {
       if (chartMode.equals("shareddisplay"))
       {
