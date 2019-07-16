@@ -76,7 +76,6 @@ public class ChartWindow extends JPanel
   }
   private void drawChart(Graphics graphics)
   {
-    // Render chart background
     renderChartBackground(graphics);
     String[] data = null;
     List<String> specialData = new ArrayList<String>();
