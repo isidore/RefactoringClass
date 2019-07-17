@@ -5,11 +5,13 @@ import static org.junit.Assert.assertEquals;
 import org.approvaltests.Approvals;
 import org.approvaltests.reporters.DelayedClipboardReporter;
 import org.approvaltests.reporters.UseReporter;
-import org.approvaltests.testcommitrevert.TestCommitRevertTest;
+import org.approvaltests.testcommitrevert.TestCommitRevertRunner;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 @UseReporter(DelayedClipboardReporter.class)
-public class ChartSmartTest extends TestCommitRevertTest
+@RunWith(TestCommitRevertRunner.class)
+public class ChartSmartTest //extends TestCommitRevertTest
 {
   @Test
   public void testMainWindow() throws Exception
