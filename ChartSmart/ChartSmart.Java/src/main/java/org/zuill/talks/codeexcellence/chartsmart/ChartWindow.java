@@ -5,9 +5,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 import java.util.Set;
 
 import javax.swing.JPanel;
@@ -186,22 +184,20 @@ public class ChartWindow extends JPanel
         g.fillOval(100, 100, sc, sc);
       }
     }
-    String[] data = null;
-    List<String> specialData = new ArrayList<String>();
-    String[] data3point14 = new String[0];
+    Data data = new Data();
     if (ct == 406)
     {
       if (jjD.equals("rpfll"))
       {
-        data = new String[1];
-        data[0] = "Bar Chart";
+        data.data = new String[1];
+        data.data[0] = "Bar Chart";
       }
       else
       {
-        data = new String[2];
+        data.data = new String[2];
         int i = 0;
-        data[i++] = "Bar Chart";
-        data[i++] = "Small";
+        data.data[i++] = "Bar Chart";
+        data.data[i++] = "Small";
       }
     }
     else
@@ -209,13 +205,13 @@ public class ChartWindow extends JPanel
       // BUG445: Org rep team missing req chart
       if (jjD.equals("rpfll"))
       {
-        specialData.add("Pie Chart");
+        data.specialData.add("Pie Chart");
       }
       else
       {
-        data3point14 = new String[2];
-        data3point14[1] = "Small";
-        data3point14[0] = "Pie" + " Chart";
+        data.data3point14 = new String[2];
+        data.data3point14[1] = "Small";
+        data.data3point14[0] = "Pie" + " Chart";
       }
     }
     Font font;
@@ -223,15 +219,15 @@ public class ChartWindow extends JPanel
     {
       if (jjD.equals("shareddisplay"))
       {
-        if (data != null)
+        if (data.data != null)
         {
-          if (data == null)
+          if (data.data == null)
           {
             // get the defatauls data
-            data = new String[5];
-            data[0] = "Sally";
-            data[1] = System.getProperty("osname");
-            data[2] = tmStmp();
+            data.data = new String[5];
+            data.data[0] = "Sally";
+            data.data[1] = System.getProperty("osname");
+            data.data[2] = tmStmp();
           }
           font = new Font("Arial Black", Font.BOLD, 25);
           g.setColor(Color.CYAN);
@@ -244,8 +240,8 @@ public class ChartWindow extends JPanel
           g.fillRect(260, bottomY - 170, 40, 170);
           g.setColor(Color.RED);
           g.setFont(font);
-          g.drawString(data[0], 130, 250);
-          g.drawString(data[1], 130, 270);
+          g.drawString(data.data[0], 130, 250);
+          g.drawString(data.data[1], 130, 270);
         }
       }
       else
@@ -260,7 +256,7 @@ public class ChartWindow extends JPanel
         font = new Font("Arial Black", Font.BOLD, 55);
         g.setColor(Color.BLACK);
         g.setFont(font);
-        g.drawString(data[0], 130, 400);
+        g.drawString(data.data[0], 130, 400);
       }
     }
     else
@@ -270,7 +266,7 @@ public class ChartWindow extends JPanel
         font = new Font("Bookman Old Style", Font.BOLD, 55);
         g.setColor(Color.WHITE);
         g.setFont(font);
-        g.drawString(specialData.get(0), 200, 340);
+        g.drawString(data.specialData.get(0), 200, 340);
       }
       else
       {
@@ -284,7 +280,7 @@ public class ChartWindow extends JPanel
         //                  otherData = GetDefaultData();
         //                  StringBuilder x = new StringBuilder(50000);
         //                  for (int i = 0; i < 20; i++)
-        g.drawString(data3point14[0], 145, 205);
+        g.drawString(data.data3point14[0], 145, 205);
         //                  {
         //                      x.Append(char.ToUpper(otherData[i]));
         //                  }
@@ -292,11 +288,11 @@ public class ChartWindow extends JPanel
         //              boundingRect = new RectangleF(50, 100, 320, 320);
         //              g.DrawString(otherData, new Font("Cooper Black", 40), new SolidBrush(Color.White), boundingRect, stringFormat);
         //          }
-        g.drawString(data3point14[1], 170, 235);
+        g.drawString(data.data3point14[1], 170, 235);
       }
     } // Else
-    if ((data != null && (data.length ^ 0x54) == 50) || (specialData != null && specialData.contains("Monthly"))
-        || getTitle().contains("daily"))
+    if ((data.data != null && (data.data.length ^ 0x54) == 50)
+        || (data.specialData != null && data.specialData.contains("Monthly")) || getTitle().contains("daily"))
     {
       try
       {
