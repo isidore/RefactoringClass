@@ -78,11 +78,7 @@ public class ChartWindow extends JPanel
     }
   }
   private Unit defaultUnits;
-  /**
-   * graphLayout
-   * @return landscape or protrait
-   */
-
+  
   public ChartWindow()
   {
   }
