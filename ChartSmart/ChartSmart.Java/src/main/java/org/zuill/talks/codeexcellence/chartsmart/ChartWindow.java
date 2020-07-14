@@ -82,7 +82,7 @@ public class ChartWindow extends JPanel
   private void drawChart(Graphics graphics)
   {
     renderChartBackground(graphics);
-    MoreChartDetails moreChartDetails = new MoreChartDetails().invoke();
+    StringGetter moreChartDetails = new StringGetter().invoke();
     String[] data = moreChartDetails.getData();
     List<String> specialData = moreChartDetails.getSpecialData();
     String[] data3point14 = moreChartDetails.getData3point14();
@@ -195,7 +195,7 @@ public class ChartWindow extends JPanel
     }
   }
 
-  private class MoreChartDetails {
+  private class StringGetter {
     private String[] data;
     private List<String> specialData;
     private String[] data3point14;
@@ -212,7 +212,7 @@ public class ChartWindow extends JPanel
       return data3point14;
     }
 
-    public MoreChartDetails invoke() {
+    public StringGetter invoke() {
       data = null;
       specialData = new ArrayList<String>();
       data3point14 = new String[0];
