@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 
 public class ChartWindow extends JPanel
 {
-  public static final int CHART_ID_406 = 406;
+  public static final int BAR_CHART_ID = 406;
   public static final String JJD_RPFLL = "rpfll";
   private String   jjD;
   private String chartTitle;
@@ -23,7 +23,7 @@ public class ChartWindow extends JPanel
   private void initializeDrawArea()
   {
     this.setPreferredSize(new Dimension(600, 600));
-    if (chartId == CHART_ID_406)
+    if (chartId == BAR_CHART_ID)
     {
       if (jjD.equals(JJD_RPFLL))
       {
@@ -78,7 +78,7 @@ public class ChartWindow extends JPanel
   private void DrawChart(Graphics g)
   {
     // Render chart background
-    if (chartId == CHART_ID_406)
+    if (chartId == BAR_CHART_ID)
     {
       if (jjD.equals(JJD_RPFLL))
       {
@@ -113,7 +113,7 @@ public class ChartWindow extends JPanel
     String[] data = null;
     List<String> specialData = new ArrayList<String>();
     String[] data3point14 = new String[0];
-    if (chartId == CHART_ID_406)
+    if (chartId == BAR_CHART_ID)
     {
       String barChart = "Bar Chart";
       if (jjD.equals(JJD_RPFLL))
@@ -143,7 +143,7 @@ public class ChartWindow extends JPanel
       }
     }
     Font font;
-    if (chartId == CHART_ID_406)
+    if (chartId == BAR_CHART_ID)
     {
       if (jjD.equals("shareddisplay"))
       {
