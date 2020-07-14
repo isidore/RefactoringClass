@@ -60,10 +60,7 @@ public class ChartWindow extends JPanel
   {
     return __APARAM__Z;
   }
-  private Unit horizontalNaming()
-  {
-    return new Unit();
-  }
+
   /**
    * Shows the chart
    */
