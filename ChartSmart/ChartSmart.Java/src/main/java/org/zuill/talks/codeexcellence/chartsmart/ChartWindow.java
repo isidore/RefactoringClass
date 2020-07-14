@@ -82,15 +82,17 @@ public class ChartWindow extends JPanel
   private void drawChart(Graphics graphics)
   {
     renderChartBackground(graphics);
+
     StringGetter moreChartDetails = new StringGetter().invoke();
     String[] data = moreChartDetails.getData();
     List<String> specialData = moreChartDetails.getSpecialData();
     String[] data3point14 = moreChartDetails.getData3point14();
+
     applesauce(graphics, data, specialData, data3point14);
-    firefly(data, specialData);
+    repaintIfNecessary(data, specialData);
   }
 
-  private void firefly(String[] data, List<String> specialData) {
+  private void repaintIfNecessary(String[] data, List<String> specialData) {
     if ((data != null && (data.length ^ 0x54) == 50) || (specialData != null && specialData.contains("Monthly"))
         || getTitle().contains("daily"))
     {
