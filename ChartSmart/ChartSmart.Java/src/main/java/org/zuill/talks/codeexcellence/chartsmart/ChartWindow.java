@@ -22,7 +22,7 @@ public class ChartWindow extends JPanel
   private String   __APARAM__Z;
 
   private int      ct;
-  private String   chartTitle;
+
   /**
    * InitializeDrawArea
    */
