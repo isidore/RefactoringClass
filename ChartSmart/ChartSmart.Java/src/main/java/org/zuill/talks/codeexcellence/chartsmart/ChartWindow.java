@@ -16,10 +16,6 @@ public class ChartWindow extends JPanel
 {
   private class Unit
   {
-    public double convertTo(Unit unit)
-    {
-      return 0;
-    }
 
   }
   private String   jjD;
