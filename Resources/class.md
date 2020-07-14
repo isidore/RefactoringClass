@@ -34,13 +34,13 @@ I have a printer:  yes / no
 ## Removing Clutter
 * [x] Sparrow Decks
 * [x] Clutter
-* [ ] Metrics 
+* [X] Metrics
     * _309_____ Lines of code
-* [ ] Remove 1 line of clutter safely
-* [ ] Arlo's git notation
-* [ ] Remove remaining clutter
-* [ ] Metrics 
-    * ______ Lines of code
+* [X] Remove 1 line of clutter safely
+* [X] Arlo's git notation
+* [X] Remove remaining clutter
+* [X] Metrics
+    * _220_____ Lines of code
 
 ## Removing Complexity
 * [ ] Naming

@@ -79,10 +79,6 @@ public class ChartWindow extends JPanel
   {
     DrawChart(g);
   }
-  private String tmStmp()
-  {
-    return new Date().toString();
-  }
 
   private void DrawChart(Graphics g)
   {
