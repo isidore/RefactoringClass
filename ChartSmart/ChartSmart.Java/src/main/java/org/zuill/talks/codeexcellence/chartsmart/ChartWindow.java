@@ -58,7 +58,7 @@ public class ChartWindow extends JPanel
   /**
    * Shows the chart
    */
-  public void iniDS(int ct, String stjjDReq1205, boolean b)
+  public void showChart(int ct, String stjjDReq1205, boolean b)
   {
     this.ct = ct;
     this.jjD = stjjDReq1205;
