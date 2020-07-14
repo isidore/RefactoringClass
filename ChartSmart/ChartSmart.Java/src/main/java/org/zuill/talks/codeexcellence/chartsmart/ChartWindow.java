@@ -109,7 +109,6 @@ public class ChartWindow extends JPanel
   {
     this.ct = ct;
     this.jjD = stjjDReq1205;
-    // Changed by Sally 2/14        
     if (b)
     {
       iHATEthisUckingJob();
