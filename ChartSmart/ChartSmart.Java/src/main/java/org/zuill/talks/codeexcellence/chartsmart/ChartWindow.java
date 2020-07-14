@@ -22,10 +22,6 @@ public class ChartWindow extends JPanel
       return 0;
     }
 
-    public void setValue(double v1)
-    {
-      this.value = v1;
-    }
     public double getValue()
     {
       return value;
