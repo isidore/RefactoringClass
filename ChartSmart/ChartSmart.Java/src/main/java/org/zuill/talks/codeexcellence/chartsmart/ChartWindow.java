@@ -15,6 +15,7 @@ public class ChartWindow extends JPanel
 {
   public static final int BAR_CHART_ID = 406;
   public static final String SINGLE_MODE = "rpfll";
+  public static final String SHARED_DISPLAY = "shareddisplay";
   private String chartSubtype;
   private String chartTitle;
 
@@ -143,7 +144,7 @@ public class ChartWindow extends JPanel
     Font font;
     if (chartId == BAR_CHART_ID)
     {
-      if (chartSubtype.equals("shareddisplay"))
+      if (chartSubtype.equals(SHARED_DISPLAY))
       {
         if (data != null)
         {
