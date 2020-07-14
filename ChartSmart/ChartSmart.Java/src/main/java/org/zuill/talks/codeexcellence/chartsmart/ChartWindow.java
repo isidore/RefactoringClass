@@ -186,11 +186,11 @@ public class ChartWindow extends JPanel
     }
     else
     {
-      renderSomethingElse(graphics);
+      renderPieChartBackground(graphics);
     }
   }
 
-  private void renderSomethingElse(Graphics graphics) {
+  private void renderPieChartBackground(Graphics graphics) {
     if (chartMode.equals(Modes.SINGLE))
     {
       Color blue;
