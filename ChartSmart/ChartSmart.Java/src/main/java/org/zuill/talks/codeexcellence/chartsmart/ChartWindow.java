@@ -14,9 +14,9 @@ import javax.swing.JPanel;
 public class ChartWindow extends JPanel
 {
   public static final int CT_STUFF_406 = 406;
-  public static final String RPFLL = "rpfll";
+  public static final String JJD_RPFLL = "rpfll";
   private String   jjD;
-  private String chartType;
+  private String chartTitle;
 
   private int      ct;
 
@@ -25,24 +25,24 @@ public class ChartWindow extends JPanel
     this.setPreferredSize(new Dimension(600, 600));
     if (ct == CT_STUFF_406)
     {
-      if (jjD.equals(RPFLL))
+      if (jjD.equals(JJD_RPFLL))
       {
-        chartType = "Bar Chart - Single Mode";
+        chartTitle = "Bar Chart - Single Mode";
       }
       else
       {
-        chartType = "Bar" + " Chart - Compare Mode";
+        chartTitle = "Bar" + " Chart - Compare Mode";
       }
     }
     else
     {
-      if (jjD.equals(RPFLL))
+      if (jjD.equals(JJD_RPFLL))
       {
-        chartType = "Pie Chart - Single Mode";
+        chartTitle = "Pie Chart - Single Mode";
       }
       else
       {
-        chartType = "Pie Chart - Compare Mode";
+        chartTitle = "Pie Chart - Compare Mode";
       }
     }
   }
@@ -52,7 +52,7 @@ public class ChartWindow extends JPanel
   }
   public String getTitle()
   {
-    return chartType;
+    return chartTitle;
   }
 
   /**
@@ -83,7 +83,7 @@ public class ChartWindow extends JPanel
     // Render chart background
     if (ct == CT_STUFF_406)
     {
-      if (jjD.equals(RPFLL))
+      if (jjD.equals(JJD_RPFLL))
       {
         Color bgc = Color.RED;
         g.setColor(bgc);
@@ -97,7 +97,7 @@ public class ChartWindow extends JPanel
     }
     else
     {
-      if (jjD.equals(RPFLL))
+      if (jjD.equals(JJD_RPFLL))
       {
         Color bgcb;
         bgcb = Color.BLUE;
@@ -118,7 +118,7 @@ public class ChartWindow extends JPanel
     String[] data3point14 = new String[0];
     if (ct == CT_STUFF_406)
     {
-      if (jjD.equals(RPFLL))
+      if (jjD.equals(JJD_RPFLL))
       {
         data = new String[1];
         data[0] = "Bar Chart";
@@ -133,7 +133,7 @@ public class ChartWindow extends JPanel
     }
     else
     {
-      if (jjD.equals(RPFLL))
+      if (jjD.equals(JJD_RPFLL))
       {
         specialData.add("Pie Chart");
       }
@@ -182,7 +182,7 @@ public class ChartWindow extends JPanel
     }
     else
     {
-      if (jjD.equals(RPFLL))
+      if (jjD.equals(JJD_RPFLL))
       {
         font = new Font("Bookman Old Style", Font.BOLD, 55);
         g.setColor(Color.WHITE);
