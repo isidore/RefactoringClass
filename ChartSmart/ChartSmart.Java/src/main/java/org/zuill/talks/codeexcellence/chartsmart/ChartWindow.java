@@ -113,7 +113,6 @@ public class ChartWindow extends JPanel
   @Override
   public Set<AWTKeyStroke> getFocusTraversalKeys(int id)
   {
-    // TODO Auto-generated method stub
     return super.getFocusTraversalKeys(id);
   }
 
@@ -123,7 +122,6 @@ public class ChartWindow extends JPanel
   }
   private String tmStmp()
   {
-    // TODO Auto-generated method stub
     return new Date().toString();
   }
   /**
