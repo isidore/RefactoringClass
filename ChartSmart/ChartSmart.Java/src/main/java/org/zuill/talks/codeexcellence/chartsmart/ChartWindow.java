@@ -55,10 +55,10 @@ public class ChartWindow extends JPanel
     return chartTitle;
   }
 
-  public void showChart(int ct, String stjjDReq1205, boolean initDrawArea)
+  public void showChart(int ct, String jjD, boolean initDrawArea)
   {
     this.ct = ct;
-    this.jjD = stjjDReq1205;
+    this.jjD = jjD;
     if (initDrawArea)
     {
       initializeDrawArea();
