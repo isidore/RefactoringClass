@@ -186,19 +186,23 @@ public class ChartWindow extends JPanel
     }
     else
     {
-      if (chartMode.equals(Modes.SINGLE))
-      {
-        Color blue;
-        blue = Color.BLUE;
-        graphics.setColor(blue);
-        graphics.fillOval(100, 100, 450, getHeight() - 150);
-      }
-      else
-      {
-        graphics.setColor(Color.BLUE);
-        int sc = (int) ((double) 405 - (float) 90 * 2);
-        graphics.fillOval(100, 100, sc, sc);
-      }
+      renderSomethingElse(graphics);
+    }
+  }
+
+  private void renderSomethingElse(Graphics graphics) {
+    if (chartMode.equals(Modes.SINGLE))
+    {
+      Color blue;
+      blue = Color.BLUE;
+      graphics.setColor(blue);
+      graphics.fillOval(100, 100, 450, getHeight() - 150);
+    }
+    else
+    {
+      graphics.setColor(Color.BLUE);
+      int sc = (int) ((double) 405 - (float) 90 * 2);
+      graphics.fillOval(100, 100, sc, sc);
     }
   }
 
