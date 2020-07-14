@@ -88,7 +88,7 @@ public class ChartWindow extends JPanel
     List<String> specialData = moreChartDetails.getSpecialData();
     String[] data3point14 = moreChartDetails.getData3point14();
 
-    applesauce(graphics, data, specialData, data3point14);
+    drawChartWithData(graphics, data, specialData, data3point14);
     repaintIfNecessary(data, specialData);
   }
 
@@ -107,7 +107,7 @@ public class ChartWindow extends JPanel
     }
   }
 
-  private void applesauce(Graphics graphics, String[] data, List<String> specialData, String[] data3point14) {
+  private void drawChartWithData(Graphics graphics, String[] data, List<String> specialData, String[] data3point14) {
     Font font;
     if (chartId == BAR_CHART_ID)
     {
