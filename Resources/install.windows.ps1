@@ -18,7 +18,10 @@ choco install -y notepadplusplus beyondcompare jdk8 intellijidea maven
 
 # Clone repo
 & "C:\Program Files\Git\cmd\git.exe" clone https://github.com/isidore/RefactoringClass.git C:\Code\RefactoringClass
-
+& "C:\Program Files\Git\cmd\git.exe" clone https://github.com/LearnWithLlew/KeyboardShortcutKatas.java.git C:\Code\KeyboardShortcutKatas
+& "C:\Program Files\Git\cmd\git.exe" clone https://github.com/LearnWithLlew/DuplicationColoringBook.git C:\Code\DuplicationColoringBook
+& "C:\Program Files\Git\cmd\git.exe" clone https://github.com/LearnWithLlew/DuplicationKata.java.git C:\Code\DuplicationKata
+## Todo: Add early returns 
 
 #Set desktop background image
  set-itemproperty -path "HKCU:Control Panel\Desktop" -name WallPaper -value c:\Code\TestingLegacyCodeCourse.cpp\Resources\desktop_background_dark.png
