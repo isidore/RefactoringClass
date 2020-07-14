@@ -122,10 +122,7 @@ public class ChartWindow extends JPanel
     Font font;
     if (chartMode.equals(Modes.SINGLE))
     {
-      font = new Font("Bookman Old Style", Font.BOLD, 55);
-      graphics.setColor(Color.WHITE);
-      graphics.setFont(font);
-      graphics.drawString(specialData.get(0), 200, 340);
+      newCoolMethod(graphics, "Bookman Old Style", Color.WHITE, specialData.get(0), 200, 340);
     }
     else
     {
@@ -135,6 +132,14 @@ public class ChartWindow extends JPanel
       graphics.drawString(data3point14[0], 145, 205);
       graphics.drawString(data3point14[1], 170, 235);
     }
+  }
+
+  private void newCoolMethod(Graphics graphics, String s, Color white, String s2, int i, int i2) {
+    Font font;
+    font = new Font(s, Font.BOLD, 55);
+    graphics.setColor(white);
+    graphics.setFont(font);
+    graphics.drawString(s2, i, i2);
   }
 
   private void drawBarChartWithData(Graphics graphics, String[] data) {
@@ -166,10 +171,7 @@ public class ChartWindow extends JPanel
       graphics.fillRect(262, bottomY - 300, 75, 300);
       graphics.fillRect(337, bottomY - 250, 75, 250);
       graphics.fillRect(412, bottomY - 340, 75, 340);
-      font = new Font("Arial Black", Font.BOLD, 55);
-      graphics.setColor(Color.BLACK);
-      graphics.setFont(font);
-      graphics.drawString(data[0], 130, 400);
+      newCoolMethod(graphics, "Arial Black", Color.BLACK, data[0], 130, 400);
     }
   }
 
