@@ -82,36 +82,7 @@ public class ChartWindow extends JPanel
   private void DrawChart(Graphics graphics)
   {
     // Render chart background
-    if (chartId == BAR_CHART_ID)
-    {
-      if (chartMode.equals(Modes.SINGLE))
-      {
-        Color red = Color.RED;
-        graphics.setColor(red);
-        graphics.fillRect(100, 90, getWidth() - 200, 420);
-      }
-      else
-      {
-        graphics.setColor(Color.BLACK);
-        graphics.fillRect(95, 95, 210, 210);
-      }
-    }
-    else
-    {
-      if (chartMode.equals(Modes.SINGLE))
-      {
-        Color blue;
-        blue = Color.BLUE;
-        graphics.setColor(blue);
-        graphics.fillOval(100, 100, 450, getHeight() - 150);
-      }
-      else
-      {
-        graphics.setColor(Color.BLUE);
-        int sc = (int) ((double) 405 - (float) 90 * 2);
-        graphics.fillOval(100, 100, sc, sc);
-      }
-    }
+    barChart(graphics);
     String[] data = null;
     List<String> specialData = new ArrayList<String>();
     String[] data3point14 = new String[0];
@@ -208,6 +179,39 @@ public class ChartWindow extends JPanel
       catch (Throwable e)
       {
         repaint();
+      }
+    }
+  }
+
+  private void barChart(Graphics graphics) {
+    if (chartId == BAR_CHART_ID)
+    {
+      if (chartMode.equals(Modes.SINGLE))
+      {
+        Color red = Color.RED;
+        graphics.setColor(red);
+        graphics.fillRect(100, 90, getWidth() - 200, 420);
+      }
+      else
+      {
+        graphics.setColor(Color.BLACK);
+        graphics.fillRect(95, 95, 210, 210);
+      }
+    }
+    else
+    {
+      if (chartMode.equals(Modes.SINGLE))
+      {
+        Color blue;
+        blue = Color.BLUE;
+        graphics.setColor(blue);
+        graphics.fillOval(100, 100, 450, getHeight() - 150);
+      }
+      else
+      {
+        graphics.setColor(Color.BLUE);
+        int sc = (int) ((double) 405 - (float) 90 * 2);
+        graphics.fillOval(100, 100, sc, sc);
       }
     }
   }
