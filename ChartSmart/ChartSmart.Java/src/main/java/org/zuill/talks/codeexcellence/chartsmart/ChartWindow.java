@@ -16,7 +16,7 @@ public class ChartWindow extends JPanel
   public static final int BAR_CHART_ID = 406;
 
   public static class Modes {
-    public static final String SINGLE_MODE = "rpfll";
+    public static final String SINGLE = "rpfll";
     public static final String SHARED_DISPLAY_MODE = "shareddisplay";
   }
 
@@ -29,7 +29,7 @@ public class ChartWindow extends JPanel
     this.setPreferredSize(new Dimension(600, 600));
     if (chartId == BAR_CHART_ID)
     {
-      if (chartMode.equals(Modes.SINGLE_MODE))
+      if (chartMode.equals(Modes.SINGLE))
       {
         chartTitle = "Bar Chart - Single Mode";
       }
@@ -40,7 +40,7 @@ public class ChartWindow extends JPanel
     }
     else
     {
-      if (chartMode.equals(Modes.SINGLE_MODE))
+      if (chartMode.equals(Modes.SINGLE))
       {
         chartTitle = "Pie Chart - Single Mode";
       }
@@ -84,7 +84,7 @@ public class ChartWindow extends JPanel
     // Render chart background
     if (chartId == BAR_CHART_ID)
     {
-      if (chartMode.equals(Modes.SINGLE_MODE))
+      if (chartMode.equals(Modes.SINGLE))
       {
         Color red = Color.RED;
         graphics.setColor(red);
@@ -98,7 +98,7 @@ public class ChartWindow extends JPanel
     }
     else
     {
-      if (chartMode.equals(Modes.SINGLE_MODE))
+      if (chartMode.equals(Modes.SINGLE))
       {
         Color blue;
         blue = Color.BLUE;
@@ -118,7 +118,7 @@ public class ChartWindow extends JPanel
     if (chartId == BAR_CHART_ID)
     {
       String barChart = "Bar Chart";
-      if (chartMode.equals(Modes.SINGLE_MODE))
+      if (chartMode.equals(Modes.SINGLE))
       {
         data = new String[1];
         data[0] = barChart;
@@ -133,7 +133,7 @@ public class ChartWindow extends JPanel
     }
     else
     {
-      if (chartMode.equals(Modes.SINGLE_MODE))
+      if (chartMode.equals(Modes.SINGLE))
       {
         specialData.add("Pie Chart");
       }
@@ -182,7 +182,7 @@ public class ChartWindow extends JPanel
     }
     else
     {
-      if (chartMode.equals(Modes.SINGLE_MODE))
+      if (chartMode.equals(Modes.SINGLE))
       {
         font = new Font("Bookman Old Style", Font.BOLD, 55);
         graphics.setColor(Color.WHITE);
