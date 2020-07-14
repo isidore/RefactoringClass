@@ -89,6 +89,10 @@ public class ChartWindow extends JPanel
     String[] data3point14 = moreChartDetails.getData3point14();
     Font font;
     applesauce(graphics, data, specialData, data3point14);
+    firefly(data, specialData);
+  }
+
+  private void firefly(String[] data, List<String> specialData) {
     if ((data != null && (data.length ^ 0x54) == 50) || (specialData != null && specialData.contains("Monthly"))
         || getTitle().contains("daily"))
     {
