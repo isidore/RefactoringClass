@@ -108,7 +108,6 @@ public class ChartWindow extends JPanel
   }
 
   private void drawChartWithData(Graphics graphics, String[] data, List<String> specialData, String[] data3point14) {
-    Font font;
     if (chartId == BAR_CHART_ID)
     {
       adventures(graphics, data);
