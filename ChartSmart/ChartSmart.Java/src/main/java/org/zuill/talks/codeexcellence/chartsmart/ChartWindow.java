@@ -87,7 +87,6 @@ public class ChartWindow extends JPanel
     String[] data = moreChartDetails.getData();
     List<String> specialData = moreChartDetails.getSpecialData();
     String[] data3point14 = moreChartDetails.getData3point14();
-    Font font;
     applesauce(graphics, data, specialData, data3point14);
     firefly(data, specialData);
   }
