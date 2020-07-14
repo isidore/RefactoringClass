@@ -32,10 +32,10 @@ I have a printer:  yes / no
         * [ ] Mob Timer Recap slides
 
 ## Removing Clutter
-* [ ] Sparrow Decks
-* [ ] Clutter
+* [x] Sparrow Decks
+* [x] Clutter
 * [ ] Metrics 
-    * ______ Lines of code
+    * _309_____ Lines of code
 * [ ] Remove 1 line of clutter safely
 * [ ] Arlo's git notation
 * [ ] Remove remaining clutter
