@@ -115,16 +115,17 @@ public class ChartWindow extends JPanel
     String[] data3point14 = new String[0];
     if (chartId == CHART_ID_406)
     {
+      String barChart = "Bar Chart";
       if (jjD.equals(JJD_RPFLL))
       {
         data = new String[1];
-        data[0] = "Bar Chart";
+        data[0] = barChart;
       }
       else
       {
         data = new String[2];
         int i = 0;
-        data[i++] = "Bar Chart";
+        data[i++] = barChart;
         data[i++] = "Small";
       }
     }
