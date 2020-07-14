@@ -119,7 +119,6 @@ public class ChartWindow extends JPanel
   }
 
   private void drawPieChartWithData(Graphics graphics, List<String> specialData, String[] data3point14) {
-    Font font;
     if (chartMode.equals(Modes.SINGLE))
     {
       newCoolMethod(graphics, "Bookman Old Style", Color.WHITE, specialData.get(0), 200, 340);
