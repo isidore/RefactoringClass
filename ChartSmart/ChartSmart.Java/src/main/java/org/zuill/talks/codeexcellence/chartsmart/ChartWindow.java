@@ -104,9 +104,8 @@ public class ChartWindow extends JPanel
       else
       {
         graphics.setColor(Color.BLUE);
-        double isq = 405;
         float padding = 90;
-        int sc = (int) (isq - padding * 2);
+        int sc = (int) ((double) 405 - padding * 2);
         graphics.fillOval(100, 100, sc, sc);
       }
     }
