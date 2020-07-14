@@ -22,10 +22,7 @@ public class ChartWindow extends JPanel
     {
       return 0;
     }
-    public void setName(String name)
-    {
-      this.str_n2 = name;
-    }
+
     public String getName()
     {
       return str_n2;
