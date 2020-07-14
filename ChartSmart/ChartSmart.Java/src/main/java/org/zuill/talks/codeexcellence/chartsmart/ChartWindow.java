@@ -91,10 +91,6 @@ public class ChartWindow extends JPanel
   {
     return __APARAM__Z;
   }
-  /**
-   * 
-   * @return
-   */
   private Unit horizontalNaming()
   {
     return new Unit();
