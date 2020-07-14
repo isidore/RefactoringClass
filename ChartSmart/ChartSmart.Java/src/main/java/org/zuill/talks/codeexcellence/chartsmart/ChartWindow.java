@@ -264,7 +264,7 @@ public class ChartWindow extends JPanel
         repaint(200);
       }
       catch (Throwable e)
-      { // this shouldn't happen
+      {
         repaint();
       }
     }
