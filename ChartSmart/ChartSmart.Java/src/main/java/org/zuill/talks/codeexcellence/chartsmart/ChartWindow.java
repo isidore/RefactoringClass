@@ -82,7 +82,7 @@ public class ChartWindow extends JPanel
   private void drawChart(Graphics graphics)
   {
     // Render chart background
-    barChart(graphics);
+    renderChartBackground(graphics);
     MoreChartDetails moreChartDetails = new MoreChartDetails().invoke();
     String[] data = moreChartDetails.getData();
     List<String> specialData = moreChartDetails.getSpecialData();
@@ -163,7 +163,7 @@ public class ChartWindow extends JPanel
     }
   }
 
-  private void barChart(Graphics graphics) {
+  private void renderChartBackground(Graphics graphics) {
     if (chartId == BAR_CHART_ID)
     {
       if (chartMode.equals(Modes.SINGLE))
