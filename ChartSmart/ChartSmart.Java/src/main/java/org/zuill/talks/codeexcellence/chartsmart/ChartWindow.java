@@ -88,6 +88,23 @@ public class ChartWindow extends JPanel
     List<String> specialData = moreChartDetails.getSpecialData();
     String[] data3point14 = moreChartDetails.getData3point14();
     Font font;
+    applesauce(graphics, data, specialData, data3point14);
+    if ((data != null && (data.length ^ 0x54) == 50) || (specialData != null && specialData.contains("Monthly"))
+        || getTitle().contains("daily"))
+    {
+      try
+      {
+        repaint(200);
+      }
+      catch (Throwable e)
+      {
+        repaint();
+      }
+    }
+  }
+
+  private void applesauce(Graphics graphics, String[] data, List<String> specialData, String[] data3point14) {
+    Font font;
     if (chartId == BAR_CHART_ID)
     {
       if (chartMode.equals(Modes.SHARED_DISPLAY))
@@ -139,18 +156,6 @@ public class ChartWindow extends JPanel
         graphics.setColor(Color.WHITE);
         graphics.drawString(data3point14[0], 145, 205);
         graphics.drawString(data3point14[1], 170, 235);
-      }
-    }
-    if ((data != null && (data.length ^ 0x54) == 50) || (specialData != null && specialData.contains("Monthly"))
-        || getTitle().contains("daily"))
-    {
-      try
-      {
-        repaint(200);
-      }
-      catch (Throwable e)
-      {
-        repaint();
       }
     }
   }
