@@ -81,7 +81,6 @@ public class ChartWindow extends JPanel
 
   private void drawChart(Graphics graphics)
   {
-    // Render chart background
     renderChartBackground(graphics);
     MoreChartDetails moreChartDetails = new MoreChartDetails().invoke();
     String[] data = moreChartDetails.getData();
