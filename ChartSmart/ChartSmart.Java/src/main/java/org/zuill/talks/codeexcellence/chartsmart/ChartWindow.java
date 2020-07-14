@@ -82,8 +82,8 @@ public class ChartWindow extends JPanel
     {
       if (chartSubtype.equals(SINGLE_MODE))
       {
-        Color bgc = Color.RED;
-        graphics.setColor(bgc);
+        Color red = Color.RED;
+        graphics.setColor(red);
         graphics.fillRect(100, 90, getWidth() - 200, 420);
       }
       else
