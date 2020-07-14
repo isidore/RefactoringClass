@@ -83,38 +83,10 @@ public class ChartWindow extends JPanel
   {
     // Render chart background
     barChart(graphics);
-    String[] data = null;
-    List<String> specialData = new ArrayList<String>();
-    String[] data3point14 = new String[0];
-    if (chartId == BAR_CHART_ID)
-    {
-      String barChart = "Bar Chart";
-      if (chartMode.equals(Modes.SINGLE))
-      {
-        data = new String[1];
-        data[0] = barChart;
-      }
-      else
-      {
-        data = new String[2];
-        int i = 0;
-        data[i++] = barChart;
-        data[i++] = "Small";
-      }
-    }
-    else
-    {
-      if (chartMode.equals(Modes.SINGLE))
-      {
-        specialData.add("Pie Chart");
-      }
-      else
-      {
-        data3point14 = new String[2];
-        data3point14[1] = "Small";
-        data3point14[0] = "Pie" + " Chart";
-      }
-    }
+    MoreChartDetails moreChartDetails = new MoreChartDetails().invoke();
+    String[] data = moreChartDetails.getData();
+    List<String> specialData = moreChartDetails.getSpecialData();
+    String[] data3point14 = moreChartDetails.getData3point14();
     Font font;
     if (chartId == BAR_CHART_ID)
     {
@@ -213,6 +185,60 @@ public class ChartWindow extends JPanel
         int sc = (int) ((double) 405 - (float) 90 * 2);
         graphics.fillOval(100, 100, sc, sc);
       }
+    }
+  }
+
+  private class MoreChartDetails {
+    private String[] data;
+    private List<String> specialData;
+    private String[] data3point14;
+
+    public String[] getData() {
+      return data;
+    }
+
+    public List<String> getSpecialData() {
+      return specialData;
+    }
+
+    public String[] getData3point14() {
+      return data3point14;
+    }
+
+    public MoreChartDetails invoke() {
+      data = null;
+      specialData = new ArrayList<String>();
+      data3point14 = new String[0];
+      if (chartId == BAR_CHART_ID)
+      {
+        String barChart = "Bar Chart";
+        if (chartMode.equals(Modes.SINGLE))
+        {
+          data = new String[1];
+          data[0] = barChart;
+        }
+        else
+        {
+          data = new String[2];
+          int i = 0;
+          data[i++] = barChart;
+          data[i++] = "Small";
+        }
+      }
+      else
+      {
+        if (chartMode.equals(Modes.SINGLE))
+        {
+          specialData.add("Pie Chart");
+        }
+        else
+        {
+          data3point14 = new String[2];
+          data3point14[1] = "Small";
+          data3point14[0] = "Pie" + " Chart";
+        }
+      }
+      return this;
     }
   }
 }
