@@ -115,21 +115,26 @@ public class ChartWindow extends JPanel
     }
     else
     {
-      if (chartMode.equals(Modes.SINGLE))
-      {
-        font = new Font("Bookman Old Style", Font.BOLD, 55);
-        graphics.setColor(Color.WHITE);
-        graphics.setFont(font);
-        graphics.drawString(specialData.get(0), 200, 340);
-      }
-      else
-      {
-        font = new Font("Bookman Old Style", Font.BOLD, 30);
-        graphics.setFont(font);
-        graphics.setColor(Color.WHITE);
-        graphics.drawString(data3point14[0], 145, 205);
-        graphics.drawString(data3point14[1], 170, 235);
-      }
+      nonsense(graphics, specialData, data3point14);
+    }
+  }
+
+  private void nonsense(Graphics graphics, List<String> specialData, String[] data3point14) {
+    Font font;
+    if (chartMode.equals(Modes.SINGLE))
+    {
+      font = new Font("Bookman Old Style", Font.BOLD, 55);
+      graphics.setColor(Color.WHITE);
+      graphics.setFont(font);
+      graphics.drawString(specialData.get(0), 200, 340);
+    }
+    else
+    {
+      font = new Font("Bookman Old Style", Font.BOLD, 30);
+      graphics.setFont(font);
+      graphics.setColor(Color.WHITE);
+      graphics.drawString(data3point14[0], 145, 205);
+      graphics.drawString(data3point14[1], 170, 235);
     }
   }
 
