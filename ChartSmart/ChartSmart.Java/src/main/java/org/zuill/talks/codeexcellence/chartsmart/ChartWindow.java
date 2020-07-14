@@ -121,15 +121,15 @@ public class ChartWindow extends JPanel
   private void drawPieChartWithData(Graphics graphics, List<String> specialData, String[] data3point14) {
     if (chartMode.equals(Modes.SINGLE))
     {
-      newCoolMethod(graphics, "Bookman Old Style", Color.WHITE, specialData.get(0), 200, 340);
+      drawSingleModePieChart(graphics, "Bookman Old Style", Color.WHITE, specialData.get(0), 200, 340);
     }
     else
     {
-      newCoolerMethod(graphics, data3point14);
+      drawSharedModePieChart(graphics, data3point14);
     }
   }
 
-  private void newCoolerMethod(Graphics graphics, String[] data3point14) {
+  private void drawSharedModePieChart(Graphics graphics, String[] data3point14) {
     Font font;
     font = new Font("Bookman Old Style", Font.BOLD, 30);
     graphics.setFont(font);
@@ -138,7 +138,7 @@ public class ChartWindow extends JPanel
     graphics.drawString(data3point14[1], 170, 235);
   }
 
-  private void newCoolMethod(Graphics graphics, String s, Color white, String s2, int i, int i2) {
+  private void drawSingleModePieChart(Graphics graphics, String s, Color white, String s2, int i, int i2) {
     Font font;
     font = new Font(s, Font.BOLD, 55);
     graphics.setColor(white);
@@ -175,7 +175,7 @@ public class ChartWindow extends JPanel
       graphics.fillRect(262, bottomY - 300, 75, 300);
       graphics.fillRect(337, bottomY - 250, 75, 250);
       graphics.fillRect(412, bottomY - 340, 75, 340);
-      newCoolMethod(graphics, "Arial Black", Color.BLACK, data[0], 130, 400);
+      drawSingleModePieChart(graphics, "Arial Black", Color.BLACK, data[0], 130, 400);
     }
   }
 
