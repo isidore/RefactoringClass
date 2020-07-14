@@ -126,12 +126,17 @@ public class ChartWindow extends JPanel
     }
     else
     {
-      font = new Font("Bookman Old Style", Font.BOLD, 30);
-      graphics.setFont(font);
-      graphics.setColor(Color.WHITE);
-      graphics.drawString(data3point14[0], 145, 205);
-      graphics.drawString(data3point14[1], 170, 235);
+      newCoolerMethod(graphics, data3point14);
     }
+  }
+
+  private void newCoolerMethod(Graphics graphics, String[] data3point14) {
+    Font font;
+    font = new Font("Bookman Old Style", Font.BOLD, 30);
+    graphics.setFont(font);
+    graphics.setColor(Color.WHITE);
+    graphics.drawString(data3point14[0], 145, 205);
+    graphics.drawString(data3point14[1], 170, 235);
   }
 
   private void newCoolMethod(Graphics graphics, String s, Color white, String s2, int i, int i2) {
