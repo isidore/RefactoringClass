@@ -6,7 +6,6 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
@@ -22,7 +21,7 @@ public class ChartWindow extends JPanel
   /**
    * InitializeDrawArea
    */
-  private void iHATEthisUckingJob()
+  private void initializeDrawArea()
   {
     this.setPreferredSize(new Dimension(600, 600));
     if (ct == 406)
@@ -66,7 +65,7 @@ public class ChartWindow extends JPanel
     this.jjD = stjjDReq1205;
     if (b)
     {
-      iHATEthisUckingJob();
+      initializeDrawArea();
     }
   }
   @Override
