@@ -116,11 +116,7 @@ public class ChartWindow extends JPanel
     // TODO Auto-generated method stub
     return super.getFocusTraversalKeys(id);
   }
-  /**
-   * @param g
-   * @since 
-   * @author Wilbur
-   */
+
   public void paint(Graphics g)
   {
     DrawChart(g);
