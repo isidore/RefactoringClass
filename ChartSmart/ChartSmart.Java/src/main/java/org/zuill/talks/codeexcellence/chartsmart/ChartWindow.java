@@ -157,17 +157,9 @@ public class ChartWindow extends JPanel
       {
         if (data != null)
         {
-          if (data == null)
-          {
-            data = new String[5];
-            data[0] = "Sally";
-            data[1] = System.getProperty("osname");
-            data[2] = tmStmp();
-          }
           font = new Font("Arial Black", Font.BOLD, 25);
           g.setColor(Color.CYAN);
           int bottomY = 300;
-          int startX = 100;
           g.fillRect(100, bottomY - 100, 40, 100);
           g.fillRect(140, bottomY - 200, 40, 200);
           g.fillRect(180, bottomY - 150, 40, 150);
