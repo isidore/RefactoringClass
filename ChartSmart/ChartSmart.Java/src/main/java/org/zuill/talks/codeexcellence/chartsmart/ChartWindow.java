@@ -52,7 +52,6 @@ public class ChartWindow extends JPanel
       }
     }
   }
-  private Unit defaultUnits;
 
   public ChartWindow()
   {
