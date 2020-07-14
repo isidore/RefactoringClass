@@ -114,11 +114,11 @@ public class ChartWindow extends JPanel
     }
     else
     {
-      nonsense(graphics, specialData, data3point14);
+      drawPieChartWithData(graphics, specialData, data3point14);
     }
   }
 
-  private void nonsense(Graphics graphics, List<String> specialData, String[] data3point14) {
+  private void drawPieChartWithData(Graphics graphics, List<String> specialData, String[] data3point14) {
     Font font;
     if (chartMode.equals(Modes.SINGLE))
     {
