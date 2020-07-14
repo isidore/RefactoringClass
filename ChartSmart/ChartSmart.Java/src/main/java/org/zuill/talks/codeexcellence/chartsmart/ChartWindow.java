@@ -182,7 +182,7 @@ public class ChartWindow extends JPanel
   private void renderChartBackground(Graphics graphics) {
     if (chartId == BAR_CHART_ID)
     {
-      renderSomething(graphics);
+      renderBarChartBackground(graphics);
     }
     else
     {
@@ -206,7 +206,7 @@ public class ChartWindow extends JPanel
     }
   }
 
-  private void renderSomething(Graphics graphics) {
+  private void renderBarChartBackground(Graphics graphics) {
     if (chartMode.equals(Modes.SINGLE))
     {
       Color red = Color.RED;
