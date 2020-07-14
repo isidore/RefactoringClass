@@ -182,17 +182,7 @@ public class ChartWindow extends JPanel
   private void renderChartBackground(Graphics graphics) {
     if (chartId == BAR_CHART_ID)
     {
-      if (chartMode.equals(Modes.SINGLE))
-      {
-        Color red = Color.RED;
-        graphics.setColor(red);
-        graphics.fillRect(100, 90, getWidth() - 200, 420);
-      }
-      else
-      {
-        graphics.setColor(Color.BLACK);
-        graphics.fillRect(95, 95, 210, 210);
-      }
+      renderSomething(graphics);
     }
     else
     {
@@ -209,6 +199,20 @@ public class ChartWindow extends JPanel
         int sc = (int) ((double) 405 - (float) 90 * 2);
         graphics.fillOval(100, 100, sc, sc);
       }
+    }
+  }
+
+  private void renderSomething(Graphics graphics) {
+    if (chartMode.equals(Modes.SINGLE))
+    {
+      Color red = Color.RED;
+      graphics.setColor(red);
+      graphics.fillRect(100, 90, getWidth() - 200, 420);
+    }
+    else
+    {
+      graphics.setColor(Color.BLACK);
+      graphics.fillRect(95, 95, 210, 210);
     }
   }
 
