@@ -110,7 +110,7 @@ public class ChartWindow extends JPanel
   private void drawChartWithData(Graphics graphics, String[] data, List<String> specialData, String[] data3point14) {
     if (chartId == BAR_CHART_ID)
     {
-      adventures(graphics, data);
+      drawBarChartWithData(graphics, data);
     }
     else
     {
@@ -137,7 +137,7 @@ public class ChartWindow extends JPanel
     }
   }
 
-  private void adventures(Graphics graphics, String[] data) {
+  private void drawBarChartWithData(Graphics graphics, String[] data) {
     Font font;
     if (chartMode.equals(Modes.SHARED_DISPLAY))
     {
