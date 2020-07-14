@@ -78,7 +78,7 @@ public class ChartWindow extends JPanel
     }
   }
   private Unit defaultUnits;
-  
+
   public ChartWindow()
   {
   }
@@ -92,9 +92,6 @@ public class ChartWindow extends JPanel
   }
   /**
    * Shows the chart
-   * 
-   * @param ct
-   * @return
    */
   public void iniDS(int ct, String stjjDReq1205, boolean b)
   {
