@@ -18,6 +18,8 @@ choco install -y notepadplusplus beyondcompare jdk8 intellijidea maven
 
 # Clone repo
 & "C:\Program Files\Git\cmd\git.exe" clone https://github.com/isidore/RefactoringClass.git C:\Code\RefactoringClass
+& "C:\Program Files\Git\cmd\git.exe" clone https://github.com/isidore/GildedRose_Demo.git C:\Code\GildedRose_Demo
+
 & "C:\Program Files\Git\cmd\git.exe" clone https://github.com/LearnWithLlew/KeyboardShortcutKatas.java.git C:\Code\KeyboardShortcutKatas
 & "C:\Program Files\Git\cmd\git.exe" clone https://github.com/LearnWithLlew/DuplicationColoringBook.git C:\Code\DuplicationColoringBook
 & "C:\Program Files\Git\cmd\git.exe" clone https://github.com/LearnWithLlew/DuplicationKata.java.git C:\Code\DuplicationKata
