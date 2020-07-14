@@ -1,13 +1,13 @@
 # Course
 
 ## Introductions
-* [ ] Intro Slides
-* [ ] Zoom
+* [x] Intro Slides
+* [x] Zoom
     * [ ] Mute
     * [ ] Video
     * [ ] Grid View
     * [ ] Name Tags
-* [ ]  Google Doc
+* [x]  Google Doc
     * [ ] Questions
 ```
 Questions:
@@ -24,7 +24,7 @@ I have a printer:  yes / no
 
 ```
 
- * [ ] AnyDesk
+ * [x] AnyDesk
     * [ ] Login
     * [ ] Mob timer
         * [ ] insert names
