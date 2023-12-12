@@ -1,12 +1,10 @@
 package org.zuill.talks.codeexcellence.chartsmart;
 
-import static org.junit.Assert.assertEquals;
-
-import org.approvaltests.Approvals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.approvaltests.awt.AwtApprovals;
 import org.approvaltests.reporters.DelayedClipboardReporter;
 import org.approvaltests.reporters.UseReporter;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 @UseReporter(DelayedClipboardReporter.class)
 public class ChartSmartTest
@@ -17,7 +15,7 @@ public class ChartSmartTest
     ChartSmart chartSmart = new ChartSmart();
     AwtApprovals.verify(chartSmart);
   }
-  @Test
+  @org.junit.jupiter.api.Test
   public void testBarChartWindow() throws Exception
   {
     ChartWindow chartSmart = new ChartWindow();
@@ -47,6 +45,6 @@ public class ChartSmartTest
     ChartWindow chartSmart = new ChartWindow();
     chartSmart.iniDS(323, "shareddisplay", true);
     AwtApprovals.verify(chartSmart);
-    assertEquals("Pie Chart - Compare Mode", chartSmart.getTitle());
+    org.junit.jupiter.api.Assertions.assertEquals("Pie Chart - Compare Mode", chartSmart.getTitle());
   }
 }
